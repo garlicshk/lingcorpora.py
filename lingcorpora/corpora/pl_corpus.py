@@ -67,7 +67,7 @@ class PageParser(Container):
         for row in rows:
             r = row.select('td')
             results.append([r[0].text, r[1].text, r[2].text])
-        return results
+        return results[:self.n_results]
     
     def _parse_analysis(self, word):
         analysis_text = re.findall('\[(.*?)\]', word)[0]

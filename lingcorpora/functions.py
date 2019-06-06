@@ -31,6 +31,7 @@ from .corpora import kal_corpus
 from .corpora import udm_corpus
 from .corpora import bua_corpus
 from .corpora import alb_corpus
+from .corpora import pl_corpus
 
 functions = {
     'rus': rus_corpus,
@@ -60,5 +61,6 @@ functions = {
     'kal': kal_corpus,
     'udm': udm_corpus,
     'bua': bua_corpus,
-    'alb': alb_corpus
+    'alb': alb_corpus,
+    'pl': pl_corpus
 }
