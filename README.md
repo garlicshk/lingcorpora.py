@@ -49,7 +49,7 @@ Also you can install the latest build from git checkout:
 ## Contributors
 
 The project is maintained by [Ekaterina Gerasimenko](https://github.com/kategerasimenko) and [Artyom Kopetskiy](https://github.com/akv17).
-At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva and George Moroz.
+At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Michael Voronov and George Moroz.
 
 ## Citation
 
@@ -65,6 +65,7 @@ It will be appreciated if you cite us:
              Diana Malyshok and
              Maria Terekhina and
              Ustinya Kosheleva and
+             Michael Voronov and
              George Moroz},
     title = {Lingcorpora for Python},
     year = {2019},
