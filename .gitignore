@@ -18,3 +18,7 @@ ava_corpus.py
 
 dist
 *.rar
+
+#Jupyter Notebook stuff
+.ipynb_checkpoints/
+docs/.ipynb_checkpoints/
