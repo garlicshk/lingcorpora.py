@@ -6,6 +6,32 @@ from lingcorpora.params_container import Container
 from lingcorpora.target import Target
 from lingcorpora.exceptions import EmptyPageException
 
+__doc__ = \
+'''
+API for National Corpus of Polish (http://nkjp.pl/)
+
+Args:
+    query: str:
+        Search by word.
+    n_results: int, default 100:
+        Number of results.
+        In case of Polisg Corpus it does NOT work like the less the number the higher speed.
+    n_left: int, default 5:
+        Number of words in the left context.
+    n_right: int, default 5:
+        Number of words in the right context.
+    subcorpus: str, default 'nkjp300':
+        Subcorpus to search in. Available options:
+            * 'nkjp300': balanced NKJP subcorpus (300M segments)
+            * 'nkjp1800': the full NKJP sorpus (1800M segments)
+            * 'nkjp1M': manually annotated corpus (1.2M segments)
+            * 'ipi250': the full IPI PAN corpus (2nd edition, 250M segments)
+            * 'ipi030': the IPI PAN corpus sample (2nd edition; 30M segments)
+            * 'frequency-dictionary': the Frequency Dictionary Corpus (0.5M segments)
+    get_analysis: bool, default False:
+        Whether to download grammatical information if the corpus is annotated.
+'''
+
 class PageParser(Container):
     
     def __init__(self, *args, **kwargs):
