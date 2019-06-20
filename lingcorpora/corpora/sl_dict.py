@@ -14,13 +14,13 @@ from ..target import Target
 __author__ = 'Pandaklez'
 __doc__ = \
 """
-sl_dics
-=======
+Spreadthesign Sign Language Dictionary
+======================================
 
 API for Spreadthesign sign language dictionary (https://www.spreadthesign.com/)
 
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str]):
     query or queries (only exact search by word is available)
 subcorpus: str or list([str]), default 'ru.ru'
@@ -43,7 +43,8 @@ variants: bool, default False
 only_link: bool, default False
     Whether to enable if you want videos to be downloaded.
     If you don't want to download videos use links from ``Target.transl``.
-sentences: boolean: In some cases you can search for the whole sentences be a word.
+sentences: bool
+    In some cases you can search for the whole sentences be a word.
 """
 
 TEST_DATA = {'test_single_query': {'query': 'собака', 'query_language': "ru.ru", 'subcorpus': "uk.ua"},

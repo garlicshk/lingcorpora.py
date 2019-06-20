@@ -11,13 +11,13 @@ TEST_DATA = {'test_single_query': {'query': 'къырым'},
 __author__ = 'zu-ann, ustya-k'
 __doc__ = \
 """
-crh_corpus
-==========
+Crimean Tatar Сorpus
+====================
 
 API for Crimean Tatar corpus (http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim).
 
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str]):
     query or queries
 n_results: int, default 100
@@ -26,6 +26,17 @@ kwic: bool, default True
     kwic format (True) or a sentence (False)
 start: int, default 0
     index of the first query appearance to be shown
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('crh')
+    results = corp.search('tili', n_results=10)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
 """
 
 

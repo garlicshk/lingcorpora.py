@@ -10,13 +10,13 @@ from ..exceptions import EmptyPageException
 __author__ = 'maria-terekhina'
 __doc__ = \
 '''
-zho_eng_corpus
-==============
+JuKuu: Chinese-English Subcorpus
+================================
 
 API for Chinese-English subcorpus of JuKuu corpus (http://www.jukuu.com/)
 
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries (currently only exact search by word or phrase is available)
 n_results: int, default 100
@@ -25,6 +25,33 @@ kwic: bool, default True
     kwic format (True) or a sentence (False)
 query_language: str
     language of the 'query'
+    
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('zho_eng')
+    results = corp.search('语', n_results=10, query_language ='zho')
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "语": 100%|██████████| 10/10 [00:01<00:00,  9.00docs/s]
+
+    1  在现代图形用户界面中，这些原语包括指向、单击和拖动。 
+    2  图13-3  图形用户界面易于使用的主要原因在于推行有限的交互词汇，由指向、单击和拖动这些极少量的原语组成复杂的习惯用法。 
+    3  ((委婉语.古))妊娠,怀孕 
+    4  避免用缩略语，如果必须，要用标准缩略语。 
+    5  避免用缩略语，如果必须，要用标准缩略语。 
+    6  "海底电报"一词是混合语,半为拉丁语,半为希腊语。 
+    7  "海底电报"一词是混合语,半为拉丁语,半为希腊语。 
+    8  "海底电报"一词是混合语,半为拉丁语,半为希腊语。 
+    9  学习外国语切莫望文生义。 
+    10  书面语比口语往往更加一致。 
+
 '''
 
 TEST_DATA = {'test_single_query': {'query': 'table', 'query_language': 'eng'},

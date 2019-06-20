@@ -11,13 +11,13 @@ TEST_DATA = {'test_single_query': {'query': 'walasa'},
 __author__ = 'kategerasimenko'
 __doc__ = \
 """
-bam_corpus
-==========
+Bamana Corpus
+=============
     
 API for Bamana corpus (http://maslinsky.spb.ru/bonito/index.html).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries (currently only exact search by word or phrase is available)
 n_results: int, default 100
@@ -31,6 +31,33 @@ subcorpus: str, default 'corbama-net-non-tonal'
         * 'corbama-net-non-tonal'
         * 'corbama-net-tonal'
         * 'corbama-brut'
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('bam')
+    results = corp.search('kan', n_results=10)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "kan": 100%|██████████| 10/10 [00:00<00:00, 14.99docs/s]
+
+    1 dennin in seginna dugu kɔnɔ ka segin dɔnkili in kan a ba ye , a yɛlɛmana ka kɛ warabilen ye ka taa kungo
+    2 kɔni tɛ dɔnkili in da dɛ ! jula k' a ka yɛlɛn fali kan ka dɔnkili da , k' a tɛna yɛlɛma . julaw ko , ko fosi
+    3 yɛlɛma . musokɔrɔba ye dɔnkili in da k' a to fali kan . a tilala dɔrɔn , a yɛlɛmana ka kɛ warabilen ye . a
+    4 a kɛ , don dɔ la , surukuba yaalatɔ bɔra tonkun in kan , kungo kɔnɔ . a kabakoyara : « Ɛ , tonkun yɛrɛ ni
+    5 y' o fɔ yɔrɔ min na , fɛn dɔ y' a ta k' a pɛrɛn a kɔ kan . surukuba foori ka wuli , k' a ɲɛkili filaw bɔ u
+    6 la . u y' u gɛrɛ tonkun in na . sama ɲɛ datɔ bonbonsi kan , a y' i kanto : « Ɛ , tonkun yɛrɛ ni bonbonsi , a da n
+    7 a y' o bɔ a da la yɔrɔ min , fɛn dɔ y' a ta k' a pɛrɛn a kɔ kan . biɲɛ dow turu kojugu a la , a dɔw bɔra a fan dɔ fɛ .
+    8 . Ala tora a ka dɔnni na ka kɔngɔ ben dugu nin kan . kɔngɔba . ka dugu nin ɲɛni , ka dugumɔgɔw fasa ,
+    9 sara . Ala fana y' o mɔgɔ sugu dan ka bila dugukolo kan . hali n' a ye fɛn sɔrɔ , hali n' a ye nafolo d' a ma , a
+    10  nsiirin , nsiirin . n y' a bila den dɔ le kan . den nin ye sira deli a facɛ fɛ , k' a b' a fɛ ka taga
+
 """
 
 

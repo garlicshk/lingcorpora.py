@@ -12,17 +12,44 @@ TEST_DATA = {'test_single_query': {'query': 'წელი'},
 __author__ = 'Filaona, kategerasimenko'
 __doc__ = \
 """
-kat_corpus
-==========
+Georgian Monolingual Corpus
+===========================
 
 API for Georgian monolingual corpus (http://corpora.iliauni.edu.ge).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries (currently only exact search by word is available)
 n_results: int, default 100
     number of results wanted
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('kat')
+    results = corp.search('ენა', n_results=10)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "ენა": 100%|██████████| 10/10 [00:01<00:00,  6.83docs/s]
+
+    1 სწორედ ქართული ენა იქნება შენი დედაენა.
+    2 მე მესმის ტკბილი ქართული ენა .
+    3 ეს ენა , როგორც ანკარა მთის წყარო, იღვრება ჩემში[...]
+    4 მუცლით მეზღაპრეს გაუხმეს ენა .
+    5 მაგრამ ვინ გაიგებს, ვინ იცის მისი ენა .
+    6 [...]ნაღამ დაიყვირა კობამ, მაგრამ გახევებული ენა ვერ დაძრა, მობრუნდა და ბურანში აედევნა ჯ[...]
+    7 [...]ნად მისული მღვდლის სიტყვები იქნებოდა და ენა გაუხევდა, ასპიროზამ კი მაჯაში ჩაავლო დაკ[...]
+    8 [...]ა ჩამცხრალ ბონდოს, მერე ძლივს მოაბრუნდა ენა და ჩურჩულით თქვა: „მართლა შენი ბრალია?“ [...]
+    9 – მეც ჭორიკანასავით გადმოვაგდე ენა ...
+    10 [...]იფიქრე, თუ ფრანგულს ვისწავლით, საიდუმლო ენა გვექნება, ვერც ვირენა და ვერც ვერავინ ვე[...]
+
 """
 
 class PageParser(Container):

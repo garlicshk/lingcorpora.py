@@ -10,13 +10,13 @@ TEST_DATA = {'test_single_query': {'query': 'bezug'},
 __author__ = 'alexeykosh, ustya-k'
 __doc__ = \
 """
-deu_corpus
-==========
+German Corpus
+=============
 
 API for German corpus (https://www.dwds.de).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries
 n_results: int, default 100
@@ -36,6 +36,26 @@ subcorpus: str
         * 'bz'
         * 'dta'
         * 'korpus21'
+        
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('deu')
+    results = corp.search('gut', n_results=10)
+    print(results[0][0].text)
+
+.. parsed-literal::
+
+    "gut": 100%|██████████| 10/10 [00:00<00:00, 17.48docs/s]
+
+        Er mache schon seit zehn Jahren mit, denn das sei ein
+    
+    guter
+    
+        Start ins neue Jahr.  
+
 """
 
 

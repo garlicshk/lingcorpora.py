@@ -23,6 +23,16 @@ class Result:
         Number of results.
     query: str
         Search query.
+    
+    Example
+    -------
+    .. code-block:: python
+    
+        >>> corp = lingcorpora.Corpus('emk')
+        >>> results = corp.search('tuma', n_results = 10, kwic=False)[0]
+        >>> results
+        "tuma": 100%|██████████| 10/10 [00:00<00:00, 11.09docs/s]
+        Result(query=tuma, N=10, params={'n_results': 10, 'kwic': False, 'n_left': None, 'n_right': None, 'query_language': None, 'subcorpus': 'cormani-brut-lat', 'get_analysis': False, 'gr_tags': None, 'start': 0, 'writing_system': ''})
     """
     def __init__(self, language, query_params):
         """
@@ -88,7 +98,7 @@ class Result:
         filename: str, default None
             name of the file. If None, filename is lang_query_results.csv
             with omission of disallowed filename symbols.
-        header: boolean, default True
+        header: bool, default True
             whether to include a header in the table.
             Header is stored in .__header: ``('index', 'text')``
         sep: str, default ';'
@@ -123,6 +133,17 @@ class Result:
                     writer.writerow((i + 1, t.text))
                     
     def clear(self):
-        """Overwrites the results attribute to empty list."""
+        """Overwrites the results attribute to empty list.
+        
+        Example
+        -------
+        .. code-block:: python
+        
+            >>> print(results.results)
+            >>> results.clear()
+            >>> print(results.results)
+            [Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, )]
+            []
+        """
         del self.results
         self.results = list()

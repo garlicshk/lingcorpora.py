@@ -11,17 +11,44 @@ TEST_DATA = {'test_single_query': {'query': 'kaster'},
 __author__ = 'Filaona, kategerasimenko'
 __doc__ = \
 """
-dan_corpus
-==========
+Danish Corpus
+=============
 
 API for Danish corpus (https://ordnet.dk/korpusdk_en/concordance).
 
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str]):
     query or queries (currently only search by forms of the word is available)
 n_results: int, default 100
     number of results wanted (100 by default)
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('dan')
+    results = corp.search('dansk', n_results=10)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "dansk": 100%|██████████| 10/10 [00:01<00:00,  9.08docs/s]
+
+    1 om hvilke juridiske modeller, der overvejes for at få en dansk særordning med EF på plads. Forinden besøger den britiske premierminister,
+    2 der også tilknyttes det amibtiøse fremstød for dansk film og højskolekultur. TV 2-medarbejderen, journalist Inger Marie Vennize forlader
+    3 skriver Klaus Rifbjerg et sted i " Karakterbogen ". Heri har dansk litteraturs Store Bastian både ret og uret. Hans nye bog
+    4 lønstigninger er de laveste i næsten 40 år. Det viser Dansk Arbejdsgiverforenings lønindikator for juli, august og september. På et år
+    5 de næste dage, som kan blive uhyre dramatiske dage i dansk politik, skal løsningen forhandles på plads både udadtil og indadtil.
+    6 der godkendes på et EF-topmøde og derefter gennemgår en dansk folkeafstemning, vil aldrig blive tilsidesat til fordel for andre traktat-bestemmelser,
+    7 og om at uafhængige juridiske eksperter skal vurdere en dansk aftale. Baggrunden er forlydender om en dansk løsning, der ikke
+    8 yderst populær vinder af sæsonens sidste klassiske dyst- Dansk Opdrætningsløb på Charlottenlund. Selv om travtalentet løb ud i fejl
+    9 have udgivet alle Carl Barks' Disney-serier på dansk . Seneste skud på stammen er " Anders And slår alt ". Det
+    10 der døde i 1964, i dobbeltversion, som det hun var: dansk teaters Madame. JEG citerer lige Mette Winge fra det udmærket
+
 """
 
 

@@ -14,8 +14,8 @@ arkhangelskiy_corpora
 
 API for Тimofey Arkhangelskiy's corpora (http://web-corpora.net/).
 
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or List([str])
     query or queries
 n_results: int

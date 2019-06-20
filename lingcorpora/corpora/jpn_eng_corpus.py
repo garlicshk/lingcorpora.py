@@ -11,13 +11,13 @@ from ..exceptions import EmptyPageException
 __author__ = 'maria-terekhina'
 __doc__ = \
 '''
-jpn_eng_corpus
-==============
+Jukuu: Japanese-English Subcorpus
+=================================
 
 API for Japanese-English subcorpus of JuKuu corpus (http://www.jukuu.com/)
 
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries (currently only exact search by word or phrase is available)
 n_results: int, default 100
@@ -26,6 +26,7 @@ kwic: bool, default True
     wic format (True) or a sentence (False)
 query_language: str
     language of the 'query'
+    
 '''
 
 TEST_DATA = {'test_single_query': {'query': 'table', 'query_language': 'eng'},

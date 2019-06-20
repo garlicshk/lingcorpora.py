@@ -11,13 +11,13 @@ TEST_DATA = {'test_single_query': {'query': 'keele'},
 __author__ = 'Filaona, kategerasimenko'
 __doc__ = \
 """
-est_corpus
-==========
+Estonian Corpus
+===============
 
 API for Estonian corpus (http://www.cl.ut.ee/korpused/kasutajaliides/index.php).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries (currently only exact search by word is available)
 n_results: int, default 100
@@ -25,8 +25,8 @@ n_results: int, default 100
 subcorpus: str
     subcorpus. Available options: see below values and their meanings ('1990_ajalehed_26_08_04' by default). To use several subcorpora, list them with semicolon, e.g. '1990_ajalehed_26_08_04;EE_10_09_2004'.
     
-Available Subcorpora
---------------------
+**Available Subcorpora**
+
 * 1990_ajalehed_26_08_04: 1990d - ajakirjandus [865 tuhat]
 * EE_10_09_2004: Eesti Ekspress 1996-2001 [7,2 miljonit]
 * Maaleht: Maaleht 2001-2004 [5,3 miljonit]
@@ -98,6 +98,33 @@ Available Subcorpora
 * 1980_muu: 1980d - muud tekstid [415 tuhat]
 * teadusartiklid: Mitmesugused Teadusartiklid 1995-2007 [1,3 miljonit]
 * akp: Asutawa Kogu protokollid [2 miljonit]
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('est')
+    results = corp.search('keel', n_results = 10)
+    for result in results:
+        for i,target in enumerate(result):
+            print(i+1,target.text)
+
+.. parsed-literal::
+
+    "keel": 100%|██████████| 10/10 [00:01<00:00,  5.01docs/s]
+
+    1 SSÜP Keskkomitee Poliitbüroo minu teada noorima liikme Egon Krenzi nimega annab saksa keeles üsna vaimukalt &zcaron;ongleerida.
+    2 Seadused peavad lähtuma nendest otsustest ja olema tõlgitud nende otsuste keelde .
+    3 Praegune kriis sai alguse 16. novembri otsuste tõlkimisest kodakondsuse seaduse keelde .
+    4 Arvutused ja eksperthinnangud näitasid, et erilisi jõuvõtteid mittekasutava nullvariandi rakendamine jätaks kodakondsusest välja sama palju või isegi rohkem muulasi kui 10-aastase paiksuse abil kodakondsusest jõuga eemale hoidmine; b) lükata uute kodanike vastuvõtmine 10 aastaks edasi, kehtestades 10-aastase paiksuse ja eesti keele oskuse nõude (ajaloo, kultuuri ja valitsemiskorra tundmise nõue peeti otstarbekaks lülitada immigratsiooniseadusse.
+    5 Ka ateljeetöö pole normaalne, kui iga päev pool tööajast kulub nii lastel kui ka rahva keeli pallaslastel oma ruumide tühjakstegemiseks ja uuesti töökorda seadmiseks.
+    6 Mis parata: kõigepealt tuleb meelde Jaan Kaplinski nägus esseekogu, mis sai teoks samuti lahe taga ja hõimurahva keeles .
+    7 Kas pole kurb, et eestlased ei saa oma asju lugeda originaalis, vaid peavad tõlke kaudu mõistatama - või koguni lugemiseseks mõne keele juurde õppima?
+    8 Käesoleva puhul pole ehk keel suuremaks takistuseks neile Eestis, kes iga päev Soome TV-d jälgivad.
+    9 Nad on ilma jäänud otsekontaktist nendega, kes küüditusest tagasi pääsesid, soome keelega pole neil tegemist.
+    10 Soome keelses eessõnas öeldakse, et see toimuvat veel tänavu.
+
 """
 
 class PageParser(Container):

@@ -10,13 +10,13 @@ TEST_DATA = {'test_single_query': {'query': 'elektronická'},
 __author__ = 'zu-ann, ustya-k'
 __doc__ = \
 """
-slk_corpus
-==========
+Slovak Corpus
+=============
 
 API for Slovak corpus (http://korpus.juls.savba.sk:8080/manatee.ks/do_query).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries
 n_results: int, default 100

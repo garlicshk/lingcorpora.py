@@ -13,13 +13,13 @@ TEST_DATA = {'test_single_query': {'query': 'कुत्ते'},
 __author__ = 'zu-ann, ustya-k'
 __doc__ = \
 """
-hin_corpus
-==========
+Hindi Corpus
+============
 
 API for Hindi corpus (http://www.cfilt.iitb.ac.in/~corpus/hindi/find.php).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or list([str])
     query or queries
 n_results: int, default 100
@@ -28,6 +28,33 @@ kwic: bool, default True
     kwic format (True) or a sentence (False)
 start: int, default 0
     index of the first query appearance to be shown (0 by default)
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('hin')
+    results = corp.search('कुत्ते', n_results=10)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "कुत्ते": 100%|██████████| 10/10 [00:10<00:00,  1.07s/docs]
+
+    1  फिर उससे इस वाइरस का टीका तैयार किया. इस टीके को आपने एक स्वस्थ  कुत्ते  की देह में पहुँचाया.
+    2  उस बच्चे को दो दिन पहले एक पागल  कुत्ते  ने काटा था. पागल 
+    3   कुत्ते  दिखाई दिये .पालतू भी नहीं . बिल्ली और पक्षी भी नहीं .
+    4  किसी दूसरे प्राणों के रहते भूत नहीं आता है . हम लोगों के घर मेए दो महीने का एक  कुत्ते  का बच्चा था .
+    5   कुत्ते  का बच्चा गोद में ही सो गया . पढ़ते-पढ़ते यह अन्दाज ही नहीं रहा कि कब सबेरा हो गया .
+    6   कुत्ते  का बच्चा मिल नहीं रहा है . समुचे मकान को रत्ती-रत्ती खोज कर सभी परेशान हो गये हैं ." बच्चा इतना बेखबर सो रहा था,
+    7 रहीं सूरज अपने घोड़ोंपर चाबुक बरसाता रहा  कुत्ते  भूँकते रहे मशीनें 
+    8  चुप क्यों हो गए ?" "सुनाते हैं, सुनाते हैं ." सर्कस ने एक नजर मेरी ओर देखा और जैसे मेरी मंशा ताड़कर बोला, "हमारे लिए  कुत्ते वाला फूल कौन लाएगा ?" "हम लायेंगें !
+    9   कुत्ते  पर सवारी गांठने वाले भैरव, को देवता रूप में ग्रहण किया तब मूषक वाहन विघ्नेश गणेश को भी ग्रहण कर उन्हें विघ्नेश बना डाला .
+    10  बड़े साहब के घर कितने  कुत्ते  हैं. . . जानकी वकील के घर पूजा में कितनी बलि होती है.
+
 """
 
 

@@ -11,13 +11,13 @@ TEST_DATA = {'test_single_query': {'query': 'kɔdɔ'},
 __author__ = 'kategerasimenko'
 __doc__ = \
 """
-emk_corpus
-==========
+Maninka Corpus
+==============
 
 API for Maninka corpus (http://maslinsky.spb.ru/emk/run.cgi/first_form).
     
-Search Parameters
------------------
+**Search Parameters**
+
 query: str or List([str])
     query or queries (currently only exact search by word or phrase is available).
 n_results: int, default 100
@@ -34,6 +34,33 @@ writing_system: str
         * 'nko',
         * 'latin'.
     Bug: only 'latin' for 'corbama-brut-nko' subcorpus.
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('emk')
+    results = corp.search('tuma bɛɛ', n_results=10, writing_system='latin', kwic=False)
+    for result in results:
+        for i,target in enumerate(result):
+            print(i+1,target.text)
+
+.. parsed-literal::
+
+    "tuma bɛɛ": 100%|██████████| 10/10 [00:01<00:00,  9.62docs/s]
+    
+    1 14 alu tɛdɛ alu ladɛla alla tara kanma tuma bɛɛ .
+    2 ‹ n ka faama ye n ɲɛ tuma bɛɛ .
+    3 alu kan ko : « cɛ nin ye kuma juu fɔla yɔrɔ saniman nin ma tuma bɛɛ , ka kuma juu fɔ kela musa la sariya fanan ma .
+    4 1 wo tuma , sɔli tɛdɛ faama isa la karandennu la ɲanamaya masilanna tuma bɛɛ .
+    5 moso wo tɛdɛ koɲuma kɛla tuma bɛɛ ka fantannu dɛmɛn .
+    6 a tɛdɛ yahudiya fantannu sɔla kosɛbɛ , ka alla tara tuma bɛɛ .
+    7 17 kɔnin a tɛdɛ a jɛdɛ yidakala alu la tuma bɛɛ ala kewaliɲumalu fɛ .
+    8 16 wo le dɔ , n ye n dɔjala tuma bɛɛ sa n kɔnɔgbɛyanɛn di to .
+    9 wo le dɔ , a tɛdɛ pɔli kilila tuma bɛɛ ka bado kɛ a fɛ .
+    10 29 n ye a fɛ le jusu wo ɲɔɔn ye kɛ alu bolo tuma bɛɛ ka silan n ɲɛ ka nna jamarililu bɛɛ latelen , sa alu ni alu kɔmɔɔlu bɛɛ di hɛrɛ sɔdɔn kadawu .
+
 """
 
 class PageParser(Container):
