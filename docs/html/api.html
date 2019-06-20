@@ -1,0 +1,472 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>API &#8212; lingcorpora 2.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Corpus list" href="corpora.html" />
+    <link rel="prev" title="lingcorpora: documentation" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="corpora.html" title="Corpus list"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="lingcorpora: documentation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">lingcorpora 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="api">
+<span id="id1"></span><h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-lingcorpora.corpus">
+<span id="corpus-object"></span><h2>Corpus object<a class="headerlink" href="#module-lingcorpora.corpus" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="lingcorpora.corpus.Corpus">
+<em class="property">class </em><code class="descclassname">lingcorpora.corpus.</code><code class="descname">Corpus</code><span class="sig-paren">(</span><em>language</em>, <em>verbose=True</em>, <em>sleep_time=1</em>, <em>sleep_each=5</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.corpus.Corpus" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object of this class should be instantiated for each corpus. Search is conducted via search method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>language</strong> (<em>str</em>) – <p>Language ISO 639-3 code for the corpus with combined codes for parallel corpora.
+List of available corpora with corresponding codes:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Corpus</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ady</td>
+<td>Adyghe corpus</td>
+</tr>
+<tr class="row-odd"><td>alb</td>
+<td>Albanian corpus</td>
+</tr>
+<tr class="row-even"><td>arm</td>
+<td>Eastern Armenian corpus</td>
+</tr>
+<tr class="row-odd"><td>bam</td>
+<td>Corpus Bambara de Reference</td>
+</tr>
+<tr class="row-even"><td>bua</td>
+<td>Buryat corpus</td>
+</tr>
+<tr class="row-odd"><td>chr</td>
+<td>Crimean Tatar corpus</td>
+</tr>
+<tr class="row-even"><td>dan</td>
+<td>Danish corpus</td>
+</tr>
+<tr class="row-odd"><td>deu</td>
+<td>German corpus</td>
+</tr>
+<tr class="row-even"><td>emk</td>
+<td>Maninka Automatically Parsed corpus</td>
+</tr>
+<tr class="row-odd"><td>est</td>
+<td>Estonian corpus</td>
+</tr>
+<tr class="row-even"><td>grk</td>
+<td>Modern Greek corpus</td>
+</tr>
+<tr class="row-odd"><td>hin</td>
+<td>Hindi corpus</td>
+</tr>
+<tr class="row-even"><td>jpn_eng</td>
+<td>Japanese-English subcorpus of JuKuu corpus</td>
+</tr>
+<tr class="row-odd"><td>jpn_zho</td>
+<td>Japanese-Chinese subcorpus of JuKuu corpus</td>
+</tr>
+<tr class="row-even"><td>kal</td>
+<td>Kalmyk corpus</td>
+</tr>
+<tr class="row-odd"><td>kat</td>
+<td>Georgian monolingual corpus</td>
+</tr>
+<tr class="row-even"><td>kaz</td>
+<td>Almaty corpus of the Kazakh language</td>
+</tr>
+<tr class="row-odd"><td>mon</td>
+<td>Mongolian corpus</td>
+</tr>
+<tr class="row-even"><td>pol</td>
+<td>National Corpus of Polish</td>
+</tr>
+<tr class="row-odd"><td>rus</td>
+<td>National Corpus of Russian</td>
+</tr>
+<tr class="row-even"><td>rus_parallel</td>
+<td>Parallel subcorpus of National Corpus of Russian Language</td>
+</tr>
+<tr class="row-odd"><td>rus_pol</td>
+<td>Polish-Russian Parallel Corpus</td>
+</tr>
+<tr class="row-even"><td>sl_dict</td>
+<td>Spreadthesign sign language dictionary</td>
+</tr>
+<tr class="row-odd"><td>slk</td>
+<td>Slovak corpus</td>
+</tr>
+<tr class="row-even"><td>tat</td>
+<td>Tatar corpus</td>
+</tr>
+<tr class="row-odd"><td>udm</td>
+<td>Udmurt corpus</td>
+</tr>
+<tr class="row-even"><td>yid</td>
+<td>Modern Yiddish corpus</td>
+</tr>
+<tr class="row-odd"><td>zho</td>
+<td>Center of Chinese Linguistics corpus</td>
+</tr>
+<tr class="row-even"><td>zho_eng</td>
+<td>Chinese-English subcorpus of JuKuu corpus</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>verbose</strong> (<em>bool</em><em>, </em><em>default True</em>) – whether to enable tqdm progressbar.</li>
+<li><strong>sleep_time</strong> (<em>int</em><em>, </em><em>default 1</em>) – the length of pause between requests to the corpus (in seconds).
+It is required to avoid blocking and corpus breakdown.</li>
+<li><strong>sleep_each</strong> (<em>int</em><em>, </em><em>default 5</em>) – the number of requests after which a pause is required.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="lingcorpora.corpus.Corpus.doc">
+<code class="descname">doc</code><a class="headerlink" href="#lingcorpora.corpus.Corpus.doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Documentation for chosen corpus (after instance creation).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lingcorpora.corpus.Corpus.results">
+<code class="descname">results</code><a class="headerlink" href="#lingcorpora.corpus.Corpus.results" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of all Result objects, each returned by search method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lingcorpora.corpus.Corpus.failed">
+<code class="descname">failed</code><a class="headerlink" href="#lingcorpora.corpus.Corpus.failed" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of Result objects where nothing was found.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lingcorpora.corpus.Corpus.reset_failed">
+<code class="descname">reset_failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.corpus.Corpus.reset_failed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset <cite>.failed</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lingcorpora.corpus.Corpus.retry_failed">
+<code class="descname">retry_failed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.corpus.Corpus.retry_failed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply <cite>.search()</cite> to failed queries stored in <cite>.failed</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lingcorpora.corpus.Corpus.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>query</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.corpus.Corpus.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a search function that queries the corpus and returns the results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<em>str</em>) – query, for arguments see <cite>params_container.Container</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-lingcorpora.params_container"></span><dl class="class">
+<dt id="lingcorpora.params_container.Container">
+<em class="property">class </em><code class="descclassname">lingcorpora.params_container.</code><code class="descname">Container</code><span class="sig-paren">(</span><em>query</em>, <em>n_results=100</em>, <em>kwic=True</em>, <em>n_left=None</em>, <em>n_right=None</em>, <em>subcorpus=None</em>, <em>get_analysis=False</em>, <em>gr_tags=None</em>, <em>query_language=None</em>, <em>start=0</em>, <em>writing_system=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.params_container.Container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Universal arguments: <code class="docutils literal notranslate"><span class="pre">query</span></code>, <code class="docutils literal notranslate"><span class="pre">n_results</span></code>.</p>
+<p>Other arguments depend on corpus.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>query</strong> (<em>str</em><em> or </em><em>list</em><em>[</em><em>str</em><em>]</em>) – query or queries.</li>
+<li><strong>n_results</strong> (<em>int</em><em>, </em><em>default 100</em>) – number of results wanted.</li>
+<li><strong>kwic</strong> (<em>boolean</em><em>, </em><em>default True:</em>) – kwic format (True) or a sentence (False).</li>
+<li><strong>n_left</strong> (<em>int</em><em>, </em><em>default None:</em>) – number of words / symbols (corpus-specific) in the left context.</li>
+<li><strong>n_right</strong> (<em>int</em><em>, </em><em>default None:</em>) – number of words / symbols (corpus-specific) in the right context.</li>
+<li><strong>subcorpus</strong> (<em>str</em><em>, </em><em>default None:</em>) – subcorpus to search in.</li>
+<li><strong>get_analysis</strong> (<em>boolean</em><em>, </em><em>default False</em>) – whether to download grammatical information if the corpus is annotated.</li>
+<li><strong>gr_tags</strong> (<em>dict</em><em>, </em><em>default None</em>) – tags for grammar search</li>
+<li><strong>query_language</strong> (<em>str</em>) – for parallel corpora, language of the query.</li>
+<li><strong>start</strong> (<em>int</em><em>, </em><em>default 0</em>) – result index to start from.</li>
+<li><strong>writing_system</strong> (<em>str</em><em>, </em><em>default None</em>) – writing system of results.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-lingcorpora.result">
+<span id="working-with-results"></span><h2>Working with results<a class="headerlink" href="#module-lingcorpora.result" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="lingcorpora.result.Result">
+<em class="property">class </em><code class="descclassname">lingcorpora.result.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>language</em>, <em>query_params</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.result.Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>The object of this class contains all results found. Result object is iterable and supports indexing.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>language</strong> (<em>str</em>) – corpus language.</li>
+<li><strong>query_params</strong> (<em>dict</em>) – all other parameters of the search.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="lingcorpora.result.Result.results">
+<code class="descname">results</code><a class="headerlink" href="#lingcorpora.result.Result.results" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">list[<a class="reference internal" href="#lingcorpora.target.Target" title="lingcorpora.target.Target">Target</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lingcorpora.result.Result.N">
+<code class="descname">N</code><a class="headerlink" href="#lingcorpora.result.Result.N" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="lingcorpora.result.Result.query">
+<code class="descname">query</code><a class="headerlink" href="#lingcorpora.result.Result.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search query.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lingcorpora.result.Result.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.result.Result.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrites the results attribute to empty list.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lingcorpora.result.Result.export_csv">
+<code class="descname">export_csv</code><span class="sig-paren">(</span><em>filename=None</em>, <em>header=True</em>, <em>sep=';'</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.result.Result.export_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save search result as CSV.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>str</em><em>, </em><em>default None</em>) – name of the file. If None, filename is lang_query_results.csv
+with omission of disallowed filename symbols.</li>
+<li><strong>header</strong> (<em>boolean</em><em>, </em><em>default True</em>) – whether to include a header in the table.
+Header is stored in .__header: <code class="docutils literal notranslate"><span class="pre">('index',</span> <span class="pre">'text')</span></code></li>
+<li><strong>sep</strong> (<em>str</em><em>, </em><em>default ';'</em>) – cell separator in the csv.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-lingcorpora.target"></span><dl class="class">
+<dt id="lingcorpora.target.Target">
+<em class="property">class </em><code class="descclassname">lingcorpora.target.</code><code class="descname">Target</code><span class="sig-paren">(</span><em>text</em>, <em>idxs</em>, <em>meta</em>, <em>analysis</em>, <em>gr_tags=None</em>, <em>transl=None</em>, <em>lang=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.target.Target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Target contains one item from the result list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>text</strong> (<em>str</em>) – full sentence / document.</li>
+<li><strong>idxs</strong> (<em>tuple</em><em> (</em><em>l</em><em>, </em><em>r</em><em>)</em>) – target indexes in self.text -&gt; self.text[l:r].</li>
+<li><strong>meta</strong> (<em>str</em>) – sentence / document info (if exists).</li>
+<li><strong>analysis</strong> (<em>dict</em>) – target analysis (parsed).</li>
+<li><strong>gr_tags</strong> (<em>str</em><em>, </em><em>default None</em>) – grammatical tags passed by user.</li>
+<li><strong>transl</strong> (<em>str</em><em>, </em><em>default None</em>) – text translation (for parallel corporas and dictionaries).</li>
+<li><strong>lang</strong> (<em>str</em><em>, </em><em>default None</em>) – translation language (for parallel corporas and dictionaries).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="lingcorpora.target.Target.kwic">
+<code class="descname">kwic</code><span class="sig-paren">(</span><em>left</em>, <em>right</em>, <em>level='word'</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.target.Target.kwic" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function makes <code class="docutils literal notranslate"><span class="pre">kwic</span></code> format for an item for further usage and csv output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>left</strong> (<em>int</em>) – length of left context</li>
+<li><strong>right</strong> (<em>int</em>) – length of right context</li>
+<li><strong>level</strong> (<em>str</em><em>, </em><em>default word</em>) – counting context length by tokens (word) or by characters (char)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">API</a><ul>
+<li><a class="reference internal" href="#module-lingcorpora.corpus">Corpus object</a></li>
+<li><a class="reference internal" href="#module-lingcorpora.result">Working with results</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">lingcorpora: documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="corpora.html"
+                        title="next chapter">Corpus list</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="corpora.html" title="Corpus list"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="lingcorpora: documentation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">lingcorpora 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+    </div>
+  </body>
+</html>

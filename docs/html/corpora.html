@@ -1,0 +1,913 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Corpus list &#8212; lingcorpora 2.0 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making new API" href="lingcorpora_guide.html" />
+    <link rel="prev" title="API" href="api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lingcorpora_guide.html" title="Making new API"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">lingcorpora 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-lingcorpora.corpora.rus_corpus">
+<span id="corpus-list"></span><span id="corpora"></span><h1>Corpus list<a class="headerlink" href="#module-lingcorpora.corpora.rus_corpus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rus-corpus">
+<h2>rus_corpus<a class="headerlink" href="#rus-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for National Corpus of Russian (<a class="reference external" href="http://ruscorpora.ru/index.html">http://ruscorpora.ru/index.html</a>)</p>
+<div class="section" id="search-parameters">
+<h3>Search Parameters<a class="headerlink" href="#search-parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>num_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not</dd>
+<dt>subcorpus: str, default ‘main’</dt>
+<dd><p class="first">subcorpus.
+Valid: [‘main’, ‘syntax’, ‘paper’, ‘regional’, ‘school’,</p>
+<blockquote class="last">
+<div>‘dialect’, ‘poetic’, ‘spoken’, ‘accent’, ‘murco’,
+‘multiparc’, ‘old_rus’, ‘birchbark’, ‘mid_rus’, ‘orthlib’]</div></blockquote>
+</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.bam_corpus"></span><div class="section" id="bam-corpus">
+<h2>bam_corpus<a class="headerlink" href="#bam-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Bamana corpus (<a class="reference external" href="http://maslinsky.spb.ru/bonito/index.html">http://maslinsky.spb.ru/bonito/index.html</a>).</p>
+<div class="section" id="id1">
+<h3>Search Parameters<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not (False by default, available only for corbama-net-non-tonal subcorpus)</dd>
+<dt>subcorpus: str, default ‘corbama-net-non-tonal’</dt>
+<dd><dl class="first last docutils">
+<dt>subcorpus. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘corbama-net-non-tonal’</li>
+<li>‘corbama-net-tonal’</li>
+<li>‘corbama-brut’</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.emk_corpus"></span><div class="section" id="emk-corpus">
+<h2>emk_corpus<a class="headerlink" href="#emk-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Maninka corpus (<a class="reference external" href="http://maslinsky.spb.ru/emk/run.cgi/first_form">http://maslinsky.spb.ru/emk/run.cgi/first_form</a>).</p>
+<div class="section" id="id2">
+<h3>Search Parameters<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or List([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available).</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted.</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False).</dd>
+<dt>subcorpus: str, default ‘cormani-brut-lat’</dt>
+<dd><dl class="first last docutils">
+<dt>subcorpus. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘cormani-brut-lat’</li>
+<li>‘corbama-brut-nko’</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>writing_system: str</dt>
+<dd><p class="first">writing system for examples.
+Available options:</p>
+<blockquote>
+<div><ul class="simple">
+<li>‘nko’,</li>
+<li>‘latin’.</li>
+</ul>
+</div></blockquote>
+<p class="last">Bug: only ‘latin’ for ‘corbama-brut-nko’ subcorpus.</p>
+</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.zho_corpus"></span><div class="section" id="zho-corpus">
+<h2>zho_corpus<a class="headerlink" href="#zho-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Chinese corpus (<a class="reference external" href="http://ccl.pku.edu.cn:8080/ccl_corpus/">http://ccl.pku.edu.cn:8080/ccl_corpus/</a>).</p>
+<div class="section" id="id3">
+<h3>Search Parameters<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>subcorpus: str, default ‘xiandai’</dt>
+<dd><p class="first">subcorpus.
+Available options:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>‘xiandai’ (modern Chinese)</li>
+<li>‘dugai’ (ancient Chinese)</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>n_left: int, default 30</dt>
+<dd>context lenght (in symbols)</dd>
+<dt>n_right: int, default 30</dt>
+<dd>context lenght (in symbols)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.rus_parallel_corpus"></span><div class="section" id="rus-parallel-corpus">
+<h2>rus_parallel_corpus<a class="headerlink" href="#rus-parallel-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for parallel subcorpus of National Corpus of Russian (<a class="reference external" href="http://ruscorpora.ru/search-para-en.html">http://ruscorpora.ru/search-para-en.html</a>)</p>
+<div class="section" id="id4">
+<h3>Search Parameters<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not</dd>
+<dt>subcorpus: str, default ‘rus’</dt>
+<dd><p class="first">subcorpus (‘rus’ - search query over all subcorpora).
+Valid: [‘rus’, ‘eng’, ‘bel’, ‘bul’, ‘bua’, ‘esp’, ‘ita’,</p>
+<blockquote>
+<div>‘zho’, ‘lav’, ‘ger’, ‘pol’, ‘ukr’,
+‘fra’, ‘sve’, ‘est’]</div></blockquote>
+<dl class="last docutils">
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.dan_corpus"></span><div class="section" id="dan-corpus">
+<h2>dan_corpus<a class="headerlink" href="#dan-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Danish corpus (<a class="reference external" href="https://ordnet.dk/korpusdk_en/concordance">https://ordnet.dk/korpusdk_en/concordance</a>).</p>
+<div class="section" id="id5">
+<h3>Search Parameters<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (currently only search by forms of the word is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.est_corpus"></span><div class="section" id="est-corpus">
+<h2>est_corpus<a class="headerlink" href="#est-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Estonian corpus (<a class="reference external" href="http://www.cl.ut.ee/korpused/kasutajaliides/index.php">http://www.cl.ut.ee/korpused/kasutajaliides/index.php</a>).</p>
+<div class="section" id="id6">
+<h3>Search Parameters<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>subcorpus: str</dt>
+<dd>subcorpus. Available options: see below values and their meanings (‘1990_ajalehed_26_08_04’ by default). To use several subcorpora, list them with semicolon, e.g. ‘1990_ajalehed_26_08_04;EE_10_09_2004’.</dd>
+</dl>
+</div>
+<div class="section" id="available-subcorpora">
+<h3>Available Subcorpora<a class="headerlink" href="#available-subcorpora" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>1990_ajalehed_26_08_04: 1990d - ajakirjandus [865 tuhat]</li>
+<li>EE_10_09_2004: Eesti Ekspress 1996-2001 [7,2 miljonit]</li>
+<li>Maaleht: Maaleht 2001-2004 [5,3 miljonit]</li>
+<li>Postimees_1995: Postimees 1995</li>
+<li>Postimees_1996: Postimees 1996</li>
+<li>Postimees_1997: Postimees 1997</li>
+<li>Postimees_1998: Postimees 1998</li>
+<li>Postimees_1999: Postimees 1999</li>
+<li>Postimees_2000: Postimees 2000</li>
+<li>Postimees_Extra: Postimees Extra</li>
+<li>epl_1995: Eesti Päevaleht 1995</li>
+<li>epl_1996: Eesti Päevaleht 1996</li>
+<li>epl_1997: Eesti Päevaleht 1997</li>
+<li>epl_1998: Eesti Päevaleht 1998</li>
+<li>epl_1999: Eesti Päevaleht 1999</li>
+<li>epl_2000: Eesti Päevaleht 2000</li>
+<li>epl_2001: Eesti Päevaleht 2001</li>
+<li>epl_2002: Eesti Päevaleht 2002</li>
+<li>epl_2003: Eesti Päevaleht 2003</li>
+<li>epl_2004: Eesti Päevaleht 2004</li>
+<li>epl_2005: Eesti Päevaleht 2005</li>
+<li>epl_2006: Eesti Päevaleht 2006</li>
+<li>epl_2007: Eesti Päevaleht 2007</li>
+<li>sloleht_1997: SLÕhtuleht 1997</li>
+<li>sloleht_1998: SLÕhtuleht 1998</li>
+<li>sloleht_1999: SLÕhtuleht 1999</li>
+<li>sloleht_2000: SLÕhtuleht 2000</li>
+<li>sloleht_2001: SLÕhtuleht 2001</li>
+<li>sloleht_2002: SLÕhtuleht 2002</li>
+<li>sloleht_2003: SLÕhtuleht 2003</li>
+<li>sloleht_2004: SLÕhtuleht 2004</li>
+<li>sloleht_2005: SLÕhtuleht 2005</li>
+<li>sloleht_2006: SLÕhtuleht 2006</li>
+<li>sloleht_2007: SLÕhtuleht 2007</li>
+<li>valga: Ajaleht Valgamaalane [2,5 miljonit]</li>
+<li>le: Ajaleht Lääne Elu [1,8 miljonit]</li>
+<li>Kroonika: Seltskonnaajakiri Kroonika [960 tuhat]</li>
+<li>1980_aja: 1980d - ajakirjandus (baas) [175 tuhat]</li>
+<li>1970_aja: 1970d - ajakirjandus [168 tuhat]</li>
+<li>1960_aja: 1960d - ajakirjandus [201 tuhat]</li>
+<li>1950_aja: 1950d - ajakirjandus [242 tuhat]</li>
+<li>1930_aja: 1930d - ajakirjandus [117 tuhat]</li>
+<li>1910_aja: 1910d - ajakirjandus [182 tuhat]</li>
+<li>1900_aja: 1900d - ajakirjandus [171 tuhat]</li>
+<li>1890_aja: 1890d - ajakirjandus [193 tuhat]</li>
+<li>1990_ilu_26_08_04: 1990d - ilukirjandus (katkendid) [602 tuhat]</li>
+<li>segailu_5_10_2008: 1990d - ilukirjandus [5,6 miljonit]</li>
+<li>1980_ilu: 1980d - ilukirjandus (baas) [250 tuhat]</li>
+<li>1970_ilu: 1970d - ilukirjandus [257 tuhat]</li>
+<li>1960_ilu: 1960d - ilukirjandus [132 tuhat]</li>
+<li>1950_ilu: 1950d - ilukirjandus [66 tuhat]</li>
+<li>1930_ilu: 1930d - ilukirjandus [252 tuhat]</li>
+<li>1910_ilu: 1910d - ilukirjandus [247 tuhat]</li>
+<li>1900_ilu: 1900d - ilukirjandus [64 tuhat]</li>
+<li>1890_ilu: 1890d - ilukirjandus [155 tuhat]</li>
+<li>1980_tea: 1980d - teadustekst [160 tuhat]</li>
+<li>horisont: Ajakiri Horisont 1996-2003 [260 tuhat]</li>
+<li>arvutitehnika: Ajakiri Arvutitehnika ja Andmetöötlus 1999-2005 [625 tuhat]</li>
+<li>doktor: Doktoritööd [2,3 miljonit]</li>
+<li>Eesti_Arst_2002: Ajakiri Eesti Arst 2002 [249 tuhat]</li>
+<li>Eesti_Arst_2003: Ajakiri Eesti Arst 2003 [244 tuhat]</li>
+<li>Eesti_Arst_2004: Ajakiri Eesti Arst 2004 [217 tuhat]</li>
+<li>agraar: Agraarteadus 2001-2006 [298 tuhat]</li>
+<li>jututoad: Jututoad [7 miljonit]</li>
+<li>uudisgrupid: Uudisgrupid [8 miljonit]</li>
+<li>foorumid: Foorumid [5 miljonit]</li>
+<li>kommentaarid: Kommentaarid [2 miljonit]</li>
+<li>riigikogu: Riigikogu stenogrammid 1995 - 2001 [13 miljonit]</li>
+<li>1980_muu: 1980d - muud tekstid [415 tuhat]</li>
+<li>teadusartiklid: Mitmesugused Teadusartiklid 1995-2007 [1,3 miljonit]</li>
+<li>akp: Asutawa Kogu protokollid [2 miljonit]</li>
+</ul>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.kat_corpus"></span><div class="section" id="kat-corpus">
+<h2>kat_corpus<a class="headerlink" href="#kat-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Georgian monolingual corpus (<a class="reference external" href="http://corpora.iliauni.edu.ge">http://corpora.iliauni.edu.ge</a>).</p>
+<div class="section" id="id7">
+<h3>Search Parameters<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.crh_corpus"></span><div class="section" id="crh-corpus">
+<h2>crh_corpus<a class="headerlink" href="#crh-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Crimean Tatar corpus (<a class="reference external" href="http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim">http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim</a>).</p>
+<div class="section" id="id8">
+<h3>Search Parameters<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>start: int, default 0</dt>
+<dd>index of the first query appearance to be shown</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.tat_corpus"></span><div class="section" id="tat-corpus">
+<h2>tat_corpus<a class="headerlink" href="#tat-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Tatar corpus (<a class="reference external" href="http://web-corpora.net/TatarCorpus/">http://web-corpora.net/TatarCorpus/</a>).</p>
+<div class="section" id="id9">
+<h3>Search Parameters<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.deu_corpus"></span><div class="section" id="deu-corpus">
+<h2>deu_corpus<a class="headerlink" href="#deu-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for German corpus (<a class="reference external" href="https://www.dwds.de">https://www.dwds.de</a>).</p>
+<div class="section" id="id10">
+<h3>Search Parameters<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False) (True by default)</dd>
+<dt>subcorpus: str</dt>
+<dd><dl class="first last docutils">
+<dt>subcorpus. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘kern’ (by default)</li>
+<li>‘tagesspiegel’</li>
+<li>‘zeit’</li>
+<li>‘public’</li>
+<li>‘blogs’</li>
+<li>‘dingler’</li>
+<li>‘untertitel’</li>
+<li>‘spk’</li>
+<li>‘bz’</li>
+<li>‘dta’</li>
+<li>‘korpus21’</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.slk_corpus"></span><div class="section" id="slk-corpus">
+<h2>slk_corpus<a class="headerlink" href="#slk-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Slovak corpus (<a class="reference external" href="http://korpus.juls.savba.sk:8080/manatee.ks/do_query">http://korpus.juls.savba.sk:8080/manatee.ks/do_query</a>).</p>
+<div class="section" id="id11">
+<h3>Search Parameters<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>subcorpus: str, default ‘prim-6.0-public-all’</dt>
+<dd>subcorpus. Available options: ‘prim-6.0-public-all’, ‘r-mak-3.0’</dd>
+<dt>start: int, default 0</dt>
+<dd>index of the first query appearance to be shown</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.hin_corpus"></span><div class="section" id="hin-corpus">
+<h2>hin_corpus<a class="headerlink" href="#hin-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Hindi corpus (<a class="reference external" href="http://www.cfilt.iitb.ac.in/~corpus/hindi/find.php">http://www.cfilt.iitb.ac.in/~corpus/hindi/find.php</a>).</p>
+<div class="section" id="id12">
+<h3>Search Parameters<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>start: int, default 0</dt>
+<dd>index of the first query appearance to be shown (0 by default)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.rus_pol_corpus"></span><div class="section" id="rus-pol-corpus">
+<h2>rus_pol_corpus<a class="headerlink" href="#rus-pol-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Polish-Russian Parallel Corpus (<a class="reference external" href="http://pol-ros.polon.uw.edu.pl/">http://pol-ros.polon.uw.edu.pl/</a>)</p>
+<div class="section" id="id13">
+<h3>Search Parameters<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>tag: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not (False by default)</dd>
+<dt>subcorpus: list</dt>
+<dd><p class="first">subcorpus (all of the mentioned below by default).
+Valid: [‘non-fiction’, ‘fiction&lt;1945’, ‘fiction&gt;1945’, ‘press’, ‘law’, ‘religious’,</p>
+<blockquote class="last">
+<div>‘russian’, ‘foreign’, ‘polish’]</div></blockquote>
+</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.zho_eng_corpus"></span><div class="section" id="zho-eng-corpus">
+<h2>zho_eng_corpus<a class="headerlink" href="#zho-eng-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Chinese-English subcorpus of JuKuu corpus (<a class="reference external" href="http://www.jukuu.com/">http://www.jukuu.com/</a>)</p>
+<div class="section" id="id14">
+<h3>Search Parameters<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.jpn_eng_corpus"></span><div class="section" id="jpn-eng-corpus">
+<h2>jpn_eng_corpus<a class="headerlink" href="#jpn-eng-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Japanese-English subcorpus of JuKuu corpus (<a class="reference external" href="http://www.jukuu.com/">http://www.jukuu.com/</a>)</p>
+<div class="section" id="id15">
+<h3>Search Parameters<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)</dd>
+<dt>kwic: bool, default True</dt>
+<dd>wic format (True) or a sentence (False)</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.jpn_zho_corpus"></span><div class="section" id="jpn-zho-corpus">
+<h2>jpn_zho_corpus<a class="headerlink" href="#jpn-zho-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Japanese-Chinese subcorpus of JuKuu corpus (<a class="reference external" href="http://www.jukuu.com/">http://www.jukuu.com/</a>)</p>
+<div class="section" id="id16">
+<h3>Search Parameters<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.sl_dict"></span><div class="section" id="sl-dics">
+<h2>sl_dics<a class="headerlink" href="#sl-dics" title="Permalink to this headline">¶</a></h2>
+<p>API for Spreadthesign sign language dictionary (<a class="reference external" href="https://www.spreadthesign.com/">https://www.spreadthesign.com/</a>)</p>
+<div class="section" id="id17">
+<h3>Search Parameters<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (only exact search by word is available)</dd>
+<dt>subcorpus: str or list([str]), default ‘ru.ru’</dt>
+<dd><p class="first">target sign language.
+Valid (use abbreviations):</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>{‘Russian’: ‘ru.ru’, ‘Swedish’: ‘sv.se’,</dt>
+<dd>‘American English’: ‘en.us’, ‘British English’: ‘en.gb’,
+‘Mexican Spanish’: ‘es.mx’, ‘Czech’: ‘cs.cz’, ‘Lithuanian’: ‘lt.lt’,
+‘Spanish’: ‘es.es’, ‘Portuguese’: ‘pt.pt’, ‘Japanese’: ‘ja.jp’,
+‘German’: ‘de.de’, ‘French’: ‘fr.fr’, ‘Turkish’: ‘tr.tr’,
+‘Portuguese (Brasil)’: ‘pt.br’, ‘Italian’: ‘it.it’, ‘Polish’: ‘pl.pl’,
+‘Icelandic’: ‘is.is’, ‘German (Austria)’: ‘de.at’, ‘Estonian’: ‘et.ee’,
+‘Latvian’: ‘lv.lv’, ‘English (India)’: ‘en.in’, ‘Bulgarian’: ‘bg.bg’,
+‘Chinese’: ‘zh.hans.cn’, ‘Urdu’: ‘ur.pk’, ‘Croatian’: ‘hr.hr’,
+‘Russian (Belarus)’: ‘ru.by’}</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’. Same languages as for ‘subcorpus’ argument are valid.</dd>
+<dt>variants: bool, default False</dt>
+<dd>Whether to enable to see variants of one sign (if exist).</dd>
+<dt>only_link: bool, default False</dt>
+<dd>Whether to enable if you want videos to be downloaded.
+If you don’t want to download videos use links from <code class="docutils literal notranslate"><span class="pre">Target.transl</span></code>.</dd>
+</dl>
+<p>sentences: boolean: In some cases you can search for the whole sentences be a word.</p>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.arm_corpus"></span><div class="section" id="arm-corpus">
+<h2>arm_corpus<a class="headerlink" href="#arm-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Eastern Armenian corpus (<a class="reference external" href="http://eanc.net">http://eanc.net</a>).</p>
+<div class="section" id="id18">
+<h3>Search Parameters<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.grk_corpus"></span><div class="section" id="grk-corpus">
+<h2>grk_corpus<a class="headerlink" href="#grk-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Modern Greek corpus (<a class="reference external" href="http://web-corpora.net/GreekCorpus/search/">http://web-corpora.net/GreekCorpus/search/</a>).</p>
+<div class="section" id="id19">
+<h3>Search Parameters<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.ady_corpus"></span><div class="section" id="ady-corpus">
+<h2>ady_corpus<a class="headerlink" href="#ady-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Adyghe corpus (<a class="reference external" href="http://web-corpora.net/AdygheCorpus/search/">http://web-corpora.net/AdygheCorpus/search/</a>).</p>
+<div class="section" id="id20">
+<h3>Search Parameters<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.mon_corpus"></span><div class="section" id="mon-corpus">
+<h2>mon_corpus<a class="headerlink" href="#mon-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Mongolian corpus (<a class="reference external" href="http://web-corpora.net/MongolianCorpus/search/">http://web-corpora.net/MongolianCorpus/search/</a>).</p>
+<div class="section" id="id21">
+<h3>Search Parameters<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.kaz_corpus"></span><div class="section" id="kaz-corpus">
+<h2>kaz_corpus<a class="headerlink" href="#kaz-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Almaty corpus of the Kazakh language
+(<a class="reference external" href="http://web-corpora.net/KazakhCorpus/search/">http://web-corpora.net/KazakhCorpus/search/</a>).</p>
+<div class="section" id="id22">
+<h3>Search Parameters<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.yid_corpus"></span><div class="section" id="yid-corpus">
+<h2>yid_corpus<a class="headerlink" href="#yid-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Modern Yiddish corpus (<a class="reference external" href="http://web-corpora.net/YMC/search/">http://web-corpora.net/YMC/search/</a>).</p>
+<div class="section" id="id23">
+<h3>Search Parameters<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.kal_corpus"></span><div class="section" id="kal-corpus">
+<h2>kal_corpus<a class="headerlink" href="#kal-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Kalmyk corpus (<a class="reference external" href="http://web-corpora.net/KalmykCorpus/search/">http://web-corpora.net/KalmykCorpus/search/</a>).</p>
+<div class="section" id="id24">
+<h3>Search Parameters<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False) (True by default)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.udm_corpus"></span><div class="section" id="udm-corpus">
+<h2>udm_corpus<a class="headerlink" href="#udm-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Udmurt corpus (<a class="reference external" href="http://web-corpora.net/UdmurtCorpus/search/">http://web-corpora.net/UdmurtCorpus/search/</a>).</p>
+<div class="section" id="id25">
+<h3>Search Parameters<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.bua_corpus"></span><div class="section" id="bua-corpus">
+<h2>bua_corpus<a class="headerlink" href="#bua-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Buryat corpus (<a class="reference external" href="http://web-corpora.net/BuryatCorpus/search/">http://web-corpora.net/BuryatCorpus/search/</a>).</p>
+<div class="section" id="id26">
+<h3>Search Parameters<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.alb_corpus"></span><div class="section" id="alb-corpus">
+<h2>alb_corpus<a class="headerlink" href="#alb-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Albanian corpus (<a class="reference external" href="http://web-corpora.net/AlbanianCorpus/search/">http://web-corpora.net/AlbanianCorpus/search/</a>).</p>
+<div class="section" id="id27">
+<h3>Search Parameters<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.pol_corpus"></span><div class="section" id="pol-corpus">
+<h2>pol_corpus<a class="headerlink" href="#pol-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for National Corpus of Polish (<a class="reference external" href="http://nkjp.pl/">http://nkjp.pl/</a>)</p>
+<div class="section" id="id28">
+<h3>Search Parameters<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>query: str:</dt>
+<dd>Search by word.</dd>
+<dt>n_results: int, default 100</dt>
+<dd>Number of results.
+In case of Polisg Corpus it does NOT work like the less the number the higher speed.</dd>
+<dt>n_left: int, default 5</dt>
+<dd>Number of words in the left context.</dd>
+<dt>n_right: int, default 5</dt>
+<dd>Number of words in the right context.</dd>
+<dt>subcorpus: str, default ‘nkjp300’</dt>
+<dd><dl class="first last docutils">
+<dt>Subcorpus to search in. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘nkjp300’: balanced NKJP subcorpus (300M segments)</li>
+<li>‘nkjp1800’: the full NKJP sorpus (1800M segments)</li>
+<li>‘nkjp1M’: manually annotated corpus (1.2M segments)</li>
+<li>‘ipi250’: the full IPI PAN corpus (2nd edition, 250M segments)</li>
+<li>‘ipi030’: the IPI PAN corpus sample (2nd edition; 30M segments)</li>
+<li>‘frequency-dictionary’: the Frequency Dictionary Corpus (0.5M segments)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>Whether to download grammatical information if the corpus is annotated.</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Corpus list</a><ul>
+<li><a class="reference internal" href="#rus-corpus">rus_corpus</a><ul>
+<li><a class="reference internal" href="#search-parameters">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bam-corpus">bam_corpus</a><ul>
+<li><a class="reference internal" href="#id1">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#emk-corpus">emk_corpus</a><ul>
+<li><a class="reference internal" href="#id2">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zho-corpus">zho_corpus</a><ul>
+<li><a class="reference internal" href="#id3">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rus-parallel-corpus">rus_parallel_corpus</a><ul>
+<li><a class="reference internal" href="#id4">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dan-corpus">dan_corpus</a><ul>
+<li><a class="reference internal" href="#id5">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#est-corpus">est_corpus</a><ul>
+<li><a class="reference internal" href="#id6">Search Parameters</a></li>
+<li><a class="reference internal" href="#available-subcorpora">Available Subcorpora</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kat-corpus">kat_corpus</a><ul>
+<li><a class="reference internal" href="#id7">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#crh-corpus">crh_corpus</a><ul>
+<li><a class="reference internal" href="#id8">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tat-corpus">tat_corpus</a><ul>
+<li><a class="reference internal" href="#id9">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deu-corpus">deu_corpus</a><ul>
+<li><a class="reference internal" href="#id10">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#slk-corpus">slk_corpus</a><ul>
+<li><a class="reference internal" href="#id11">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hin-corpus">hin_corpus</a><ul>
+<li><a class="reference internal" href="#id12">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rus-pol-corpus">rus_pol_corpus</a><ul>
+<li><a class="reference internal" href="#id13">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zho-eng-corpus">zho_eng_corpus</a><ul>
+<li><a class="reference internal" href="#id14">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jpn-eng-corpus">jpn_eng_corpus</a><ul>
+<li><a class="reference internal" href="#id15">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jpn-zho-corpus">jpn_zho_corpus</a><ul>
+<li><a class="reference internal" href="#id16">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sl-dics">sl_dics</a><ul>
+<li><a class="reference internal" href="#id17">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arm-corpus">arm_corpus</a><ul>
+<li><a class="reference internal" href="#id18">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#grk-corpus">grk_corpus</a><ul>
+<li><a class="reference internal" href="#id19">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ady-corpus">ady_corpus</a><ul>
+<li><a class="reference internal" href="#id20">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mon-corpus">mon_corpus</a><ul>
+<li><a class="reference internal" href="#id21">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kaz-corpus">kaz_corpus</a><ul>
+<li><a class="reference internal" href="#id22">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#yid-corpus">yid_corpus</a><ul>
+<li><a class="reference internal" href="#id23">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kal-corpus">kal_corpus</a><ul>
+<li><a class="reference internal" href="#id24">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#udm-corpus">udm_corpus</a><ul>
+<li><a class="reference internal" href="#id25">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bua-corpus">bua_corpus</a><ul>
+<li><a class="reference internal" href="#id26">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alb-corpus">alb_corpus</a><ul>
+<li><a class="reference internal" href="#id27">Search Parameters</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pol-corpus">pol_corpus</a><ul>
+<li><a class="reference internal" href="#id28">Search Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api.html"
+                        title="previous chapter">API</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="lingcorpora_guide.html"
+                        title="next chapter">Making new API</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/corpora.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="lingcorpora_guide.html" title="Making new API"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">lingcorpora 2.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.4.
+    </div>
+  </body>
+</html>
