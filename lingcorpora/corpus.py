@@ -11,46 +11,105 @@ from .functions import functions
 
 
 class Corpus:
-    """The object of this class should be instantiated for each corpus. Search is conducted via search method
+    """The object of this class should be instantiated for each corpus. Search is conducted via search method.
     
-    Attributes:
-        language: str: in most cases,
-            Language ISO 639-3 code for the corpus with combined codes for parallel corpora.
-            List of available corpora with corresponding codes:
-           ┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-           ┃ Code         ┃   Corpus                                                      ┃
-           ┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-           ┃ bam          ┃   Corpus Bambara de Reference                                 ┃
-           ┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-           ┃ emk          ┃   Maninka Automatically Parsed corpus                         ┃
-           ┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-           ┃ rus          ┃   National Corpus of Russian Language                         ┃
-           ┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-           ┃ rus_parallel ┃   Parallel subcorpus of National Corpus of Russian Language   ┃
-           ┣━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
-           ┃ zho          ┃   Center of Chinese Linguistics corpus                        ┃
-           ┗━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-        sleep_time: int, optional, default 1:
-            The length of pause between requests to the corpus (in seconds).
-            It is required to avoid blocking and corpus breakdown.
-        sleep_each: int, optional, default 5:
-            The number of requests after which a pause is required.
-        doc: str:
-            Documentation for chosen corpus (after instance creation).
-        results: list:
-            List of all Result objects, each returned by search method.
-        failed: list:
-            List of Result objects where nothing was found.
+    Parameters
+    ----------
+    language: str
+        Language ISO 639-3 code for the corpus with combined codes for parallel corpora.
+        List of available corpora with corresponding codes:
+        
+        +--------------+---------------------------------------------------------------+
+        | Code         |   Corpus                                                      |
+        +==============+===============================================================+
+        | ady          |   Adyghe corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | alb          |   Albanian corpus                                             |
+        +--------------+---------------------------------------------------------------+
+        | arm          |   Eastern Armenian corpus                                     |
+        +--------------+---------------------------------------------------------------+
+        | bam          |   Corpus Bambara de Reference                                 |
+        +--------------+---------------------------------------------------------------+
+        | bua          |   Buryat corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | chr          |   Crimean Tatar corpus                                        |
+        +--------------+---------------------------------------------------------------+
+        | dan          |   Danish corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | deu          |   German corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | emk          |   Maninka Automatically Parsed corpus                         |
+        +--------------+---------------------------------------------------------------+
+        | est          |   Estonian corpus                                             |
+        +--------------+---------------------------------------------------------------+
+        | grk          |   Modern Greek corpus                                         |
+        +--------------+---------------------------------------------------------------+
+        | hin          |   Hindi corpus                                                |
+        +--------------+---------------------------------------------------------------+
+        | jpn_eng      |   Japanese-English subcorpus of JuKuu corpus                  |
+        +--------------+---------------------------------------------------------------+
+        | jpn_zho      |   Japanese-Chinese subcorpus of JuKuu corpus                  |
+        +--------------+---------------------------------------------------------------+
+        | kal          |   Kalmyk corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | kat          |   Georgian monolingual corpus                                 |
+        +--------------+---------------------------------------------------------------+
+        | kaz          |   Almaty corpus of the Kazakh language                        |
+        +--------------+---------------------------------------------------------------+
+        | mon          |   Mongolian corpus                                            |
+        +--------------+---------------------------------------------------------------+
+        | pol          |   National Corpus of Polish                                   |
+        +--------------+---------------------------------------------------------------+
+        | rus          |   National Corpus of Russian                                  |
+        +--------------+---------------------------------------------------------------+
+        | rus_parallel |   Parallel subcorpus of National Corpus of Russian Language   |
+        +--------------+---------------------------------------------------------------+
+        | rus_pol      |   Polish-Russian Parallel Corpus                              |
+        +--------------+---------------------------------------------------------------+
+        | sl_dict      |   Spreadthesign sign language dictionary                      |
+        +--------------+---------------------------------------------------------------+
+        | slk          |   Slovak corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | tat          |   Tatar corpus                                                |
+        +--------------+---------------------------------------------------------------+
+        | udm          |   Udmurt corpus                                               |
+        +--------------+---------------------------------------------------------------+
+        | yid          |   Modern Yiddish corpus                                       |
+        +--------------+---------------------------------------------------------------+
+        | zho          |   Center of Chinese Linguistics corpus                        |
+        +--------------+---------------------------------------------------------------+
+        | zho_eng      |   Chinese-English subcorpus of JuKuu corpus                   |
+        +--------------+---------------------------------------------------------------+
+        
+    verbose: bool, default True
+        whether to enable tqdm progressbar.
+    sleep_time: int, default 1
+        the length of pause between requests to the corpus (in seconds).
+        It is required to avoid blocking and corpus breakdown.
+    sleep_each: int, default 5
+        the number of requests after which a pause is required.
+    
+    Attributes
+    ----------
+    doc: str
+        Documentation for chosen corpus (after instance creation).
+    results: list
+        List of all Result objects, each returned by search method.
+    failed: list
+        List of Result objects where nothing was found.
     """
     def __init__(self, language, verbose=True, sleep_time=1, sleep_each=5):
         """
-        language: str: language alias
-        verbose: bool: enable tqdm progressbar
-
-        USELESS?
-        sleep_time: int: sleeping time in seconds
-        sleep_each: int: sleep after each `sleep_each` request
+        Parameters
+        ----------
+        language: str
+            language alias
+        verbose: bool
+            enable tqdm progressbar
+        sleep_time: int
+            sleeping time in seconds USELESS?
+        sleep_each: int
+            sleep after each `sleep_each` request USELESS?
         """
         
         self.language = language
@@ -100,9 +159,12 @@ class Corpus:
         print(self.gr_tags_info)
 
     def search(self, query, *args, **kwargs):
-        """
-        query: str: query
-        for arguments see `params_container.Container`
+        """This is a search function that queries the corpus and returns the results.
+        
+        Parameters
+        ----------
+        query: str
+            query, for arguments see `params_container.Container`
         """
 
         query = self.__to_multisearch_format(query, 'query')

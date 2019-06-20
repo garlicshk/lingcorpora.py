@@ -10,20 +10,22 @@ TEST_DATA = {'test_single_query': {'query': 'къырым'},
 
 __author__ = 'zu-ann, ustya-k'
 __doc__ = \
-    """
-    
-API for Crimean Tatar corpus (http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim).
-    
-Args:
-    query: str or List([str]): query or queries
-    n_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    start: int: index of the first query appearance to be shown (0 by default)
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
+"""
+crh_corpus
+==========
 
+API for Crimean Tatar corpus (http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim).
+
+Search Parameters
+-----------------
+query: str or list([str]):
+    query or queries
+n_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+start: int, default 0
+    index of the first query appearance to be shown
 """
 
 

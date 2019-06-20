@@ -11,20 +11,29 @@ TEST_DATA = {'test_single_query': {'query': 'kɔdɔ'},
 __author__ = 'kategerasimenko'
 __doc__ = \
 """
-    
+emk_corpus
+==========
+
 API for Maninka corpus (http://maslinsky.spb.ru/emk/run.cgi/first_form).
     
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    n_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    subcorpus: str: subcorpus. Available options: 'cormani-brut-lat', 'corbama-brut-nko' ('cormani-brut-lat' by default)
-    writing_system: str: writing system for examples. Available options: 'nko', 'latin'. Bug: only 'latin' for 'corbama-brut-nko' subcorpus. 
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
-
+Search Parameters
+-----------------
+query: str or List([str])
+    query or queries (currently only exact search by word or phrase is available).
+n_results: int, default 100
+    number of results wanted.
+kwic: bool, default True
+    kwic format (True) or a sentence (False).
+subcorpus: str, default 'cormani-brut-lat'
+    subcorpus. Available options:
+        * 'cormani-brut-lat'
+        * 'corbama-brut-nko'
+writing_system: str
+    writing system for examples.
+    Available options:
+        * 'nko',
+        * 'latin'.
+    Bug: only 'latin' for 'corbama-brut-nko' subcorpus.
 """
 
 class PageParser(Container):

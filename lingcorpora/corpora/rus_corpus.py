@@ -16,22 +16,26 @@ __author__ = 'akv_17'
 
 __doc__ = \
 """
+rus_corpus
+==========
+
 API for National Corpus of Russian (http://ruscorpora.ru/index.html)
 
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    num_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    get_analysis: boolean: whether to collect grammatical tags for target word or not (False by default)
-    subcorpus: str: subcorpus ('main' by default).
-                    Valid: ['main', 'syntax', 'paper', 'regional', 'school',
-                            'dialect', 'poetic', 'spoken', 'accent', 'murco',
-                            'multiparc', 'old_rus', 'birchbark', 'mid_rus', 'orthlib']
-
-Main method: extract
-
-Returns:
-    A generator over Target objects.
+Search Parameters
+-----------------
+query: str or list([str])
+    query or queries (currently only exact search by word or phrase is available)
+num_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+get_analysis: bool, default False
+    whether to collect grammatical tags for target word or not
+subcorpus: str, default 'main'
+    subcorpus.
+    Valid: ['main', 'syntax', 'paper', 'regional', 'school',
+            'dialect', 'poetic', 'spoken', 'accent', 'murco',
+            'multiparc', 'old_rus', 'birchbark', 'mid_rus', 'orthlib']
 """
 
 GR_TAGS_INFO = \

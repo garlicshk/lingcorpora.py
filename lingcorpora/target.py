@@ -5,7 +5,25 @@ import re
 
 
 class Target:
-
+    """Target contains one item from the result list.
+    
+    Parameters
+    ----------
+    text: str
+        full sentence / document.
+    idxs: tuple (l, r)
+        target indexes in self.text -> self.text[l:r].
+    meta: str
+        sentence / document info (if exists).
+    analysis: dict
+        target analysis (parsed).
+    gr_tags: str, default None
+        grammatical tags passed by user.
+    transl: str, default None
+        text translation (for parallel corporas and dictionaries).
+    lang: str, default None
+        translation language (for parallel corporas and dictionaries).
+    """
     def __init__(self,
                  text,
                  idxs,
@@ -16,13 +34,22 @@ class Target:
                  lang=None
     ):
         """
-        text: str: full sentence / document
-        idxs: tuple (l, r): target idxs in self.text -> self.text[l:r]
-        meta: str: sentence / document info (if exists)
-        analysis: dict?: target analysis (parsed)
-        gr_tags: str or None: grammatical tags passed by user
-        transl: str or None: text translation (for parallel corporas and dictionaries)
-        lang: str or None: translation language (for parallel corporas and dictionaries)
+        Parameters
+        ----------
+        text: str
+            full sentence / document.
+        idxs: tuple (l, r)
+            target idxs in self.text -> self.text[l:r]
+        meta: str
+            sentence / document info (if exists)
+        analysis: dict?, default None
+            target analysis (parsed)
+        gr_tags: str, default None
+            grammatical tags passed by user
+        transl: str, default None
+            text translation (for parallel corporas and dictionaries)
+        lang: str, default None
+            translation language (for parallel corporas and dictionaries)
         """
         
         self.text = text
@@ -66,10 +93,21 @@ class Target:
         return (l, c, r)
     
     def kwic(self, left, right, level='word'):
+        """This function makes ``kwic`` format for an item for further usage and csv output.
+        
+        Parameters
+        ----------
+        left: int
+            length of left context
+        right: int
+            length of right context
+        level: str, default word
+            counting context length by tokens (word) or by characters (char)
         """
+        '''
         level: ['word', 'char']: if "word" - split by words
                                  if "char" - split by characters
-        """
+        '''
         # ISSUE: 'one , two, three >> kwic(1, 1, word) >> (',', 'two', ',three')
         
         if level not in ['word', 'char']:

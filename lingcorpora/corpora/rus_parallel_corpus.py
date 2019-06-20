@@ -12,21 +12,28 @@ from ..exceptions import EmptyPageException
 __author__ = 'akv_17, maria-terekhina'
 __doc__ = \
 """
+rus_parallel_corpus
+===================
+
 API for parallel subcorpus of National Corpus of Russian (http://ruscorpora.ru/search-para-en.html)
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    n_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    get_analysis: boolean: whether to collect grammatical tags for target word or not (False by default)
-    subcorpus: str: subcorpus ('rus' by default - search query over all subcorpora).
-                    Valid: ['rus', 'eng', 'bel', 'bul', 'bua', 'esp', 'ita',
-                            'zho', 'lav', 'ger', 'pol', 'ukr',
-                            'fra', 'sve', 'est']
-    query_language: str: language of the 'query'
-    
-Main method: extract
-Returns:
-    A generator over Target objects.
+
+Search Parameters
+-----------------
+query: str or list([str]):
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+get_analysis: bool, default False
+    whether to collect grammatical tags for target word or not
+subcorpus: str, default 'rus'
+    subcorpus ('rus' - search query over all subcorpora).
+    Valid: ['rus', 'eng', 'bel', 'bul', 'bua', 'esp', 'ita',
+            'zho', 'lav', 'ger', 'pol', 'ukr',
+            'fra', 'sve', 'est']
+    query_language: str
+        language of the 'query'
 """
 
 

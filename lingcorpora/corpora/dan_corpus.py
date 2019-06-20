@@ -11,17 +11,17 @@ TEST_DATA = {'test_single_query': {'query': 'kaster'},
 __author__ = 'Filaona, kategerasimenko'
 __doc__ = \
 """
-    
-API for Danish corpus (https://ordnet.dk/korpusdk_en/concordance).
-    
-Args:
-    query: str or List([str]): query or queries (currently only search by forms of the word is available)
-    n_results: int: number of results wanted (100 by default)
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
+dan_corpus
+==========
 
+API for Danish corpus (https://ordnet.dk/korpusdk_en/concordance).
+
+Search Parameters
+-----------------
+query: str or list([str]):
+    query or queries (currently only search by forms of the word is available)
+n_results: int, default 100
+    number of results wanted (100 by default)
 """
 
 

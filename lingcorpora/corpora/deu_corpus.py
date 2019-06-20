@@ -9,23 +9,33 @@ TEST_DATA = {'test_single_query': {'query': 'bezug'},
 
 __author__ = 'alexeykosh, ustya-k'
 __doc__ = \
-    """
-    
+"""
+deu_corpus
+==========
+
 API for German corpus (https://www.dwds.de).
     
-Args:
-    query: str or List([str]): query or queries
-    n_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    subcorpus: str: subcorpus. Available options: 'kern' (by default),
-                                'tagesspiegel', 'zeit', 'public', 'blogs',
-                                'dingler', 'untertitel', 'spk', 'bz', 'dta',
-                                'korpus21'.
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
-
+Search Parameters
+-----------------
+query: str or list([str])
+    query or queries
+n_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False) (True by default)
+subcorpus: str
+    subcorpus. Available options:
+        * 'kern' (by default)
+        * 'tagesspiegel'
+        * 'zeit'
+        * 'public'
+        * 'blogs'
+        * 'dingler'
+        * 'untertitel'
+        * 'spk'
+        * 'bz'
+        * 'dta'
+        * 'korpus21'
 """
 
 

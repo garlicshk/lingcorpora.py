@@ -12,19 +12,26 @@ TEST_DATA = {'test_single_query': {'query': '代汉语'},
 __author__ = 'kategerasimenko'
 __doc__ = \
 """
-    
+zho_corpus
+==========
+
 API for Chinese corpus (http://ccl.pku.edu.cn:8080/ccl_corpus/).
     
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    n_results: int: number of results wanted (100 by default)
-    subcorpus: str: subcorpus. Available options: 'xiandai' (modern Chinese) or 'dugai' (ancient Chinese) ('xiandai' by default)
-    n_left, n_right: int: context lenght (in symbols, 30 by default)
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
-
+Search Parameters
+-----------------
+query: str or list([str])
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted
+subcorpus: str, default 'xiandai'
+    subcorpus.
+    Available options:
+        * 'xiandai' (modern Chinese)
+        * 'dugai' (ancient Chinese)
+n_left: int, default 30
+    context lenght (in symbols)
+n_right: int, default 30
+    context lenght (in symbols)
 """
 
 

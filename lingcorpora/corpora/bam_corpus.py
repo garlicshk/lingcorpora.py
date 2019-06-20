@@ -11,20 +11,26 @@ TEST_DATA = {'test_single_query': {'query': 'walasa'},
 __author__ = 'kategerasimenko'
 __doc__ = \
 """
+bam_corpus
+==========
     
 API for Bamana corpus (http://maslinsky.spb.ru/bonito/index.html).
     
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    n_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    get_analysis: boolean: whether to collect grammatical tags for target word or not (False by default, available only for corbama-net-non-tonal subcorpus)
-    subcorpus: str: subcorpus. Available options: 'corbama-net-non-tonal', 'corbama-net-tonal', 'corbama-brut' ('corbama-net-non-tonal' by default)
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
-
+Search Parameters
+-----------------
+query: str or list([str])
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+get_analysis: bool, default False
+    whether to collect grammatical tags for target word or not (False by default, available only for corbama-net-non-tonal subcorpus)
+subcorpus: str, default 'corbama-net-non-tonal'
+    subcorpus. Available options:
+        * 'corbama-net-non-tonal'
+        * 'corbama-net-tonal'
+        * 'corbama-brut'
 """
 
 

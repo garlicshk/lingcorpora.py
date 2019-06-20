@@ -12,17 +12,17 @@ TEST_DATA = {'test_single_query': {'query': 'წელი'},
 __author__ = 'Filaona, kategerasimenko'
 __doc__ = \
 """
-    
+kat_corpus
+==========
+
 API for Georgian monolingual corpus (http://corpora.iliauni.edu.ge).
     
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word is available)
-    n_results: int: number of results wanted (100 by default)
-    
-Main function: extract
-Returns:
-    A generator of Target objects.
-
+Search Parameters
+-----------------
+query: str or list([str])
+    query or queries (currently only exact search by word is available)
+n_results: int, default 100
+    number of results wanted
 """
 
 class PageParser(Container):
