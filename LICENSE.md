@@ -1,9 +1,7 @@
 The MIT License (MIT)
 =====================
 
-Copyright © `2017-2019` `Ekaterina Gerasimenko, Artyom Kopetskiy,
-Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok,
-Maria Terekhina, Ustinya Kosheleva, Michael Voronov, George Moroz`
+Copyright © 2017-2019 Ekaterina Gerasimenko, Artyom Kopetskiy, Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Michael Voronov, George Moroz
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
