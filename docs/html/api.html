@@ -236,6 +236,14 @@ It is required to avoid blocking and corpus breakdown.</li>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rus_corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;rus&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rus_results</span> <span class="o">=</span> <span class="n">rus_corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;мешок&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rus_results</span>
+<span class="go">&quot;мешок&quot;: 100%|███████████████████████████████| 10/10 [00:07&lt;00:00,  1.40docs/s]</span>
+<span class="go">[Result(query=мешок, N=10, params={&#39;n_results&#39;: 10, &#39;kwic&#39;: True, &#39;n_left&#39;: None, &#39;n_right&#39;: None, &#39;query_language&#39;: None, &#39;subcorpus&#39;: &#39;main&#39;, &#39;get_analysis&#39;: False, &#39;gr_tags&#39;: None, &#39;start&#39;: 0, &#39;writing_system&#39;: None})]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
@@ -329,10 +337,26 @@ It is required to avoid blocking and corpus breakdown.</li>
 </table>
 </dd></dl>
 
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;emk&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;tuma&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">kwic</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span>
+<span class="go">&quot;tuma&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 11.09docs/s]</span>
+<span class="go">Result(query=tuma, N=10, params={&#39;n_results&#39;: 10, &#39;kwic&#39;: False, &#39;n_left&#39;: None, &#39;n_right&#39;: None, &#39;query_language&#39;: None, &#39;subcorpus&#39;: &#39;cormani-brut-lat&#39;, &#39;get_analysis&#39;: False, &#39;gr_tags&#39;: None, &#39;start&#39;: 0, &#39;writing_system&#39;: &#39;&#39;})</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="lingcorpora.result.Result.clear">
 <code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.result.Result.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overwrites the results attribute to empty list.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
+<span class="go">[Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, ), Target(tuma, )]</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -346,7 +370,7 @@ It is required to avoid blocking and corpus breakdown.</li>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>filename</strong> (<em>str</em><em>, </em><em>default None</em>) – name of the file. If None, filename is lang_query_results.csv
 with omission of disallowed filename symbols.</li>
-<li><strong>header</strong> (<em>boolean</em><em>, </em><em>default True</em>) – whether to include a header in the table.
+<li><strong>header</strong> (<em>bool</em><em>, </em><em>default True</em>) – whether to include a header in the table.
 Header is stored in .__header: <code class="docutils literal notranslate"><span class="pre">('index',</span> <span class="pre">'text')</span></code></li>
 <li><strong>sep</strong> (<em>str</em><em>, </em><em>default ';'</em>) – cell separator in the csv.</li>
 </ul>
@@ -379,6 +403,24 @@ Header is stored in .__header: <code class="docutils literal notranslate"><span 
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rus_corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;rus&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rus_results</span> <span class="o">=</span> <span class="n">rus_corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;одеяло&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">get_analysis</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first_hit</span> <span class="o">=</span> <span class="n">rus_results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first_hit</span>
+<span class="go">Target(одеяло, Народный костюм: архаика или современность? // «Народное творчество», 2004)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">vars</span><span class="p">(</span><span class="n">first_hit</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="go">text  Я, например, для внучки настегала своими руками лоскутное одеяло, зная, что оно будет её оберегать, давать ей энергию.</span>
+<span class="go">idxs (59, 65)</span>
+<span class="go">meta Народный костюм: архаика или современность? // «Народное творчество», 2004</span>
+<span class="go">tags {&#39;lex&#39;: [&#39;одеяло&#39;], &#39;gramm&#39;: [&#39;S&#39;, &#39;inan&#39;, &#39;n&#39;, &#39;sg&#39;, &#39;acc&#39;, &#39;disamb&#39;], &#39;sem&#39;: [&#39;r:concr&#39;, &#39;t:tool:bedding&#39;], &#39;flags&#39;: [&#39;animred&#39;, &#39;bcomma&#39;, &#39;bmark&#39;, &#39;casered&#39;, &#39;genderred&#39;, &#39;numred&#39;]}</span>
+<span class="go">transl None</span>
+<span class="go">lang None</span>
+</pre></div>
+</div>
 <dl class="method">
 <dt id="lingcorpora.target.Target.kwic">
 <code class="descname">kwic</code><span class="sig-paren">(</span><em>left</em>, <em>right</em>, <em>level='word'</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.target.Target.kwic" title="Permalink to this definition">¶</a></dt>
@@ -396,6 +438,16 @@ Header is stored in .__header: <code class="docutils literal notranslate"><span 
 </tr>
 </tbody>
 </table>
+<p class="rubric">Examples</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_hit</span><span class="o">.</span><span class="n">kwic</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">(&#39;внучки настегала своими руками лоскутное&#39;,</span>
+<span class="go">&#39;одеяло&#39;,</span>
+<span class="go">&#39;, зная, что оно будет её&#39;)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first_hit</span><span class="o">.</span><span class="n">kwic</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;char&#39;</span><span class="p">)</span>
+<span class="go">(&#39;егала своими руками лоскутное &#39;, &#39;одеяло&#39;, &#39;, зная, что оно будет её обере&#39;)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
