@@ -1,6 +1,6 @@
 .. _corpora:
 
-Corpus list
+Corpus List
 ===========
 
 .. automodule:: lingcorpora.corpora.ady_corpus
