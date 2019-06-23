@@ -149,9 +149,9 @@ class PageParser(Container):
                     if _target_idxs:
                         for i, ixs in enumerate(_target_idxs):
                             if analyses:
-                                yield _text, ixs, _meta, _ana[i], _transl, _lang
+                                yield _text, ixs, _meta, _ana[i], self.gr_tags, _transl, _lang
                             else:
-                                yield _text, ixs, _meta, _ana, _transl, _lang
+                                yield _text, ixs, _meta, _ana, self.gr_tags, _transl, _lang
                     else:
                         continue
         
