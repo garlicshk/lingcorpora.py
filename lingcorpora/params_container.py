@@ -33,17 +33,17 @@ class Container:
         writing system of results.
     """
     def __init__(self,
-                 query,
-                 n_results=100,
-                 kwic=True,
-                 n_left=None,
-                 n_right=None,
-                 subcorpus=None,
-                 get_analysis=False,
-                 gr_tags=None,
-                 query_language=None,
-                 start=0,
-                 writing_system=None
+         query,
+         n_results=100,
+         kwic=True,
+         n_left=None,
+         n_right=None,
+         subcorpus=None,
+         get_analysis=False,
+         gr_tags=None,
+         query_language=None,
+         start=0,
+         writing_system=None
     ):
         """
         Universal arguments:
