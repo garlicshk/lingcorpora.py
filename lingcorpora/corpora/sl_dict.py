@@ -13,30 +13,39 @@ from ..target import Target
 
 __author__ = 'Pandaklez'
 __doc__ = \
-    """
-    API for Spreadthesign sign language dictionary (https://www.spreadthesign.com/)
-    Args:
-        query: str or List([str]): query or queries (only exact search by word is available)
-        subcorpus: str or List([str]): target sign language. ('ru.ru' by default)
-                                       Valid (use abbreviations): {'Russian': 'ru.ru', 'Swedish': 'sv.se',
-                                       'American English': 'en.us', 'British English': 'en.gb',
-                                       'Mexican Spanish': 'es.mx', 'Czech': 'cs.cz', 'Lithuanian': 'lt.lt',
-                                       'Spanish': 'es.es', 'Portuguese': 'pt.pt', 'Japanese': 'ja.jp',
-                                       'German': 'de.de', 'French': 'fr.fr', 'Turkish': 'tr.tr',
-                                       'Portuguese (Brasil)': 'pt.br', 'Italian': 'it.it', 'Polish': 'pl.pl',
-                                       'Icelandic': 'is.is', 'German (Austria)': 'de.at', 'Estonian': 'et.ee',
-                                       'Latvian': 'lv.lv', 'English (India)': 'en.in', 'Bulgarian': 'bg.bg',
-                                       'Chinese': 'zh.hans.cn', 'Urdu': 'ur.pk', 'Croatian': 'hr.hr',
-                                       'Russian (Belarus)': 'ru.by'}
-        query_language: str: language of the 'query'. Same languages as for 'subcorpus' argument are valid.
-        variants: boolean: Enable to see variants of one sign (if exist). False by default.
-        only_link: boolean: Enable if you want videos to be downloaded. False by default.
-                            If you don't want to download videos use links from Target.transl.
-        sentences: boolean: In some cases you can search for the whole sentences be a word. False by default.
-    Main method: extract
-    Returns:
-        A generator over Target objects.
-    """
+"""
+Spreadthesign Sign Language Dictionary
+======================================
+
+API for Spreadthesign sign language dictionary (https://www.spreadthesign.com/)
+
+**Search Parameters**
+
+query: str or list([str]):
+    query or queries (only exact search by word is available)
+subcorpus: str or list([str]), default 'ru.ru'
+    target sign language.
+    Valid (use abbreviations):
+        {'Russian': 'ru.ru', 'Swedish': 'sv.se',
+         'American English': 'en.us', 'British English': 'en.gb',
+         'Mexican Spanish': 'es.mx', 'Czech': 'cs.cz', 'Lithuanian': 'lt.lt',
+         'Spanish': 'es.es', 'Portuguese': 'pt.pt', 'Japanese': 'ja.jp',
+         'German': 'de.de', 'French': 'fr.fr', 'Turkish': 'tr.tr',
+         'Portuguese (Brasil)': 'pt.br', 'Italian': 'it.it', 'Polish': 'pl.pl',
+         'Icelandic': 'is.is', 'German (Austria)': 'de.at', 'Estonian': 'et.ee',
+         'Latvian': 'lv.lv', 'English (India)': 'en.in', 'Bulgarian': 'bg.bg',
+         'Chinese': 'zh.hans.cn', 'Urdu': 'ur.pk', 'Croatian': 'hr.hr',
+         'Russian (Belarus)': 'ru.by'}
+query_language: str
+    language of the 'query'. Same languages as for 'subcorpus' argument are valid.
+variants: bool, default False
+    Whether to enable to see variants of one sign (if exist).
+only_link: bool, default False
+    Whether to enable if you want videos to be downloaded.
+    If you don't want to download videos use links from ``Target.transl``.
+sentences: bool
+    In some cases you can search for the whole sentences be a word.
+"""
 
 TEST_DATA = {'test_single_query': {'query': 'собака', 'query_language': "ru.ru", 'subcorpus': "uk.ua"},
              'test_multi_query': {'query': ['moon', 'T-shirt'], 'query_language': "en.us", 'subcorpus': "en.us"}

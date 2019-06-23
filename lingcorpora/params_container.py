@@ -1,9 +1,37 @@
 # python3
 # coding=<UTF-8>
 
-
 class Container:
+    """
+    Universal arguments: ``query``, ``n_results``.
     
+    Other arguments depend on corpus.
+    
+    Parameters
+    ----------
+    query: str or list[str]
+        query or queries.
+    n_results: int, default 100
+        number of results wanted.
+    kwic: boolean, default True:
+        kwic format (True) or a sentence (False).
+    n_left: int, default None:
+        number of words / symbols (corpus-specific) in the left context.
+    n_right: int, default None:
+        number of words / symbols (corpus-specific) in the right context.
+    subcorpus: str, default None:
+        subcorpus to search in.
+    get_analysis: boolean, default False
+        whether to download grammatical information if the corpus is annotated.
+    gr_tags: dict, default None
+        tags for grammar search
+    query_language: str
+        for parallel corpora, language of the query.
+    start: int, default 0
+        result index to start from.
+    writing_system: str, default None
+        writing system of results.
+    """
     def __init__(self,
          query,
          n_results=100,

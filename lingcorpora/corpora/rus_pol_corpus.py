@@ -9,23 +9,38 @@ from ..exceptions import EmptyPageException
 
 __author__ = 'maria-terekhina'
 __doc__ = \
-    """
-    API for Polish-Russian Parallel Corpus (http://pol-ros.polon.uw.edu.pl/)
+"""
+Polish-Russian Parallel Corpus
+==============================
+
+API for Polish-Russian Parallel Corpus (http://pol-ros.polon.uw.edu.pl/)
     
-    Args:
-        query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-        n_results: int: number of results wanted (100 by default)
-        kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-        tag: boolean: whether to collect grammatical tags for target word or not (False by default)
-        subcorpus: list: subcorpus (all of the mentioned below by default).
-                        Valid: ['non-fiction', 'fiction<1945', 'fiction>1945', 'press', 'law', 'religious', 
-                        'russian', 'foreign', 'polish']
-    
-    Main method: extract
-    
-    Returns:
-        A generator over Target objects.
-    """
+**Search Parameters**
+
+query: str or list([str]):
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+tag: bool, default False
+    whether to collect grammatical tags for target word or not (False by default)
+subcorpus: list
+    subcorpus (all of the mentioned below by default).
+    Valid: ['non-fiction', 'fiction<1945', 'fiction>1945', 'press', 'law', 'religious', 
+            'russian', 'foreign', 'polish']
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('rus_pol')
+    results = corp.search('лягушка', n_results=10, query_language='rus')
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+"""
 
 
 TEST_DATA = {'test_single_query': {'query': 'стул', 'query_language': 'rus'},

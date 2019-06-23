@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making New API &mdash; lingcorpora 2.0rc0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Corpus List" href="corpora.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> lingcorpora
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corpora.html">Corpus List</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Making New API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#main-concept">Main concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#to-make-a-new-api">To make a new API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-template">API template</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lingcorpora</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Making New API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/lingcorpora_guide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-new-api">
+<h1>Making New API<a class="headerlink" href="#making-new-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main-concept">
+<h2>Main concept<a class="headerlink" href="#main-concept" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Search is done via <code class="docutils literal notranslate"><span class="pre">Corpus</span></code> object (<code class="docutils literal notranslate"><span class="pre">search</span></code> method)</li>
+<li>Each API of a corpus, dictionary, etc. is a <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> class (see
+below) which has method <code class="docutils literal notranslate"><span class="pre">.extract()</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PageParser.extract()</span></code> is a generator (see <code class="docutils literal notranslate"><span class="pre">yield</span></code> in Python) of
+<code class="docutils literal notranslate"><span class="pre">Target</span></code> objects (individual hits).</li>
+<li><code class="docutils literal notranslate"><span class="pre">PageParser</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Container</span></code>, which is a class in
+<code class="docutils literal notranslate"><span class="pre">params_container.py</span></code> and contains all possible parameters for
+corpora.</li>
+<li>All <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects are collected in <code class="docutils literal notranslate"><span class="pre">search</span></code> (in the <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>
+object) into the <code class="docutils literal notranslate"><span class="pre">Result</span></code> object.</li>
+<li>Documentation for users can be found
+<a class="reference external" href="https://lingcorpora.github.io/lingcorpora.py/docs.html">here</a></li>
+</ul>
+</div>
+<div class="section" id="to-make-a-new-api">
+<h2>To make a new API<a class="headerlink" href="#to-make-a-new-api" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Make a <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> object</li>
+<li>It inherits from <code class="docutils literal notranslate"><span class="pre">Container</span></code> and <code class="docutils literal notranslate"><span class="pre">Container</span></code> constructor is
+called in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> (see example below)</li>
+<li>It has method <code class="docutils literal notranslate"><span class="pre">extract()</span></code> which <code class="docutils literal notranslate"><span class="pre">yield</span></code>s <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects</li>
+<li>All other (auxiliary) parameters in <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> should be
+encapsulated (add to underscores <code class="docutils literal notranslate"><span class="pre">__</span></code> to their names)</li>
+<li>You should pass to <code class="docutils literal notranslate"><span class="pre">Target</span></code> object the following information:</li>
+<li>whole sentence (<code class="docutils literal notranslate"><span class="pre">text</span></code>) - string</li>
+<li>indices (<code class="docutils literal notranslate"><span class="pre">idxs</span></code>) of the target in the sentence: <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code>
+such that target == <code class="docutils literal notranslate"><span class="pre">text[l:r]</span></code> - tuple</li>
+<li>metadata (<code class="docutils literal notranslate"><span class="pre">meta</span></code>) (document name, author, year, etc.) - string. If
+there is no meta, then pass empty string</li>
+<li>grammar tags (<code class="docutils literal notranslate"><span class="pre">tags</span></code>) - dict. If there are no tags, pass empty
+dict</li>
+<li>for parallel corpora: translation (<code class="docutils literal notranslate"><span class="pre">transl</span></code>) - translation from
+<code class="docutils literal notranslate"><span class="pre">queryLanguage</span></code> to another language</li>
+<li>for parallel corpora: language (<code class="docutils literal notranslate"><span class="pre">lang</span></code>) - the other language (not
+<code class="docutils literal notranslate"><span class="pre">queryLanguage</span></code>) in the example pair</li>
+<li><strong>Important</strong>: if there are several target occurrences in one
+example, you should split them into <strong>separate</strong> Target objects.</li>
+<li>Write the docstring <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> and the author <code class="docutils literal notranslate"><span class="pre">__author__</span></code> before
+<code class="docutils literal notranslate"><span class="pre">PageParser</span></code></li>
+<li>Name the file <em>langcode</em>_corpus.py and place it into the
+<code class="docutils literal notranslate"><span class="pre">corpora</span></code> directory. <em>langcode</em> stands for <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-3
+code</a></li>
+<li>For testing purposes querying data must be provided via <code class="docutils literal notranslate"><span class="pre">&lt;dict&gt;</span></code>
+named <code class="docutils literal notranslate"><span class="pre">TEST_DATA</span></code> (see template below for details)</li>
+<li>If you would like to add new search parameters, open
+<code class="docutils literal notranslate"><span class="pre">params_container.py</span></code> and add this parameter to the arguments
+(<strong>do not forget default value</strong>) and attributes.</li>
+<li>Make a pull request and if API is OK, we will:</li>
+<li>Add it to the package</li>
+<li>Include it in the docs</li>
+</ol>
+</div>
+<div class="section" id="api-template">
+<h2>API template<a class="headerlink" href="#api-template" title="Permalink to this headline">¶</a></h2>
+<div class="code ipython3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">params_container</span> <span class="k">import</span> <span class="n">Container</span>
+<span class="kn">from</span> <span class="nn">target</span> <span class="k">import</span> <span class="n">Target</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="c1"># The docs should be in reST format</span>
+<span class="c1"># The header is the name of the module</span>
+<span class="c1"># The subheader is &#39;Search Parameters&#39;</span>
+<span class="c1"># e.g:</span>
+<span class="c1"># pol_corpus</span>
+<span class="c1"># ==========</span>
+<span class="c1">#</span>
+<span class="c1"># API for National Corpus of Polish (http://nkjp.pl/)</span>
+<span class="c1">#</span>
+<span class="c1"># Search Parameters</span>
+<span class="c1"># ------------------</span>
+<span class="c1"># query: str:</span>
+<span class="c1">#    Search by word.</span>
+<span class="c1"># n_results: int, default 100</span>
+<span class="c1">#     Number of results.</span>
+<span class="c1"># ...</span>
+<span class="vm">__doc__</span> <span class="o">=</span> \
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># &lt;dict&gt; of querying data passed to `Corpus.search` as kwargs while testing</span>
+<span class="c1"># keys and types to be preserved</span>
+
+<span class="n">TEST_DATA</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;test_single_query&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">str</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">...</span><span class="p">},</span>                            <span class="c1"># {arg: value, ...}</span>
+             <span class="s1">&#39;test_multi_query&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;query&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">&lt;</span><span class="nb">str</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nb">str</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">...</span> <span class="o">&lt;</span><span class="nb">str</span> <span class="n">N</span><span class="o">&gt;</span><span class="p">],</span> <span class="o">...</span><span class="p">}</span>    <span class="c1"># {arg: value, ...}</span>
+            <span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">PageParser</span><span class="p">(</span><span class="n">Container</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># inner auxiliary attributes:</span>
+        <span class="c1"># self.__page = None</span>
+        <span class="c1"># self.__pagenum = 0</span>
+        <span class="c1"># ...</span>
+
+    <span class="k">def</span> <span class="nf">any_method_for_getting_the_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># ...</span>
+
+    <span class="k">def</span> <span class="nf">any_method_for_getting_the_results_10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">extract</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        --- Generator of found occurrences as `Target` types</span>
+<span class="sd">            Query.search() uses this method---</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># ...</span>
+
+        <span class="c1"># for each occurrence found we pass `Target` object,</span>
+        <span class="c1"># describing the occurrence, to Query.search()</span>
+        <span class="c1"># for parallel corpora also transl and lang</span>
+        <span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">tags</span> <span class="ow">in</span> <span class="n">found</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">Target</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">idxs</span><span class="p">,</span> <span class="n">meta</span><span class="p">,</span> <span class="n">tags</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="corpora.html" class="btn btn-neutral float-left" title="Corpus List" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2019, School of Linguistics, HSE
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

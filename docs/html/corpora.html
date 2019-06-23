@@ -1,0 +1,1495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Corpus List &mdash; lingcorpora 2.0rc0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Making New API" href="lingcorpora_guide.html" />
+    <link rel="prev" title="API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> lingcorpora
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Corpus List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#adyghe-orpus">Adyghe Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#albanian-orpus">Albanian Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#almaty-corpus-of-the-kazakh-language">Almaty Corpus of the Kazakh Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bamana-corpus">Bamana Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#buryat-orpus">Buryat Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chinese-corpus">Chinese Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#crimean-tatar-orpus">Crimean Tatar Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#danish-corpus">Danish Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#eastern-armenian-corpus">Eastern Armenian Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#estonian-corpus">Estonian Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#german-corpus">German Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#georgian-monolingual-corpus">Georgian Monolingual Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hindi-corpus">Hindi Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jukuu-chinese-english-subcorpus">JuKuu: Chinese-English Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jukuu-japanese-chinese-subcorpus">JuKuu: Japanese-Chinese Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jukuu-japanese-english-subcorpus">Jukuu: Japanese-English Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kalmyk-corpus">Kalmyk Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maninka-corpus">Maninka Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mongolian-corpus">Mongolian Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modern-greek-corpus">Modern Greek Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modern-yiddish-corpus">Modern Yiddish Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#national-corpus-of-polish">National Corpus of Polish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#national-corpus-of-russian">National Corpus of Russian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#national-corpus-of-russian-parallel-subcorpus">National Corpus of Russian: Parallel Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#polish-russian-parallel-corpus">Polish-Russian Parallel Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spreadthesign-sign-language-dictionary">Spreadthesign Sign Language Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slovak-corpus">Slovak Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tatar-corpus">Tatar Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#udmurt-orpus">Udmurt Сorpus</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lingcorpora_guide.html">Making New API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">lingcorpora</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Corpus List</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/corpora.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-lingcorpora.corpora.ady_corpus">
+<span id="corpus-list"></span><span id="corpora"></span><h1>Corpus List<a class="headerlink" href="#module-lingcorpora.corpora.ady_corpus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adyghe-orpus">
+<h2>Adyghe Сorpus<a class="headerlink" href="#adyghe-orpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Adyghe corpus (<a class="reference external" href="http://web-corpora.net/AdygheCorpus/search/">http://web-corpora.net/AdygheCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;ady&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;лӏыгъэ&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;лӏыгъэ&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.35docs/s]
+
+1  «Лӏыгъэ »,«адыгагъ »,«адыгэ хабз » зыфэпӏощтхэм тарихъ, социальнэ ыкӏи психологическэ лъэпсэ къэкӏуапӏэу яӏэхэм тхакӏор алъыплъагъ, ыгъэунэфыгъэх.
+2
+Ащ фэдэ зекӏуакӏэр пфэукӏочӏыныри лӏыгъэ ыкӏи цӏыфыгъ.
+3
+Лӏыгъэ шъыпкъэ спортым идунай, щыӏэныгъэм ащызепхьан олъэкӏы.
+4
+Ащ къикӏырэр нафэ - уцӏыфыным цӏыфыгъэ ищыкӏагъ, цӏыфыгъэм шэн лъэныкъуабэ къызэлъеубыты: лӏыгъэ, гукӏэгъу, шъыпкъэныгъ, хьалэлныгъ ыкӏи нэмыкӏхэр.
+5
+Непэ тшъхьэ ӏэтыгъэу «хэку тиӏ » зыкӏэтӏошъурэр чӏыгужъым исхэм лӏыгъэ ахэлъэу, аӏэбжъэнакӏэ хэгъэнагъэу хэкур аухъумагъэшъ ары.
+6
+Заом игъогу къинхэм лӏыгъэ къызхагъафэзэ арыкӏуагъэх офицерхэу Дзыбэ Тыркубый, Батышэ Къэрбатыр, Брыцо
+7
+Фэсакъ, уижьау чӏэгъэт, лӏыгъэ напэкӏэ султӏаным къегъэгъэзэжь есӏуагъэмэ, дзэр умыгъэзао, къегъаж есӏуагъэп сэ...
+8
+Ипсауныгъэ зыпкъ зеуцожьым, зэуапӏэм ӏухьажьыгъ, лӏыгъэ хэлъэу пыим езэуагъ.
+9
+Лӏыгъэ хабзэм фэкъаигъагъ, иӏорэ-ишӏэрэ зэтетэу псэугъэ.
+10
+— Нэфэ теор уихабзэпышъ, ари лӏыгъэ, тыхьазырыщт.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.alb_corpus"></span><div class="section" id="albanian-orpus">
+<h2>Albanian Сorpus<a class="headerlink" href="#albanian-orpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Albanian corpus (<a class="reference external" href="http://web-corpora.net/AlbanianCorpus/search/">http://web-corpora.net/AlbanianCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;alb&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;shqipe&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;shqipe&quot;: 100%|██████████| 10/10 [00:04&lt;00:00,  2.02docs/s]
+
+1  «Shqiptarët po blejnë banesa në Nish », apo «Shqiptarët‘pushtojnë’Nishin » – ishin tituj bombastikë të cilët para disa ditësh gdhinë në shtypin tonë, ndërsa po të bëni një kërkim në Google me cilindo variant të tij, do të shihni se këtë lajm e kanë botuar pothuajse të gjitha portalet në internet në gjuhën shqipe nga të gjitha territoret e banuara nga shqiptarët.
+2
+Dyke u hapur shkolla shqipe e Korçës – siç pamë përmes aq mundimesh dhe intrigash dhe mjerimesh-shoqërisë Shqiptare të Kollonisë së Bukureshtit i-u hap dhe asaj një përkujdesje e re, një vepërim tjetër.
+3
+Këtë mendim ndan edhe Isen Bajrami, njëri prej iniciatorëve për themelimin e Këshillit të prindërve për formimin e paralele shqipe të ciklit të lartë, që u formua në vitin 2007. «Më distancuan prej Këshillit duke më quajtur të paaftë në gjeten e zgjidhjes së problemit afatgjatë, pasi i orientuan negociatat me MASH-in për ndërtimin e një shkolle të re », tregon Bajrami.
+4
+Mendoni se mund të ketë dëshmi të shkruara që e çojnë historinë e gjuhës shqipe para Buzukut?
+5
+Ai kërkoi besimin që në mandatin e ardhshëm katërvjeçar të zgjidh përfundimisht çështjen e përdorimit të gjuhës shqipe, zbutjen e papunësisë, hapjen e vendeve të reja të punës.
+6
+Përmes protestës, Beqiri ka njoftuar se shqiptarët e Luginës së Preshevës do të kërkojnë që të ketë tekste shkollore në gjuhën shqipe ngase nxënësit, sipas tij, vazhdojnë të zhvillojnë mësim me shënime, por jo me tekste shkollore.
+7
+Çdo ditë përballemi me gabime akute dhe deformime të gjuhës shqipe nëpër mediume (media të shkruar dhe vizive, forume online etj), çdo ditë shohim se si gjuha shqipe po venitet nga debate të vakta televizive dhe diskurset e forta mbi dialektet që e formojnë atë.
+8
+Duke jetuar në një botë ku bursa e vlerave të mirëfillta dhe të patjetërsueshme artistike përzihet keqazi me bursën e interesave dhe vlerave të ndryshueshme të tregut, lëvruesit e letrave shqipe, me synimin për të qenë të botuar jashtë vendit, kanë nisur të lëshojnë jo pak pe në drejtim të «invariableve » për t’u kapur pas «variableve » letrare, duke u përpjekur shpesh të lëvrojnë një mori vlerash të luhatshme, në mos të dyshimta, të cilat duket se grishin fort një lloj kërshërie të veçantë ndaj asaj që ndodh brenda izolimit në përgjithësi, por dhe ndaj vuajtjes njerëzore në veçanti.
+9
+Abetaret e Naum Veqilharxhit luajtën një rol të rëndësishëm në Rilindjen Shqiptare, hodhën hapat e parë të arsimit në gjuhën shqipe.
+10
+Nuk ishte e rastit as edhe prirja e disa klerikëve për të futur në shërbesat kishtare edhe gjuhën shqipe.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.kaz_corpus"></span><div class="section" id="almaty-corpus-of-the-kazakh-language">
+<h2>Almaty Corpus of the Kazakh Language<a class="headerlink" href="#almaty-corpus-of-the-kazakh-language" title="Permalink to this headline">¶</a></h2>
+<p>API for Almaty corpus of the Kazakh language
+(<a class="reference external" href="http://web-corpora.net/KazakhCorpus/search/">http://web-corpora.net/KazakhCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;kaz&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;тілі&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;тілі&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  6.49docs/s]
+
+1
+Ағылшын тілі пәнінің модульдік оқыту технологиясының элементтері ойындар мен шығармашылық жұмыстарды қолдана оқыту арқылы: балалардың білімге деген қызығушылығы мен білім дәрежесі артады; оқушының қисынды ойлауын, қабілеттерін, көзге елестету қабілетін, жадын, шығармашылығы дамытылады; оқушылардың ішкі қуатымен мүмкіндіктері ашылады; ұжымдық, топтық, жеке жұмыс түрлері арқылы, өзара достыққа, көмекке , қиындықты бірге жеңуге, адамгершілік қасиеттерге үйретеді; оқушының танымдық қасиеттері дамиды; белсенді сөздік қорын, ауызша және жазбаша тілін дамытады.
+2
+2. Ана тілі мен ағылшын тілін араластырып сөйлемеу керек.
+3
+Интернет жүйесінің келесі ақпараттық қоры мен ресурстарын шетел тілі сабағында пайдалану бірден-бір тиімді болмақ:• электрондық пошта (e-mail), телеконфереция, видеоконференция;• жеке ақпараттарды жарыққа шығару мүмкіндігі немесе басқаша айтқанда Web• серверге жеке шығару;• ақпараттық каталогтар ( Yahoo, InfoSeek/UltraSmart, Galaxy) іздеу жүйесі (Altta, Vista, HotBob, Open Text), жүйе ішіндегі әңгіме (Chat).
+4
+Ол жалмауыздың саған қарап жалақтаған тілі де, шырағым.
+5
+Ағылшын тілі сабағында ақпараттық технологияны пайдалану
+6
+Бұл жұмыстың басты мақсаты компьютер желісін және мультимедиялық-электрондық құралдарды шет тілі сабағында тиімді қолдану, нақтылап айтқанда ағылшын тілі сабағында презентацияларды және мультимедиялық-электрондық құралдарды мектеп қабырғасында және білім беру процесінде терең қолдану.
+7
+Ағылшын тілі сабағын оқытуда таным қабілетін арттыру арқылы ағылшын тілі сабағын өткізуге оқыту әдістемесін теориялық тұрғыдан негіздеу, яғни: ағылшын тілі сабағын өткізуде сөздің айтылуы мен естілуі жұмыстарын ұйымдастыру проблемаларын зерттеу; оқулық негізінде ағылшын тілі сабағын өткізуде сөздің айтылуы мен естілуі жұмыстарын ұйымдастыру барысында болашақ мұғалімдерді оқыту әдістемесін жасау; оқулық негізінде ағылшын тілі сабағын өткізуге болашақ мұғалімдерді оқыту әдістемесін тиімді зерттеу тұрғысынан эксперимент жүргізу.
+8  «Газет – халықтың көзі, құлағы һәм тілі ».
+9
+Шетел тілі сабағында компьютермен жұмыс жасай отырып, студенттер психологиялық тұрғыдан да жеңілдіктерге ие болады.
+10
+Сондықтан да ағылшын тілі мұғалімдеріне қойылатын талаптар ауқымы үлкен.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.bam_corpus"></span><div class="section" id="bamana-corpus">
+<h2>Bamana Corpus<a class="headerlink" href="#bamana-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Bamana corpus (<a class="reference external" href="http://maslinsky.spb.ru/bonito/index.html">http://maslinsky.spb.ru/bonito/index.html</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not (False by default, available only for corbama-net-non-tonal subcorpus)</dd>
+<dt>subcorpus: str, default ‘corbama-net-non-tonal’</dt>
+<dd><dl class="first last docutils">
+<dt>subcorpus. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘corbama-net-non-tonal’</li>
+<li>‘corbama-net-tonal’</li>
+<li>‘corbama-brut’</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;bam&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;kan&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;kan&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 14.99docs/s]
+
+1 dennin in seginna dugu kɔnɔ ka segin dɔnkili in kan a ba ye , a yɛlɛmana ka kɛ warabilen ye ka taa kungo
+2 kɔni tɛ dɔnkili in da dɛ ! jula k&#39; a ka yɛlɛn fali kan ka dɔnkili da , k&#39; a tɛna yɛlɛma . julaw ko , ko fosi
+3 yɛlɛma . musokɔrɔba ye dɔnkili in da k&#39; a to fali kan . a tilala dɔrɔn , a yɛlɛmana ka kɛ warabilen ye . a
+4 a kɛ , don dɔ la , surukuba yaalatɔ bɔra tonkun in kan , kungo kɔnɔ . a kabakoyara : « Ɛ , tonkun yɛrɛ ni
+5 y&#39; o fɔ yɔrɔ min na , fɛn dɔ y&#39; a ta k&#39; a pɛrɛn a kɔ kan . surukuba foori ka wuli , k&#39; a ɲɛkili filaw bɔ u
+6 la . u y&#39; u gɛrɛ tonkun in na . sama ɲɛ datɔ bonbonsi kan , a y&#39; i kanto : « Ɛ , tonkun yɛrɛ ni bonbonsi , a da n
+7 a y&#39; o bɔ a da la yɔrɔ min , fɛn dɔ y&#39; a ta k&#39; a pɛrɛn a kɔ kan . biɲɛ dow turu kojugu a la , a dɔw bɔra a fan dɔ fɛ .
+8 . Ala tora a ka dɔnni na ka kɔngɔ ben dugu nin kan . kɔngɔba . ka dugu nin ɲɛni , ka dugumɔgɔw fasa ,
+9 sara . Ala fana y&#39; o mɔgɔ sugu dan ka bila dugukolo kan . hali n&#39; a ye fɛn sɔrɔ , hali n&#39; a ye nafolo d&#39; a ma , a
+10  nsiirin , nsiirin . n y&#39; a bila den dɔ le kan . den nin ye sira deli a facɛ fɛ , k&#39; a b&#39; a fɛ ka taga
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.bua_corpus"></span><div class="section" id="buryat-orpus">
+<h2>Buryat Сorpus<a class="headerlink" href="#buryat-orpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Buryat corpus (<a class="reference external" href="http://web-corpora.net/BuryatCorpus/search/">http://web-corpora.net/BuryatCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;bua&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;хэлэн&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;хэлэн&quot;: 100%|██████████| 10/10 [00:02&lt;00:00,  4.14docs/s]
+
+1
+Шэнэ начальнигуудай зангыень мэдэтэрээ мэдэлдэнь байһан хүндэ бэрхэ ха юм: хүн бүхэндэ хандаха, харюусаха дүрэ хэрэгтэй.– Ябууд дайнда орохобди гэжэ би һанаалби, – гэжэ Махмудов бага гажанхайшаг ород хэлэн дээрэ хэлэнэ.– Майор Толстовые Москва ябуулха гэжэ һананаб.
+2
+30-аад онуудта эхин һургуулиин бүхы учебнигүүд буряад хэлэндэ оршуулагдаад, буряад хэлэн дээрэ заагдадаг болобо.
+3
+Тэдэнэй урдаһаа уйгарай томо тэргэнүүдтэ эд бараа шэрэһэн хүнүүд, мүн тэдээнэй тэргэдэл адли тэргэтэйшүүд, гурбан сахаригтай велосипедтэйшье хүнүүд, ябага нюсэгэншье улад, һогтуушуул, һаари хирэшье болошоһон үхибүүд, англиин сагаан булочкануудые ашаһан гү, али элдэб помидор, үгэрсэшье шэрэһэн ябаган тэргэтэй хүнүүд, элжэгэн дээрэшье юумэ ашаһан наймаашад, зүһэн бүриин хэлэн дээрэ үлэн хооһон поршоонхонуудай бархиралдаанһаа өөрэгүйгөөр шэхэ дүлиирмэ шууяа гаргажа байбад.
+4
+Мүнөө үедэ кириллицэ үзэгтэй хори нютагай хэлэн буряад арадай литературна (ном бэшэгэй) хэлэн зандаа байна.
+5
+Энэ талаһаа олон тоото үргэн а, о, э аялгануудтай н, м, нг, л, р хахад аялгануудтай, хонгёо хашалгануудтай, мүн тэрээн дээрэ үшөө үсөөн тоото уйтан аялганууд болон бүдэхи хашалгануудтай, к, ц, ч, щ абяануудгүй буряад хэлэн баһа таатай юм.
+6
+Мүн лэ энэ зорилгоор Буряадай Доржи Банзаровай нэрэмжэтэ багшанарай институдай бүхы факультедэй буряад студентнэртэ буряад хэлэн заагдадаг болобо.
+7
+Һайрхан хэлэн һуухаш, эхэмни.
+8
+Юрэдөөл, хүнэй хэлэн газаагуур ошодоггүй юм байна даа.
+9
+Харин дуун лэ галта даляараа зүрхынь сорьёжо, наһан соогоо баянай барлаг боложо тулиһаншье һаа, нэгэнэйньшье урда һүгэдэжэ, айжа унаагүй, хуурмаг үгын һүүдэршье хэлэн дээрээ асаржа үзөөгүй сэхэ зантан нүхэрыень, омог залуу наһан соогоо ажабайдалай халуун шулуу долёонгүй, дайнай хүйтэн мүртэ дайрагдажа, бусалтагүй ошоһон хайрата ганса хүбүүень мүнөөдэр мэтэ элихэнээр мүндэлүүлжэ үгэдэг.
+10
+Бишни Винницын хүм.— Теэд ород хэлэн дээрэ аргагүй сэбэрээр дуугарналта!— Тиигэнгүй яахабши.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.zho_corpus"></span><div class="section" id="chinese-corpus">
+<h2>Chinese Corpus<a class="headerlink" href="#chinese-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Chinese corpus (<a class="reference external" href="http://ccl.pku.edu.cn:8080/ccl_corpus/">http://ccl.pku.edu.cn:8080/ccl_corpus/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>subcorpus: str, default ‘xiandai’</dt>
+<dd><p class="first">subcorpus.
+Available options:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>‘xiandai’ (modern Chinese)</li>
+<li>‘dugai’ (ancient Chinese)</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>n_left: int, default 30</dt>
+<dd>context lenght (in symbols)</dd>
+<dt>n_right: int, default 30</dt>
+<dd>context lenght (in symbols)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;zho&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;语&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;语&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  6.77docs/s]
+
+1 ...是学校教学的基本组织形式；某些教学内容，特别是自然科学知识、语言文字知识等，成为各历史时期的共同内容；一些反映教育规律的教育...
+2 ...的，必须先教他们识字，不识字就不能有政治，不识字只能有流言蜚语、传闻偏见，而没有政治。&quot;因为政治民主化的最主要表现之一，是人...
+3 ...常有三种：（1）物质载体，如工具、建筑等；（2）精神载体，如语言、文字、意识形态等；（3）人的戴体，如个人所拥有的知识、道德...
+4 ...程。就教育而言，首先是教育者将寓于自己主体内的文化外化为教育语言、文字形式的材料等，教育过程才能进行。没有这种外化，教育过程...
+5 ...一个首要条件，即首先要求人们对文化的认同和理解，无论是见之于语言文字的或是其它象征符号的文化，只有当它们成为共享文化时，才能...
+6 ...如见之于文字的文化，无法向一个文盲传播；将外国文化向不懂该国语言或不了解该文化背景的人传播，就会发生困难。所以，教育者首先需...
+7 ...就是指某种心理机能发展最重要的刻印时期。如2到3岁是儿童口头语言发展的关键期。实验证明，小学四年级是童年思维发展的质变期，初...
+8 ...的生理和心理也存在着差异。心理学研究表明，在婴儿期，孪生子的语言和认识能力就有了差异。
+9 ...直立行走，而是像狼一样四肢落地并养成了狼的生活习性，没有人的语言和思维，没有人的情感和兴趣。由此可知，人的身心的最终发展方向...
+10 ...际交往关系和利益交往关系，使人在交往中逐步掌握作为交往工具的语言，把握思想和行为规范；正是社会意识形态，为个体的心理发展提供...
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.crh_corpus"></span><div class="section" id="crimean-tatar-orpus">
+<h2>Crimean Tatar Сorpus<a class="headerlink" href="#crimean-tatar-orpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Crimean Tatar corpus (<a class="reference external" href="http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim">http://korpus.juls.savba.sk:8080/manatee.ks/do_query?corpname=qirim</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>start: int, default 0</dt>
+<dd>index of the first query appearance to be shown</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;crh&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;tili&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.dan_corpus"></span><div class="section" id="danish-corpus">
+<h2>Danish Corpus<a class="headerlink" href="#danish-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Danish corpus (<a class="reference external" href="https://ordnet.dk/korpusdk_en/concordance">https://ordnet.dk/korpusdk_en/concordance</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (currently only search by forms of the word is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;dan&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;dansk&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;dansk&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  9.08docs/s]
+
+1 om hvilke juridiske modeller, der overvejes for at få en dansk særordning med EF på plads. Forinden besøger den britiske premierminister,
+2 der også tilknyttes det amibtiøse fremstød for dansk film og højskolekultur. TV 2-medarbejderen, journalist Inger Marie Vennize forlader
+3 skriver Klaus Rifbjerg et sted i &quot; Karakterbogen &quot;. Heri har dansk litteraturs Store Bastian både ret og uret. Hans nye bog
+4 lønstigninger er de laveste i næsten 40 år. Det viser Dansk Arbejdsgiverforenings lønindikator for juli, august og september. På et år
+5 de næste dage, som kan blive uhyre dramatiske dage i dansk politik, skal løsningen forhandles på plads både udadtil og indadtil.
+6 der godkendes på et EF-topmøde og derefter gennemgår en dansk folkeafstemning, vil aldrig blive tilsidesat til fordel for andre traktat-bestemmelser,
+7 og om at uafhængige juridiske eksperter skal vurdere en dansk aftale. Baggrunden er forlydender om en dansk løsning, der ikke
+8 yderst populær vinder af sæsonens sidste klassiske dyst- Dansk Opdrætningsløb på Charlottenlund. Selv om travtalentet løb ud i fejl
+9 have udgivet alle Carl Barks&#39; Disney-serier på dansk . Seneste skud på stammen er &quot; Anders And slår alt &quot;. Det
+10 der døde i 1964, i dobbeltversion, som det hun var: dansk teaters Madame. JEG citerer lige Mette Winge fra det udmærket
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.arm_corpus"></span><div class="section" id="eastern-armenian-corpus">
+<h2>Eastern Armenian Corpus<a class="headerlink" href="#eastern-armenian-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Eastern Armenian corpus (<a class="reference external" href="http://eanc.net">http://eanc.net</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;arm&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;նարդի&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;նարդի&quot;: 100%|██████████| 10/10 [00:08&lt;00:00,  1.15docs/s]
+
+1
+Նարդի խաղալիս նա այնպես էր փնչում Սիրունյանի երեսին, որ վերջինս ստիպված եղավ արագորեն տանուլ տալ խաղը:
+2 « — Նարդի կուզես նե–կխաղամ, թուղթ չեմ խաղար», — պատասխանում է ղահվեճին և, քանի որ Աբոմարշը չի հակաճառում՝ նա նույնպես փակում է խանութը, բայց թուղթ չի փակցնում դռանը, որ գնում է ճաշի — և երկուսով միասին գնում են Տելեֆոն Սեթոյի սըրճարանը — նարդի խաղալու:
+3
+Նարդի խաղացողները լավ գիտեն, որ մինչեւ զառ գցելու հերթը հասնելը՝ գլուխ գովելը, միմյանց ջարդուփշուր անել խոստանալը պարտադիր արարողություն են:
+4
+Մի տեղ թուղթ են խաղում, մի ուրիշ տեղ նարդի չխկացնում:
+5
+Պատշգամբում այն զույգը դեռ նարդի է շրխկացնում և սարսափելի տխրություն կար այդ շրխկոցի մեջ, ինչպես առաջին անգամ թափվող ձյունի:
+6 — Ոչ մի նարդի,– անհոգ վրա բերեց Ներսիսյանը, — պարապ ժամանակ՝ ո՞րտեղից:
+7
+Այգիներ հաճախել ամենից առաջ սիրում են շախմատ ու նարդի խաղացող եւ քաղաքական թեմաներով թունդ-թունդ վիճող պապիկները:
+8
+Ես Ֆրունզիկին ու Շերենցին արդժեն հրաժեշտ տվել ու անհամոզիչ բացատրություններ էի տալիս Ֆրունզիկին ու Շերենցին տեսած ու ճանաչած Կարոյին ու նարդի խաղացող մյուսներին, ու հիմա էլ՝ հենց էս պահին պարզապես անկարող եմ չթռչել ու չհասնել անկախության մեր էս օրերը, որովհետեւ ուղիղ երկու հազար թվականին, երբ Շիլաչու տունս ծախել ու Կայարանի էս տունս էի առել, տնափոխության պատճառով պրկված նյարդերս թուլացնելու նպատակով ամառվա իրիկուններն էլի սկսեցի գնալ «Պապլավոկ», ավելի ճիշտ՝ «Պապլավոկի» դիմացի «Դիմակ» սրճարան, ուր Օրթախ Աբոն, Հայկունը, Սերոբը, Ջոնը, Սադոյան Արշակն ու էլի ուրիշներ ամեն իրիկուն հավաքվում ու ամեն ինչից խոսում էին ու մինչեւ հիմա էլ խոսում են, բայց երկու հազար թվականի էդ ամառ հատկապե՛ս էինք խոսում, որովհետեւ էդ ամառ առանձնապե՛ս էր շոգ, ու գիշերները նույնիսկ քնել չէր լինում, ու էդ ամառվա շոգ գիշերները մենք հնարավորինս կրճատում էինք «Դիմակ» սրճարանում, եւ գիշերվա երկուսի ու երեքի արանքում ավտոմեքենայով ամեն օր ինձ տուն հասցնողը Սադոյան Արշակն էր, որովհետեւ համեմատաբար ի՛ր ճամփի վրա էի, ու էդ ամառ Արշակի «Զրո ութի» առջեւի աջ դուռը փչացել ու ներսից ոչ մի կերպ չէր բացվում, ու էդ ամռան ամեն Աստծո գիշեր Արշակն ինձ Կայարանի էս մեր նոր շենք հասցնելով` մեքենայից իջնում էր, դրսից բացում էր իմ կողմի դուռը, ու ես իջնում էի մեքենայից, ու քանի որ շատ շոգ գիշերներ էին, շենքի ջահելությունը դեռեւս արթուն էր լինում ու կուտակված էր լինում հատկապես մեր մուտքի մոտ, իսկ շենքի տղամարդկանցից որոշներն էլ էդ ժամին իրենց պատշգամբներում անքնությունից ծխում ու նայում էին ներքեւ, ուր «Լիմուզին» խանութի պայծառ լույսերի ներքո Արշակն ամեն Աստծո գիշեր իր «Զրո ութից» իջնում էր, դրսից իմ առջեւ բաց էր անում իր ավտոմեքենայի իմ կողմի դուռը, ու ես պատվավոր իջնում եւ մուտքի առաջ կուտակված ջահելների ու պատշգամբներում ծխող մեծերի ապշահար հայացքների ուղեկցությամբ մտնում էի շենք, ու հենց էդ ամառվանից սկսած՝ մեր էս նոր շենքի հարեւանությունն սկսեց առանձնակի հարգանքով բարեւել ինձ, իսկ հետո՝ երբ մի քանի անգամ հեռուստացույցով ինձ տեսան ու թերթերում էլ կարդացին էս ու այլ գրություններս, դրանից հարգանքս, կարելի է ասել, չավելացավ, եւ կարելի է ասել՝ նույնիսկ պակասե՛ց էլ, ու երեւի հենց էդպես էլ պիտի լիներ, որովհետեւ առավել աներեւակայելի տեսարան, քան Արշակի՝ իմ առջեւ ամեն Աստծո գիշեր իր «Զրո ութի» դուռը բացելն էր, մեր էս նոր հարեւանության երեւակայությունն ուղղակի չէր կարող պատկերացնել, եւ էս տեսարանն առավել անպատկերացնելի էր, քան յոթանասունվեց թվականի օգոստոսի վեցի, լույս յոթի գիշերվա՝ Կարոյի ու նարդի խաղացող մյուսների տեսածը, բայց յոթանասունվեցի էն գիշերվա իմ վիճակն անհամեմա՛տ էր բարդ, որովհետեւ, եթե Արշակի դեպքում իմ էս նոր հարեւանությունն ինձանից որեւէ բացատրություն չէր պահանջում, ապա յոթանասունվեցի օգոստոսի լույս յոթի էն գիշեր իմ ընկեր Կարոն ու նարդի խաղացող մյուսներն ինձանից, փաստորեն, բացատրություն ու արդարացում էին պահանջում:
+9
+Կամենաք, մի քիչ նարդի խաղանք պատշգամբի վրա:
+10
+Մեծ պարոնի տիրուհին, վրանց մեծ մայրը, ծալապատիկ նստած էր Արչիլ թավադի որդու տիկնոջ` Մելանիայի հանդեպ, և նարդու խաղատախտակը իրանց մեջտեղը դրած, նարդի էին խաղում:
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.est_corpus"></span><div class="section" id="estonian-corpus">
+<h2>Estonian Corpus<a class="headerlink" href="#estonian-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Estonian corpus (<a class="reference external" href="http://www.cl.ut.ee/korpused/kasutajaliides/index.php">http://www.cl.ut.ee/korpused/kasutajaliides/index.php</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>subcorpus: str</dt>
+<dd>subcorpus. Available options: see below values and their meanings (‘1990_ajalehed_26_08_04’ by default). To use several subcorpora, list them with semicolon, e.g. ‘1990_ajalehed_26_08_04;EE_10_09_2004’.</dd>
+</dl>
+<p><strong>Available Subcorpora</strong></p>
+<ul class="simple">
+<li>1990_ajalehed_26_08_04: 1990d - ajakirjandus [865 tuhat]</li>
+<li>EE_10_09_2004: Eesti Ekspress 1996-2001 [7,2 miljonit]</li>
+<li>Maaleht: Maaleht 2001-2004 [5,3 miljonit]</li>
+<li>Postimees_1995: Postimees 1995</li>
+<li>Postimees_1996: Postimees 1996</li>
+<li>Postimees_1997: Postimees 1997</li>
+<li>Postimees_1998: Postimees 1998</li>
+<li>Postimees_1999: Postimees 1999</li>
+<li>Postimees_2000: Postimees 2000</li>
+<li>Postimees_Extra: Postimees Extra</li>
+<li>epl_1995: Eesti Päevaleht 1995</li>
+<li>epl_1996: Eesti Päevaleht 1996</li>
+<li>epl_1997: Eesti Päevaleht 1997</li>
+<li>epl_1998: Eesti Päevaleht 1998</li>
+<li>epl_1999: Eesti Päevaleht 1999</li>
+<li>epl_2000: Eesti Päevaleht 2000</li>
+<li>epl_2001: Eesti Päevaleht 2001</li>
+<li>epl_2002: Eesti Päevaleht 2002</li>
+<li>epl_2003: Eesti Päevaleht 2003</li>
+<li>epl_2004: Eesti Päevaleht 2004</li>
+<li>epl_2005: Eesti Päevaleht 2005</li>
+<li>epl_2006: Eesti Päevaleht 2006</li>
+<li>epl_2007: Eesti Päevaleht 2007</li>
+<li>sloleht_1997: SLÕhtuleht 1997</li>
+<li>sloleht_1998: SLÕhtuleht 1998</li>
+<li>sloleht_1999: SLÕhtuleht 1999</li>
+<li>sloleht_2000: SLÕhtuleht 2000</li>
+<li>sloleht_2001: SLÕhtuleht 2001</li>
+<li>sloleht_2002: SLÕhtuleht 2002</li>
+<li>sloleht_2003: SLÕhtuleht 2003</li>
+<li>sloleht_2004: SLÕhtuleht 2004</li>
+<li>sloleht_2005: SLÕhtuleht 2005</li>
+<li>sloleht_2006: SLÕhtuleht 2006</li>
+<li>sloleht_2007: SLÕhtuleht 2007</li>
+<li>valga: Ajaleht Valgamaalane [2,5 miljonit]</li>
+<li>le: Ajaleht Lääne Elu [1,8 miljonit]</li>
+<li>Kroonika: Seltskonnaajakiri Kroonika [960 tuhat]</li>
+<li>1980_aja: 1980d - ajakirjandus (baas) [175 tuhat]</li>
+<li>1970_aja: 1970d - ajakirjandus [168 tuhat]</li>
+<li>1960_aja: 1960d - ajakirjandus [201 tuhat]</li>
+<li>1950_aja: 1950d - ajakirjandus [242 tuhat]</li>
+<li>1930_aja: 1930d - ajakirjandus [117 tuhat]</li>
+<li>1910_aja: 1910d - ajakirjandus [182 tuhat]</li>
+<li>1900_aja: 1900d - ajakirjandus [171 tuhat]</li>
+<li>1890_aja: 1890d - ajakirjandus [193 tuhat]</li>
+<li>1990_ilu_26_08_04: 1990d - ilukirjandus (katkendid) [602 tuhat]</li>
+<li>segailu_5_10_2008: 1990d - ilukirjandus [5,6 miljonit]</li>
+<li>1980_ilu: 1980d - ilukirjandus (baas) [250 tuhat]</li>
+<li>1970_ilu: 1970d - ilukirjandus [257 tuhat]</li>
+<li>1960_ilu: 1960d - ilukirjandus [132 tuhat]</li>
+<li>1950_ilu: 1950d - ilukirjandus [66 tuhat]</li>
+<li>1930_ilu: 1930d - ilukirjandus [252 tuhat]</li>
+<li>1910_ilu: 1910d - ilukirjandus [247 tuhat]</li>
+<li>1900_ilu: 1900d - ilukirjandus [64 tuhat]</li>
+<li>1890_ilu: 1890d - ilukirjandus [155 tuhat]</li>
+<li>1980_tea: 1980d - teadustekst [160 tuhat]</li>
+<li>horisont: Ajakiri Horisont 1996-2003 [260 tuhat]</li>
+<li>arvutitehnika: Ajakiri Arvutitehnika ja Andmetöötlus 1999-2005 [625 tuhat]</li>
+<li>doktor: Doktoritööd [2,3 miljonit]</li>
+<li>Eesti_Arst_2002: Ajakiri Eesti Arst 2002 [249 tuhat]</li>
+<li>Eesti_Arst_2003: Ajakiri Eesti Arst 2003 [244 tuhat]</li>
+<li>Eesti_Arst_2004: Ajakiri Eesti Arst 2004 [217 tuhat]</li>
+<li>agraar: Agraarteadus 2001-2006 [298 tuhat]</li>
+<li>jututoad: Jututoad [7 miljonit]</li>
+<li>uudisgrupid: Uudisgrupid [8 miljonit]</li>
+<li>foorumid: Foorumid [5 miljonit]</li>
+<li>kommentaarid: Kommentaarid [2 miljonit]</li>
+<li>riigikogu: Riigikogu stenogrammid 1995 - 2001 [13 miljonit]</li>
+<li>1980_muu: 1980d - muud tekstid [415 tuhat]</li>
+<li>teadusartiklid: Mitmesugused Teadusartiklid 1995-2007 [1,3 miljonit]</li>
+<li>akp: Asutawa Kogu protokollid [2 miljonit]</li>
+</ul>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;est&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;keel&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;keel&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.01docs/s]
+
+1 SSÜP Keskkomitee Poliitbüroo minu teada noorima liikme Egon Krenzi nimega annab saksa keeles üsna vaimukalt &amp;zcaron;ongleerida.
+2 Seadused peavad lähtuma nendest otsustest ja olema tõlgitud nende otsuste keelde .
+3 Praegune kriis sai alguse 16. novembri otsuste tõlkimisest kodakondsuse seaduse keelde .
+4 Arvutused ja eksperthinnangud näitasid, et erilisi jõuvõtteid mittekasutava nullvariandi rakendamine jätaks kodakondsusest välja sama palju või isegi rohkem muulasi kui 10-aastase paiksuse abil kodakondsusest jõuga eemale hoidmine; b) lükata uute kodanike vastuvõtmine 10 aastaks edasi, kehtestades 10-aastase paiksuse ja eesti keele oskuse nõude (ajaloo, kultuuri ja valitsemiskorra tundmise nõue peeti otstarbekaks lülitada immigratsiooniseadusse.
+5 Ka ateljeetöö pole normaalne, kui iga päev pool tööajast kulub nii lastel kui ka rahva keeli pallaslastel oma ruumide tühjakstegemiseks ja uuesti töökorda seadmiseks.
+6 Mis parata: kõigepealt tuleb meelde Jaan Kaplinski nägus esseekogu, mis sai teoks samuti lahe taga ja hõimurahva keeles .
+7 Kas pole kurb, et eestlased ei saa oma asju lugeda originaalis, vaid peavad tõlke kaudu mõistatama - või koguni lugemiseseks mõne keele juurde õppima?
+8 Käesoleva puhul pole ehk keel suuremaks takistuseks neile Eestis, kes iga päev Soome TV-d jälgivad.
+9 Nad on ilma jäänud otsekontaktist nendega, kes küüditusest tagasi pääsesid, soome keelega pole neil tegemist.
+10 Soome keelses eessõnas öeldakse, et see toimuvat veel tänavu.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.deu_corpus"></span><div class="section" id="german-corpus">
+<h2>German Corpus<a class="headerlink" href="#german-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for German corpus (<a class="reference external" href="https://www.dwds.de">https://www.dwds.de</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False) (True by default)</dd>
+<dt>subcorpus: str</dt>
+<dd><dl class="first last docutils">
+<dt>subcorpus. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘kern’ (by default)</li>
+<li>‘tagesspiegel’</li>
+<li>‘zeit’</li>
+<li>‘public’</li>
+<li>‘blogs’</li>
+<li>‘dingler’</li>
+<li>‘untertitel’</li>
+<li>‘spk’</li>
+<li>‘bz’</li>
+<li>‘dta’</li>
+<li>‘korpus21’</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;deu&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;gut&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;gut&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 17.48docs/s]
+
+    Er mache schon seit zehn Jahren mit, denn das sei ein
+
+guter
+
+    Start ins neue Jahr.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.kat_corpus"></span><div class="section" id="georgian-monolingual-corpus">
+<h2>Georgian Monolingual Corpus<a class="headerlink" href="#georgian-monolingual-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Georgian monolingual corpus (<a class="reference external" href="http://corpora.iliauni.edu.ge">http://corpora.iliauni.edu.ge</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;kat&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;ენა&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;ენა&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  6.83docs/s]
+
+1 სწორედ ქართული ენა იქნება შენი დედაენა.
+2 მე მესმის ტკბილი ქართული ენა .
+3 ეს ენა , როგორც ანკარა მთის წყარო, იღვრება ჩემში[...]
+4 მუცლით მეზღაპრეს გაუხმეს ენა .
+5 მაგრამ ვინ გაიგებს, ვინ იცის მისი ენა .
+6 [...]ნაღამ დაიყვირა კობამ, მაგრამ გახევებული ენა ვერ დაძრა, მობრუნდა და ბურანში აედევნა ჯ[...]
+7 [...]ნად მისული მღვდლის სიტყვები იქნებოდა და ენა გაუხევდა, ასპიროზამ კი მაჯაში ჩაავლო დაკ[...]
+8 [...]ა ჩამცხრალ ბონდოს, მერე ძლივს მოაბრუნდა ენა და ჩურჩულით თქვა: „მართლა შენი ბრალია?“ [...]
+9 – მეც ჭორიკანასავით გადმოვაგდე ენა ...
+10 [...]იფიქრე, თუ ფრანგულს ვისწავლით, საიდუმლო ენა გვექნება, ვერც ვირენა და ვერც ვერავინ ვე[...]
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.hin_corpus"></span><div class="section" id="hindi-corpus">
+<h2>Hindi Corpus<a class="headerlink" href="#hindi-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Hindi corpus (<a class="reference external" href="http://www.cfilt.iitb.ac.in/~corpus/hindi/find.php">http://www.cfilt.iitb.ac.in/~corpus/hindi/find.php</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>start: int, default 0</dt>
+<dd>index of the first query appearance to be shown (0 by default)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;hin&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;कुत्ते&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;कुत्ते&quot;: 100%|██████████| 10/10 [00:10&lt;00:00,  1.07s/docs]
+
+1  फिर उससे इस वाइरस का टीका तैयार किया. इस टीके को आपने एक स्वस्थ  कुत्ते  की देह में पहुँचाया.
+2  उस बच्चे को दो दिन पहले एक पागल  कुत्ते  ने काटा था. पागल
+3   कुत्ते  दिखाई दिये .पालतू भी नहीं . बिल्ली और पक्षी भी नहीं .
+4  किसी दूसरे प्राणों के रहते भूत नहीं आता है . हम लोगों के घर मेए दो महीने का एक  कुत्ते  का बच्चा था .
+5   कुत्ते  का बच्चा गोद में ही सो गया . पढ़ते-पढ़ते यह अन्दाज ही नहीं रहा कि कब सबेरा हो गया .
+6   कुत्ते  का बच्चा मिल नहीं रहा है . समुचे मकान को रत्ती-रत्ती खोज कर सभी परेशान हो गये हैं .&quot; बच्चा इतना बेखबर सो रहा था,
+7 रहीं सूरज अपने घोड़ोंपर चाबुक बरसाता रहा  कुत्ते  भूँकते रहे मशीनें
+8  चुप क्यों हो गए ?&quot; &quot;सुनाते हैं, सुनाते हैं .&quot; सर्कस ने एक नजर मेरी ओर देखा और जैसे मेरी मंशा ताड़कर बोला, &quot;हमारे लिए  कुत्ते वाला फूल कौन लाएगा ?&quot; &quot;हम लायेंगें !
+9   कुत्ते  पर सवारी गांठने वाले भैरव, को देवता रूप में ग्रहण किया तब मूषक वाहन विघ्नेश गणेश को भी ग्रहण कर उन्हें विघ्नेश बना डाला .
+10  बड़े साहब के घर कितने  कुत्ते  हैं. . . जानकी वकील के घर पूजा में कितनी बलि होती है.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.zho_eng_corpus"></span><div class="section" id="jukuu-chinese-english-subcorpus">
+<h2>JuKuu: Chinese-English Subcorpus<a class="headerlink" href="#jukuu-chinese-english-subcorpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Chinese-English subcorpus of JuKuu corpus (<a class="reference external" href="http://www.jukuu.com/">http://www.jukuu.com/</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;zho_eng&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;语&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">query_language</span> <span class="o">=</span><span class="s1">&#39;zho&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;语&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  9.00docs/s]
+
+1  在现代图形用户界面中，这些原语包括指向、单击和拖动。
+2  图13-3  图形用户界面易于使用的主要原因在于推行有限的交互词汇，由指向、单击和拖动这些极少量的原语组成复杂的习惯用法。
+3  ((委婉语.古))妊娠,怀孕
+4  避免用缩略语，如果必须，要用标准缩略语。
+5  避免用缩略语，如果必须，要用标准缩略语。
+6  &quot;海底电报&quot;一词是混合语,半为拉丁语,半为希腊语。
+7  &quot;海底电报&quot;一词是混合语,半为拉丁语,半为希腊语。
+8  &quot;海底电报&quot;一词是混合语,半为拉丁语,半为希腊语。
+9  学习外国语切莫望文生义。
+10  书面语比口语往往更加一致。
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.jpn_zho_corpus"></span><div class="section" id="jukuu-japanese-chinese-subcorpus">
+<h2>JuKuu: Japanese-Chinese Subcorpus<a class="headerlink" href="#jukuu-japanese-chinese-subcorpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Japanese-Chinese subcorpus of JuKuu corpus (<a class="reference external" href="http://www.jukuu.com/">http://www.jukuu.com/</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;jpn_zho&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;錬&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">query_language</span><span class="o">=</span><span class="s1">&#39;jpn&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;錬&quot;: 100%|██████████| 10/10 [00:04&lt;00:00,  2.08docs/s]
+
+1  粗銅を精錬して純銅にする
+2  鉄鉱石を溶かして精錬する
+3  鉱石から金属を製錬する
+4  百戦錬磨を経てきた軍隊
+5  百戦錬磨の老戦士
+6  このうえさらに体の鍛錬を必要とする
+7  心身を修錬する
+8  てつを製錬する
+9  百戦錬磨を経る
+10  金属を製錬する
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.jpn_eng_corpus"></span><div class="section" id="jukuu-japanese-english-subcorpus">
+<h2>Jukuu: Japanese-English Subcorpus<a class="headerlink" href="#jukuu-japanese-english-subcorpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Japanese-English subcorpus of JuKuu corpus (<a class="reference external" href="http://www.jukuu.com/">http://www.jukuu.com/</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)</dd>
+<dt>kwic: bool, default True</dt>
+<dd>wic format (True) or a sentence (False)</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+</div>
+<span class="target" id="module-lingcorpora.corpora.kal_corpus"></span><div class="section" id="kalmyk-corpus">
+<h2>Kalmyk Corpus<a class="headerlink" href="#kalmyk-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Kalmyk corpus (<a class="reference external" href="http://web-corpora.net/KalmykCorpus/search/">http://web-corpora.net/KalmykCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False) (True by default)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;kal&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;келн&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;келн&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  6.95docs/s]
+
+1
+Үлгүрнь, Рафаэль Дусейнов маңһд келн көвүн, болв хальмг келнд, Манҗин Аркадин дуунд йир дурта.
+2
+Дәкәд «АПК-н делгрлт» гидг келн-улсин төсвәр районд государственн лизингәр чигн мал хулдҗ авад өскҗәнә гив.
+3
+Хар гөрәр цааҗлгдад, Сиврүр туугдсн төрскн келн-улсин һашута зовлңгинь Көглтин Дава хувалцсмн.
+4
+Олна советин гешүд болҗах Хальмг Таңһчд әмтнә зөв харслһна күцц зөвтә элчин үүл дааҗах Владислав Сависько, Өмн үзгин федеральн округд Әрәсән Президентин күцц зөвтә элчин аппаратын федеральн инспектор Александр Беляев, таңһчд үүлдҗәх «Ислам» гидг мусульманск цутхлңгин һардач Магомед-Шапи Магомедов, Хальмг Таңһчин шаҗн лам Тэло Тулку Ринпочен нөкд Хоңһр Эльбиков, сойлын болн олнд зәңгллһнә коммуникацсин министерствин әңгин һардач Григорий Деликов, хасг келн-улсин «Жерлестер» цутхлңгин һардач Пётр Идрисов болн нань чигн улс тоолврарн хувалцв.
+5
+Комиссин гешүд Городовиковск балһсар, селәдәр йовад, әмтнлә харһад, күүндәд, келн-улсин дөрвн төсвиг яһҗ күцәдгинь медүлв.
+6  «Совещание МСХиПрода» Келн-улсин селәнә эдл-ахун төрәр Хальмг Таңһчин 21 эдл-аху орн-нутгин программд орулгдҗана.
+7
+Ар Кавказд кесг жилин туршт тогтҗах нәрн бәәдлд кесг җилдән хам-хоша үр-иньгинәр бәәсн келн улс хоорндан цүүгә татдг, өшә көөлддг йовдлмуд дегд ик болҗ одв.
+8
+Төрскн келн Төрскн келән медый, өргҗүлий!
+9
+Хальмг Таңһчин өргн теегин нег захд бәәх Баһ Дөрвдә района Ик Бухс селәнә улс эврәннь келн улсин сойлдан, төрскн келндән дурта.
+10
+Сүл цагт эрүл-менд харлһна туст батлгдсн келн-улсин төсвсиг бәәдл-җирһлд тохралһна тускар күүндвр болна гих кергтә.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.emk_corpus"></span><div class="section" id="maninka-corpus">
+<h2>Maninka Corpus<a class="headerlink" href="#maninka-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Maninka corpus (<a class="reference external" href="http://maslinsky.spb.ru/emk/run.cgi/first_form">http://maslinsky.spb.ru/emk/run.cgi/first_form</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or List([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available).</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted.</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False).</dd>
+<dt>subcorpus: str, default ‘cormani-brut-lat’</dt>
+<dd><dl class="first last docutils">
+<dt>subcorpus. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘cormani-brut-lat’</li>
+<li>‘corbama-brut-nko’</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>writing_system: str</dt>
+<dd><p class="first">writing system for examples.
+Available options:</p>
+<blockquote>
+<div><ul class="simple">
+<li>‘nko’,</li>
+<li>‘latin’.</li>
+</ul>
+</div></blockquote>
+<p class="last">Bug: only ‘latin’ for ‘corbama-brut-nko’ subcorpus.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;emk&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;tuma bɛɛ&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">writing_system</span><span class="o">=</span><span class="s1">&#39;latin&#39;</span><span class="p">,</span> <span class="n">kwic</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;tuma bɛɛ&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  9.62docs/s]
+
+1 14 alu tɛdɛ alu ladɛla alla tara kanma tuma bɛɛ .
+2 ‹ n ka faama ye n ɲɛ tuma bɛɛ .
+3 alu kan ko : « cɛ nin ye kuma juu fɔla yɔrɔ saniman nin ma tuma bɛɛ , ka kuma juu fɔ kela musa la sariya fanan ma .
+4 1 wo tuma , sɔli tɛdɛ faama isa la karandennu la ɲanamaya masilanna tuma bɛɛ .
+5 moso wo tɛdɛ koɲuma kɛla tuma bɛɛ ka fantannu dɛmɛn .
+6 a tɛdɛ yahudiya fantannu sɔla kosɛbɛ , ka alla tara tuma bɛɛ .
+7 17 kɔnin a tɛdɛ a jɛdɛ yidakala alu la tuma bɛɛ ala kewaliɲumalu fɛ .
+8 16 wo le dɔ , n ye n dɔjala tuma bɛɛ sa n kɔnɔgbɛyanɛn di to .
+9 wo le dɔ , a tɛdɛ pɔli kilila tuma bɛɛ ka bado kɛ a fɛ .
+10 29 n ye a fɛ le jusu wo ɲɔɔn ye kɛ alu bolo tuma bɛɛ ka silan n ɲɛ ka nna jamarililu bɛɛ latelen , sa alu ni alu kɔmɔɔlu bɛɛ di hɛrɛ sɔdɔn kadawu .
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.mon_corpus"></span><div class="section" id="mongolian-corpus">
+<h2>Mongolian Corpus<a class="headerlink" href="#mongolian-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Mongolian corpus (<a class="reference external" href="http://web-corpora.net/MongolianCorpus/search/">http://web-corpora.net/MongolianCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;mon&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;ОХУ&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;ОХУ&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 89.05docs/s]
+
+1 )1996 Канад Швед ОХУ Бостон АНУ)
+2 )1997 Канад АНУ ОХУ Женев,Морже Швейцарь)
+3 )2000 Чех ОХУ Канад Шеллефтео,Умео Швед)
+4 )2007 Канад ОХУ АНУ Мора,Лександ Швед)
+5 )2009 Канад Швед ОХУ Оттава Канад)
+6 )2011 ОХУ Канад АНУ Баффало АНУ)
+7 )2005 Канад ОХУ Чех Грэнд Форкс,АНУ)
+8
+Хагас шигшээгийн хоёр дахь тоглолтод өүхлийн хэсэгтө Канад,Чех,ОХУ гээд хоккейн луухгаруудтай багтсан ч нэг хожигдолгүй хэсэгтээ тэргүүлж,хагас шигшээд шууд шалгарсан өГурван титэмтө Швед  энэ тэмцээнд эхлээд Канад,Шведийн багт хожигдож,ирээдүй нь нилээд бүрхэг болоод байсан ч Норвеги,Чехийн багийг дараалан хожиж плей-оффын эрхээ аваад хагас шигшээд үлдэх эрхийн төлөө Финландын багт тоглолтын цаг дуусахад 4 минут орчим дутуу байхад 1:3-аар хожигдож яваад 3:3 болгож дөнгөсөн,улмаар нэмэлт цагт хожлын шайб оруулан гайхамшигтай ялалт байгуулсан Оросын залуучууд хоорондоо таарсан.
+9 )2006 Канад ОХУ Финланд Ванкувер Канад)
+10 .Канада ОХУ 3:5 2:0,1:0,0:5)
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.grk_corpus"></span><div class="section" id="modern-greek-corpus">
+<h2>Modern Greek Corpus<a class="headerlink" href="#modern-greek-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Modern Greek corpus (<a class="reference external" href="http://web-corpora.net/GreekCorpus/search/">http://web-corpora.net/GreekCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;grk&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;γλώσσα&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;γλώσσα&quot;: 100%|██████████| 10/10 [00:03&lt;00:00,  2.95docs/s]
+
+1
+Έτσι, στο όνομα του Ιησού όλα τα επουράνια, τα επίγεια και τα υποχθόνια θα προσκυνήσουν,και κάθε γλώσσα θα ομολογήσει ότι Κύριος είναι ο Ιησούς Χριστός, για να δοξάζεται έτσι ο θεός
+2
+Στο χωριό σήμερα ζουν περίπου 1.200 κάτοικοι, από τους οποίους οι 250-300 μιλούν την ελληνική γλώσσα.
+3
+Προτιμώ λοιπόν να το πω διότι αυτή είναι η γλώσσα της αλήθειας.
+4  «Για την Ελλάδα οι διαπραγματεύσεις που γίνονται στο πλαίσιο του ΟΗΕ έχουν χρονικό ορίζοντα και είναι η πρόσκληση της γειτονικής χώρας στο ΝΑΤΟ » υπογράμμισε η ελληνίδα ΥΠΕΞ Σκληρή γλώσσα έναντι των Σκοπίων χρησιμοποίησε η Ντόρα Μπακογιάννη από τις Βρυξέλλες, μετά και τη νέα πρόκληση των γειτόνων μας να μην επιτρέψουν την ελληνική εθνική ομάδα της σκοποβολής να περάσει από το έδαφός τους, κάτι το οποίο ούτε καν σχολίασε η ηγεσία της ΠΓΔΜ.
+5
+Τα μαθήματα διδάσκονται από Ελληνες και ξένους (σε κάθε γλώσσα) διδάσκοντες.
+6
+Η αρνητική γλώσσα του παρελθόντος έχει προκαλέσει απώλειες και δεν πρέπει να χαραμίσουμε άλλο χρόνο ή ενέργεια σε αυτήν.
+7
+Φέτος, λόγω του κακού προγραμματισμού των διευθύνσεων Δευτεροβάθμιας Εκπαίδευσης και μετά από αδικαιολόγητη καθυστέρηση, προσλήφθηκαν τελικά στο τέλος της σχολικής χρονιάς 52 αναπληρωτές, με αποτέλεσμα 5.000 μαθητές σε όλη τη χώρα που είχαν επιλέξει να διδαχθούν την Ιταλική Γλώσσα να μείνουν στα προαύλια των σχολείων σε κενή-ελεύθερη ώρα ή να προωθηθούν σε άλλη γλώσσα.
+8
+Νομίζουμε ότι επειδή έχουμε σταρ μπροστά στην κάμερα, γνωρίζουμε τη γλώσσα του σώματος.
+9
+Σε νέα βερσιόν, στην αγγλική γλώσσα, ετοιμάζεται να κυκλοφορήσει από τη Sony Pictures Classics, το γαλλικό πολιτικό δράμα κινουμένων σχεδίων «Περσέπολις ».
+10
+Ο υποθάλαμος, δηλαδή, είναι ένα υπερόργανο, όπου τα μυστηριώδη μηνύματα του εγκεφάλου, τα οποία προέρχονται από εξωτερικά ή εσωτερικά ερεθίσματα και τ’αξιοποιούν οι αισθήσεις, μετατρέπονται σε μηνύματα νευροδιαβιβαστών και ηλεκτρικών παλμών και μεταφράζονται τελικά σε μια νέα γλώσσα: τη γλώσσα των ορμονών του υποθαλάμου.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.yid_corpus"></span><div class="section" id="modern-yiddish-corpus">
+<h2>Modern Yiddish Corpus<a class="headerlink" href="#modern-yiddish-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Modern Yiddish corpus (<a class="reference external" href="http://web-corpora.net/YMC/search/">http://web-corpora.net/YMC/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;yid&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;gut&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;gut&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.17docs/s]
+
+1
+עס איז גוט באַקאַנט, אַז די פּאַרטײ און סטאַלין אַלײן האָבן געהאַלטן אַ וואַכיק אויג אויף דער ליטעראַטור און קונסט.
+2
+זיכער האָט ראַבײַ טראַוויס געווירקט אויפֿן אָנגעזאַמלטן עולם וועלכער האָט גאַנץ גוט געוווּסט וואָס עס מיינט אַראָפּצונידערן אַליין, און אַ סך פֿון אים האָבן גאַנץ גוט געוווּסט וואָס מען מיינט מיטן זאָג &quot;זײַן,&quot; צי דאָס האָט געמיינט צו באַקלערן זיך, צו טראַכטן אָדער צו לעבן אינעם מאָמענט.
+3
+עס וואָלט געווען גוט צו וויסן צי איבערזעצונגען פֿון ייִדיש, &quot;משפּחה מאַשבער“ בתוכם, ווערן געלייענט אין די לייען-קלובן און קרײַזלעך, וואָס זענען טעטיק אין אַלע וויקנלעך פֿון דער וועלט.
+4
+אַ גרויסע טייל פֿאַבריקן האָבן אין גאַנצן אײַנגעשטעלט אָפּגעשטעלט די אַרבעט, אַנדערע האָבן דערווײַל נאָר אָפּגעזאָגט האַלב אָדער צוויי-דריטל פֿון זייערע אַרבעטער, ווײַל זיי האָבן נאָך גערעכנט, אַז דער פּלוצלונגער קריזיס וועט שנעל איבערגיין און די געשעפֿטן וועלן צוריק אויפֿלעבן ווי געווען; אָבער די אמתע קלוגע געשעפֿטסלײַט, וועלכע האָבן גוט פֿאַרשטאַנען פֿון וואַנען דער פּלוצלונגער קריזיס האָט זיך גענומען, האָבן ניט פֿיל געהאָפֿט אויף דער צוקונפֿט.
+5
+ווען מע שטרעבט צו זײַן גוט און צו אַנטפּלעקן ג־טלעכקייט אין זיך און אין דער אַרומיקער וועלט, קאָן מען דערגרייכן דאָס אמתע חשיבֿות פֿון דער מענטשלעכער נשמה, די מדרגה פֿון &quot;אַשר לא ימד ולא יספר&quot;, דאָס ליכט פֿונעם ג-טלעכן אין־סוף, וואָס פֿאַראייניקט דאָס גאַנצע וועזן, העכער פֿון אַלע גרענעצן און חשבונות.
+6
+און לסוף, די אייביקע פֿראַגע: צי איז גוט דער נײַער פּרעזידענט פֿאַר די ייִדן?
+7
+31:18 זי מערקט אַז איר פֿאַרדינסט איז גוט; ניט פֿאַרלאָשן בייַ נאַכט ווערט איר ליכט.
+8
+דער אמתער &quot;בערמודער דרײַעק&quot;, וואָס געפֿינט זיך אין אַטלאַנטישן אָקעאַן, צווישן די בערמודער אינדזלען, פּוערטאָ־ריקאָ און פֿלאָרידע, איז גוט באַקאַנט, ווי אַן אָרט, וווּ עס לויערט די סכּנה איבער די שיפֿן אומגעבראַכט אָדער פֿאַרשוווּנדן צו ווערן.
+9
+אַזוי איז זרח געקומען נאָך יאָהרען אַהיים צו זייַן ווייַב צירלען צוריק, וימצאה בריאה ושלמה, און האָט זי געפונען געזונד און פריש, וואָרום זי האָט די גאַנצע צאָהל יאָהר נישט איין מינוט פערלוירען דעם בטחון, און האָט יעדען טאָג געהאָפט צו גאָט, אַז זרח איהר מאַן וועט קומען אַהיים און אַלץ וועט נאָך ווערען גוט.
+10
+זיי ווייסן גענוי, וואָס איז גוט און וואָס איז שלעכט.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.pol_corpus"></span><div class="section" id="national-corpus-of-polish">
+<h2>National Corpus of Polish<a class="headerlink" href="#national-corpus-of-polish" title="Permalink to this headline">¶</a></h2>
+<p>API for National Corpus of Polish (<a class="reference external" href="http://nkjp.pl/">http://nkjp.pl/</a>)</p>
+<p><strong>Search Parameters</strong>
+-
+query: str:</p>
+<blockquote>
+<div>Search by word.</div></blockquote>
+<dl class="docutils">
+<dt>n_results: int, default 100</dt>
+<dd>Number of results.
+In case of Polisg Corpus it does NOT work like the less the number the higher speed.</dd>
+<dt>n_left: int, default 5</dt>
+<dd>Number of words in the left context.</dd>
+<dt>n_right: int, default 5</dt>
+<dd>Number of words in the right context.</dd>
+<dt>subcorpus: str, default ‘nkjp300’</dt>
+<dd><dl class="first last docutils">
+<dt>Subcorpus to search in. Available options:</dt>
+<dd><ul class="first last simple">
+<li>‘nkjp300’: balanced NKJP subcorpus (300M segments)</li>
+<li>‘nkjp1800’: the full NKJP sorpus (1800M segments)</li>
+<li>‘nkjp1M’: manually annotated corpus (1.2M segments)</li>
+<li>‘ipi250’: the full IPI PAN corpus (2nd edition, 250M segments)</li>
+<li>‘ipi030’: the IPI PAN corpus sample (2nd edition; 30M segments)</li>
+<li>‘frequency-dictionary’: the Frequency Dictionary Corpus (0.5M segments)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>Whether to download grammatical information if the corpus is annotated.</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;pol&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;żaba&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;żaba&quot;: 100%|██████████| 10/10 [00:11&lt;00:00,  1.12s/docs]
+
+1  nie grzbiet, tylko zielona żaba rozpłaszczona na ropusze. Podróżowała
+2  woli skakać po łące jaka żaba . Nie może przestać wierzyć
+3  sobie zapewne, że to żaba błotna. - Tańcio!
+4 . Jak... żaba w raju. - Sprzątanie
+5 , rozdęta, bardzo pryszczata żaba . Brwi maga podjechały do
+6 , czuły na wilgoć jak żaba . Rzeczywiście, ja też
+7  potrafię tego uczynić. Czyż żaba może śpiewać jak skowronek lub
+8  Wpadłaś w kałużę, żaba ? - Nie jestem zadna
+9 em na plecach bezradnie jak żaba , przygnieciony przez Agnieszkę.
+10  opuchlizny. Wyglądał jak rozdeptana żaba . Pomyślałem, że
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.rus_corpus"></span><div class="section" id="national-corpus-of-russian">
+<h2>National Corpus of Russian<a class="headerlink" href="#national-corpus-of-russian" title="Permalink to this headline">¶</a></h2>
+<p>API for National Corpus of Russian (<a class="reference external" href="http://ruscorpora.ru/index.html">http://ruscorpora.ru/index.html</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>num_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not</dd>
+<dt>subcorpus: str, default ‘main’</dt>
+<dd><p class="first">subcorpus.
+Valid: [‘main’, ‘syntax’, ‘paper’, ‘regional’, ‘school’,</p>
+<blockquote class="last">
+<div>‘dialect’, ‘poetic’, ‘spoken’, ‘accent’, ‘murco’,
+‘multiparc’, ‘old_rus’, ‘birchbark’, ‘mid_rus’, ‘orthlib’]</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;rus&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;сердце&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">subcorpus</span><span class="o">=</span><span class="s1">&#39;poetic&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;сердце&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 23.94docs/s]
+
+1   Не будильник поставлен на шесть,  а колотится сердце быстрей.
+2   Да и сердце легче бьется ― поддается уговорам.
+3   Прелесть, от нее дрожит сердце возле птиц или ночниц бледных.
+4   Чтоб они стали перинами белыми с мягкой опорой на дне,  и невредимыми съехали, целыми дети на той стороне.   Сердце привязано ниткой невидимой.   Нить коротка, а земля велика.
+5   Моя мама умерла девятого мая, когда всюду день-деньской надрывают сердце «аты-баты» ― коллективный катарсис такой.
+6  Чтобы скорей, скорей горло его достать.   Сердце его потрогать.
+7   И ― прочь через площадь в закатных лучах В какой-нибудь Чехии, Польше… Разбитое сердце, своя голова на плечах ― Чего тебе больше?
+8   «Хотел бы я знать, если Бог повелит,  О чем твое старое сердце болит».
+9   Когда уйдет последний друг И в сердце перемрут подруги,  Я очерчу незримый круг И лиру заключу в том круге.
+10   О том не надо вспоминать,  Но что-то в сердце изломилось:  ― Не узнаю родную мать.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.rus_parallel_corpus"></span><div class="section" id="national-corpus-of-russian-parallel-subcorpus">
+<h2>National Corpus of Russian: Parallel Subcorpus<a class="headerlink" href="#national-corpus-of-russian-parallel-subcorpus" title="Permalink to this headline">¶</a></h2>
+<p>API for parallel subcorpus of National Corpus of Russian (<a class="reference external" href="http://ruscorpora.ru/search-para-en.html">http://ruscorpora.ru/search-para-en.html</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not</dd>
+<dt>subcorpus: str, default ‘rus’</dt>
+<dd><p class="first">subcorpus (‘rus’ - search query over all subcorpora).
+Valid: [‘rus’, ‘eng’, ‘bel’, ‘bul’, ‘bua’, ‘esp’, ‘ita’,</p>
+<blockquote>
+<div>‘zho’, ‘lav’, ‘ger’, ‘pol’, ‘ukr’,
+‘fra’, ‘sve’, ‘est’]</div></blockquote>
+<dl class="last docutils">
+<dt>query_language: str</dt>
+<dd>language of the ‘query’</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;rus_parallel&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;авось&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">query_language</span><span class="o">=</span><span class="s1">&#39;rus&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;авось&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 20.01docs/s]
+
+1   – Русский человек крепок на трех сваях – «авось», «небось» и «как-нибудь».
+2   – Я признаться уж не верю-с… – Порфирий Петрович махнул рукой. – Ничего мы тут не зацепим. Кругом одна безнадежность… А впрочем сходите.    Авось вам больше моего повезет.    И ведь как в воду смотрел.
+3   Русский злодей горяч и нерасчетлив, крушит на авось.
+4   Во-первых, преступление все-таки оказалось не европейское, а русское, на авось.
+5   Да еще нумер каждому проставьте.    Ничего, авось не перепутаем-с.    Я их всех уж наизусть успел выучить.
+6   Никто, естественно, не запретит вашей милости кропать новые эпистолы, ибо капля камень точит, как знать, авось кто-нибудь из кардиналов наконец поддастся, возможно, меня наконец отзовут.
+7   Положение его, конечно, аховое, но в глубине сознания все-таки теплилась маленькая надежда.    На авось или, может, на чудо.    Когда другого не находилось, обычно полагались на чудо, так было всегда.
+8   Положение его, конечно, аховое, но в глубине сознания все-таки теплилась маленькая надежда.    На авось или, может, на чудо.    Когда другого не находилось, обычно полагались на чудо, так было всегда.
+9   Чудо, конечно, выручало редко, больше подводило, особенно атеистов-большевиков, которые теперь так дружно стали взывать к христианскому чуду.    Авось выручит!    ―
+10   Чудо, конечно, выручало редко, больше подводило, особенно атеистов-большевиков, которые теперь так дружно стали взывать к христианскому чуду.    Авось выручит!    ―
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.rus_pol_corpus"></span><div class="section" id="polish-russian-parallel-corpus">
+<h2>Polish-Russian Parallel Corpus<a class="headerlink" href="#polish-russian-parallel-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Polish-Russian Parallel Corpus (<a class="reference external" href="http://pol-ros.polon.uw.edu.pl/">http://pol-ros.polon.uw.edu.pl/</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (currently only exact search by word or phrase is available)</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>tag: bool, default False</dt>
+<dd>whether to collect grammatical tags for target word or not (False by default)</dd>
+<dt>subcorpus: list</dt>
+<dd><p class="first">subcorpus (all of the mentioned below by default).
+Valid: [‘non-fiction’, ‘fiction&lt;1945’, ‘fiction&gt;1945’, ‘press’, ‘law’, ‘religious’,</p>
+<blockquote class="last">
+<div>‘russian’, ‘foreign’, ‘polish’]</div></blockquote>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;rus_pol&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;лягушка&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">query_language</span><span class="o">=</span><span class="s1">&#39;rus&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.sl_dict"></span><div class="section" id="spreadthesign-sign-language-dictionary">
+<h2>Spreadthesign Sign Language Dictionary<a class="headerlink" href="#spreadthesign-sign-language-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>API for Spreadthesign sign language dictionary (<a class="reference external" href="https://www.spreadthesign.com/">https://www.spreadthesign.com/</a>)</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries (only exact search by word is available)</dd>
+<dt>subcorpus: str or list([str]), default ‘ru.ru’</dt>
+<dd><p class="first">target sign language.
+Valid (use abbreviations):</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>{‘Russian’: ‘ru.ru’, ‘Swedish’: ‘sv.se’,</dt>
+<dd>‘American English’: ‘en.us’, ‘British English’: ‘en.gb’,
+‘Mexican Spanish’: ‘es.mx’, ‘Czech’: ‘cs.cz’, ‘Lithuanian’: ‘lt.lt’,
+‘Spanish’: ‘es.es’, ‘Portuguese’: ‘pt.pt’, ‘Japanese’: ‘ja.jp’,
+‘German’: ‘de.de’, ‘French’: ‘fr.fr’, ‘Turkish’: ‘tr.tr’,
+‘Portuguese (Brasil)’: ‘pt.br’, ‘Italian’: ‘it.it’, ‘Polish’: ‘pl.pl’,
+‘Icelandic’: ‘is.is’, ‘German (Austria)’: ‘de.at’, ‘Estonian’: ‘et.ee’,
+‘Latvian’: ‘lv.lv’, ‘English (India)’: ‘en.in’, ‘Bulgarian’: ‘bg.bg’,
+‘Chinese’: ‘zh.hans.cn’, ‘Urdu’: ‘ur.pk’, ‘Croatian’: ‘hr.hr’,
+‘Russian (Belarus)’: ‘ru.by’}</dd>
+</dl>
+</div></blockquote>
+</dd>
+<dt>query_language: str</dt>
+<dd>language of the ‘query’. Same languages as for ‘subcorpus’ argument are valid.</dd>
+<dt>variants: bool, default False</dt>
+<dd>Whether to enable to see variants of one sign (if exist).</dd>
+<dt>only_link: bool, default False</dt>
+<dd>Whether to enable if you want videos to be downloaded.
+If you don’t want to download videos use links from <code class="docutils literal notranslate"><span class="pre">Target.transl</span></code>.</dd>
+<dt>sentences: bool</dt>
+<dd>In some cases you can search for the whole sentences be a word.</dd>
+</dl>
+</div>
+<span class="target" id="module-lingcorpora.corpora.slk_corpus"></span><div class="section" id="slovak-corpus">
+<h2>Slovak Corpus<a class="headerlink" href="#slovak-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Slovak corpus (<a class="reference external" href="http://korpus.juls.savba.sk:8080/manatee.ks/do_query">http://korpus.juls.savba.sk:8080/manatee.ks/do_query</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>subcorpus: str, default ‘prim-6.0-public-all’</dt>
+<dd>subcorpus. Available options: ‘prim-6.0-public-all’, ‘r-mak-3.0’</dd>
+<dt>start: int, default 0</dt>
+<dd>index of the first query appearance to be shown</dd>
+</dl>
+</div>
+<span class="target" id="module-lingcorpora.corpora.tat_corpus"></span><div class="section" id="tatar-corpus">
+<h2>Tatar Corpus<a class="headerlink" href="#tatar-corpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Tatar corpus (<a class="reference external" href="http://web-corpora.net/TatarCorpus/">http://web-corpora.net/TatarCorpus/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str])</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;tat&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;теле&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;теле&quot;: 100%|██████████| 10/10 [00:02&lt;00:00,  4.85docs/s]
+
+1
+Ир-егетләреңдәй дәртле, Гайрәтле син, татар теле.
+2
+гел Гадел Кутуй 348 украин теле.
+3
+Аның тагы башы әйләнә башлады, авызы кипте, теле әйләнмәс хәлгә килде.
+4
+Хәзер РИУда татар теле күп булмаса да фән буларак укытыла.
+5
+— Татар теле һәм әдәбияты.
+6
+Хәбибуллин укый торган класска җитәкче итеп беркетелгән ана теле укытучысы белән сөйләште.
+7
+Тик шунысы кызганыч һәм сәер, шул кеше мәктәпләрдә милли компонетларны бетерүче мәгънәсез указга ашыгыч рәвештә кул куйды.) Татар теле төрле чорлар кичерде.
+8
+Гомумән, җыеп әйткәндә, татар теле синтаксисы галим тарафыннан бербөтен система итеп тирәнтен өйрәнелә һәм нәтиҗәләр 1958 елда «Хәзерге татар әдәби теле: Синтаксис» исемендә басылып чыга.
+9
+Шагыйрь әсәрләрендә рус теле аркылы шактый күп санда Көнбатыш Европа телләреннән дә алынмалар кулланылган.
+10
+Сүз җаеннан аңлашылганча, мәкаләдә вакытлы матбугат теле турында гына фикер әйтелә, ягъни Г.
+</pre></div>
+</div>
+</div>
+<span class="target" id="module-lingcorpora.corpora.udm_corpus"></span><div class="section" id="udmurt-orpus">
+<h2>Udmurt Сorpus<a class="headerlink" href="#udmurt-orpus" title="Permalink to this headline">¶</a></h2>
+<p>API for Udmurt corpus (<a class="reference external" href="http://web-corpora.net/UdmurtCorpus/search/">http://web-corpora.net/UdmurtCorpus/search/</a>).</p>
+<p><strong>Search Parameters</strong></p>
+<dl class="docutils">
+<dt>query: str or list([str]):</dt>
+<dd>query or queries</dd>
+<dt>n_results: int, default 100</dt>
+<dd>number of results wanted</dd>
+<dt>kwic: bool, default True</dt>
+<dd>kwic format (True) or a sentence (False)</dd>
+<dt>get_analysis: bool, default False</dt>
+<dd>tags shown (True) or not (False)</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;udm&#39;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;кыл&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;кыл&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.64docs/s]
+
+1
+Абхазилэн обороная министрез кылсёoӥc: Грузия ожмаськонзэ ӧc дугдытыке, со кыкетӥ фронт усьтоз.
+2
+Ми палан 80 процентэз улӥсьёс - удмуртъёс, нош школаын удмурт кыл быдтэмын.
+3
+Озьы шуи ке, янгыш уг луы, дыр, уго ужало соос «Ӟеч-а, бур-а, удмурт кыл » книгая, кудӥз чакламын воксё удмуртсэ тодӥсьтэм ӟуч нылпиослы.
+4
+Соос пӧлын нимаз ӧвӧл ӟуч литература, вань ӟуч кыл но литература.
+5
+Одӥг кыл гинэ верай вал.
+6
+История уг яраты трос кыл быдтэмез, со эскере документъёсты, учыръёсты.
+7
+Азьвыл аръёсы сямен ик, Гурт шудонъёсын ыбылӥськонэ пыриськозы полиатлонистъёс но ёрос йыръёс гинэ.- Мугорез кыдатонэ трос калыкез кыскон понна специалистъёс но тырмыт луыны кулэ, дыр?- Ёросысь мугорез кыдатон культураез но спортэз азинтон удысын 70 мурт ужа: нылпи садъёсын, школаосын физкультураез нуисьёс, профессиональной колледжысь преподавательёс, предприятиосын но организациосын 6 мурт спортэз азинтон понна кыл кутэ.
+8
+Мон валасько семьяе азьын кыл кутонме,«пӧйшурась » луэмме.- Мон малпай вал, али Д. Донцовалэн кадь книгаос гинэ коньдон ваё...- Кудласянь учкод ведь гожъямъёсыд шоры.
+9
+Нылкышно пал кыл но ӧз тоды ӟуч сямен.
+10
+Базарын китай сямен вераськимы ни, отын, конешно, дасо кыл но тырмыт.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lingcorpora_guide.html" class="btn btn-neutral float-right" title="Making New API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api.html" class="btn btn-neutral float-left" title="API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2019, School of Linguistics, HSE
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>lingcorpora: documentation &mdash; lingcorpora 2.0rc0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> lingcorpora
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corpora.html">Corpus List</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lingcorpora_guide.html">Making New API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">lingcorpora</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>lingcorpora: documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lingcorpora-documentation">
+<h1>lingcorpora: documentation<a class="headerlink" href="#lingcorpora-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This package includes API for more than 20 online text corpora including:</p>
+<ul class="simple">
+<li>National Corpus of Russian Language</li>
+<li>Parallel subcorpus of National Corpus of Russian Language</li>
+<li>Center of Chinese Linguistics corpus</li>
+<li>Corpus Bambara de Reference</li>
+<li>Maninka Automatically Parsed corpus</li>
+</ul>
+<p>R version of this package by George Moroz is located <a class="reference external" href="https://github.com/lingcorpora/lingcorpora.R">here</a>.</p>
+<p>The package is available under <a class="reference external" href="https://github.com/lingcorpora/lingcorpora.py/blob/master/LICENSE.md">MIT license</a>.</p>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>The project is maintained by <a class="reference external" href="https://github.com/kategerasimenko">Ekaterina Gerasimenko</a> and <a class="reference external" href="https://github.com/akv17">Artyom Kopetskiy</a>.
+At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Michael Voronov and George Moroz.</p>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-lingcorpora.corpus">Corpus object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-lingcorpora.result">Working with results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="corpora.html">Corpus List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#adyghe-orpus">Adyghe Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#albanian-orpus">Albanian Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#almaty-corpus-of-the-kazakh-language">Almaty Corpus of the Kazakh Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#bamana-corpus">Bamana Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#buryat-orpus">Buryat Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#chinese-corpus">Chinese Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#crimean-tatar-orpus">Crimean Tatar Сorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#danish-corpus">Danish Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#eastern-armenian-corpus">Eastern Armenian Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#estonian-corpus">Estonian Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#german-corpus">German Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#georgian-monolingual-corpus">Georgian Monolingual Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#hindi-corpus">Hindi Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#jukuu-chinese-english-subcorpus">JuKuu: Chinese-English Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#jukuu-japanese-chinese-subcorpus">JuKuu: Japanese-Chinese Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#jukuu-japanese-english-subcorpus">Jukuu: Japanese-English Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#kalmyk-corpus">Kalmyk Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#maninka-corpus">Maninka Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#mongolian-corpus">Mongolian Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#modern-greek-corpus">Modern Greek Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#modern-yiddish-corpus">Modern Yiddish Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#national-corpus-of-polish">National Corpus of Polish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#national-corpus-of-russian">National Corpus of Russian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#national-corpus-of-russian-parallel-subcorpus">National Corpus of Russian: Parallel Subcorpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#polish-russian-parallel-corpus">Polish-Russian Parallel Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#spreadthesign-sign-language-dictionary">Spreadthesign Sign Language Dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#slovak-corpus">Slovak Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#tatar-corpus">Tatar Corpus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corpora.html#udmurt-orpus">Udmurt Сorpus</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reporting-a-bug-requesting-functionality">
+<h3>Reporting a bug &amp; requesting functionality<a class="headerlink" href="#reporting-a-bug-requesting-functionality" title="Permalink to this headline">¶</a></h3>
+<p>You can report a bug, ask a question or suggest adding features via <a class="reference external" href="https://github.com/lingcorpora/lingcorpora.py/issues">Issues</a> in the repository.</p>
+</div>
+<div class="section" id="making-new-corpora-and-proposing-changes">
+<h3>Making new corpora and proposing changes<a class="headerlink" href="#making-new-corpora-and-proposing-changes" title="Permalink to this headline">¶</a></h3>
+<p>You are welcome to suggest your improvements to the source code and make APIs for more corpora. You should propose changes via <a class="reference external" href="https://help.github.com/articles/about-pull-requests/">pull requests</a>. Your code should fit into the overall structure, which is described in the guide in the following guide:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lingcorpora_guide.html">Making New API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lingcorpora_guide.html#main-concept">Main concept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lingcorpora_guide.html#to-make-a-new-api">To make a new API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lingcorpora_guide.html#api-template">API template</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017-2019, School of Linguistics, HSE
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

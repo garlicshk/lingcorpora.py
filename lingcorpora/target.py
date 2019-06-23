@@ -5,25 +5,72 @@ import re
 
 
 class Target:
-
-    def __init__(
-        self,
-        text,
-        idxs,
-        meta,
-        analysis,
-        gr_tags=None,
-        transl=None,
-        lang=None
+    """Target contains one item from the result list.
+    
+    Parameters
+    ----------
+    text: str
+        full sentence / document.
+    idxs: tuple (l, r)
+        target indexes in self.text -> self.text[l:r].
+    meta: str
+        sentence / document info (if exists).
+    analysis: dict
+        target analysis (parsed).
+    gr_tags: str, default None
+        grammatical tags passed by user.
+    transl: str, default None
+        text translation (for parallel corporas and dictionaries).
+    lang: str, default None
+        translation language (for parallel corporas and dictionaries).
+    
+    Examples
+    --------
+    .. code-block:: python
+    
+        >>> rus_corp = lingcorpora.Corpus('rus')
+        >>> rus_results = rus_corp.search('одеяло', n_results = 10, get_analysis=True)[0]
+        >>> first_hit = rus_results[0]
+        >>> first_hit
+        Target(одеяло, Народный костюм: архаика или современность? // «Народное творчество», 2004)
+    
+    .. code-block:: python
+    
+        >>> for k, v in vars(first_hit).items():
+        >>> print(k, v)
+        text  Я, например, для внучки настегала своими руками лоскутное одеяло, зная, что оно будет её оберегать, давать ей энергию. 
+        idxs (59, 65)
+        meta Народный костюм: архаика или современность? // «Народное творчество», 2004
+        tags {'lex': ['одеяло'], 'gramm': ['S', 'inan', 'n', 'sg', 'acc', 'disamb'], 'sem': ['r:concr', 't:tool:bedding'], 'flags': ['animred', 'bcomma', 'bmark', 'casered', 'genderred', 'numred']}
+        transl None
+        lang None
+    """
+    def __init__(self,
+                 text,
+                 idxs,
+                 meta,
+                 analysis,
+                 gr_tags=None,
+                 transl=None,
+                 lang=None
     ):
         """
-        text: str: full sentence / document
-        idxs: tuple (l, r): target idxs in self.text -> self.text[l:r]
-        meta: str: sentence / document info (if exists)
-        analysis: dict?: target analysis (parsed)
-        gr_tags: str or None: grammatical tags passed by user
-        transl: str or None: text translation (for parallel corporas and dictionaries)
-        lang: str or None: translation language (for parallel corporas and dictionaries)
+        Parameters
+        ----------
+        text: str
+            full sentence / document.
+        idxs: tuple (l, r)
+            target idxs in self.text -> self.text[l:r]
+        meta: str
+            sentence / document info (if exists)
+        analysis: dict?, default None
+            target analysis (parsed)
+        gr_tags: str, default None
+            grammatical tags passed by user
+        transl: str, default None
+            text translation (for parallel corporas and dictionaries)
+        lang: str, default None
+            translation language (for parallel corporas and dictionaries)
         """
         
         self.text = text
@@ -65,9 +112,28 @@ class Target:
         return (l, c, r)
     
     def kwic(self, left, right, level='word'):
-        """
-        level: ['word', 'char']: if "word" - split by words
-                                 if "char" - split by characters
+        """This function makes ``kwic`` format for an item for further usage and csv output.
+        
+        Parameters
+        ----------
+        left: int
+            length of left context
+        right: int
+            length of right context
+        level: str, default word
+            counting context length by tokens (word) or by characters (char)
+        
+        Examples
+        --------
+        .. code-block:: python
+        
+            >>> first_hit.kwic(left=5, right=5)
+            ('внучки настегала своими руками лоскутное',
+            'одеяло',
+            ', зная, что оно будет её')
+        
+            >>> first_hit.kwic(left=30, right=30, level='char')
+            ('егала своими руками лоскутное ', 'одеяло', ', зная, что оно будет её обере')
         """
 
         # ISSUE: 'one , two, three >> kwic(1, 1, word) >> (',', 'two', ',three')

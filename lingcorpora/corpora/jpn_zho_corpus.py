@@ -9,16 +9,50 @@ from ..exceptions import EmptyPageException
 
 __author__ = 'maria-terekhina'
 __doc__ = \
-    '''
-    API for Japanese-Chinese subcorpus of JuKuu corpus (http://www.jukuu.com/)
-    Args:
-        query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-        n_results: int: number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)
-        kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-        get_analysis: boolean: not relevant for this corpus
-        subcorpus: str: not relevant for this corpus 
-        query_language: str: language of the 'query'
-    '''
+'''
+JuKuu: Japanese-Chinese Subcorpus
+=================================
+
+API for Japanese-Chinese subcorpus of JuKuu corpus (http://www.jukuu.com/)
+
+**Search Parameters**
+
+query: str or list([str])
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+query_language: str
+    language of the 'query'
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('jpn_zho')
+    results = corp.search('錬', n_results = 10, query_language='jpn')
+    for result in results:
+        for i,target in enumerate(result):
+            print(i+1,target.text)
+
+.. parsed-literal::
+
+    "錬": 100%|██████████| 10/10 [00:04<00:00,  2.08docs/s]
+
+    1  粗銅を精錬して純銅にする 
+    2  鉄鉱石を溶かして精錬する 
+    3  鉱石から金属を製錬する 
+    4  百戦錬磨を経てきた軍隊 
+    5  百戦錬磨の老戦士 
+    6  このうえさらに体の鍛錬を必要とする 
+    7  心身を修錬する 
+    8  てつを製錬する 
+    9  百戦錬磨を経る 
+    10  金属を製錬する 
+
+'''
 
 TEST_DATA = {'test_single_query': {'query': 'のも', 'query_language': 'jpn'},
              'test_multi_query': {'query': ['のも', 'ある'], 'query_language': 'jpn'}

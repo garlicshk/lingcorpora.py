@@ -16,22 +16,53 @@ __author__ = 'akv17'
 
 __doc__ = \
 """
+National Corpus of Russian
+==========================
+
 API for National Corpus of Russian (http://ruscorpora.ru/index.html)
 
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    num_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    get_analysis: boolean: whether to collect grammatical tags for target word or not (False by default)
-    subcorpus: str: subcorpus ('main' by default).
-                    Valid: ['main', 'syntax', 'paper', 'regional', 'school',
-                            'dialect', 'poetic', 'spoken', 'accent', 'murco',
-                            'multiparc', 'old_rus', 'birchbark', 'mid_rus', 'orthlib']
+**Search Parameters**
 
-Main method: extract
+query: str or list([str])
+    query or queries (currently only exact search by word or phrase is available)
+num_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+get_analysis: bool, default False
+    whether to collect grammatical tags for target word or not
+subcorpus: str, default 'main'
+    subcorpus.
+    Valid: ['main', 'syntax', 'paper', 'regional', 'school',
+            'dialect', 'poetic', 'spoken', 'accent', 'murco',
+            'multiparc', 'old_rus', 'birchbark', 'mid_rus', 'orthlib']
 
-Returns:
-    A generator over Target objects.
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('rus')
+    results = corp.search('сердце', n_results=10, subcorpus='poetic')
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "сердце": 100%|██████████| 10/10 [00:00<00:00, 23.94docs/s]
+
+    1   Не будильник поставлен на шесть,  а колотится сердце быстрей. 
+    2   Да и сердце легче бьется ― поддается уговорам. 
+    3   Прелесть, от нее дрожит сердце возле птиц или ночниц бледных. 
+    4   Чтоб они стали перинами белыми с мягкой опорой на дне,  и невредимыми съехали, целыми дети на той стороне.   Сердце привязано ниткой невидимой.   Нить коротка, а земля велика. 
+    5   Моя мама умерла девятого мая, когда всюду день-деньской надрывают сердце «аты-баты» ― коллективный катарсис такой. 
+    6  Чтобы скорей, скорей горло его достать.   Сердце его потрогать. 
+    7   И ― прочь через площадь в закатных лучах В какой-нибудь Чехии, Польше… Разбитое сердце, своя голова на плечах ― Чего тебе больше? 
+    8   «Хотел бы я знать, если Бог повелит,  О чем твое старое сердце болит». 
+    9   Когда уйдет последний друг И в сердце перемрут подруги,  Я очерчу незримый круг И лиру заключу в том круге. 
+    10   О том не надо вспоминать,  Но что-то в сердце изломилось:  ― Не узнаю родную мать. 
+
 """
 
 GR_TAGS_INFO = \

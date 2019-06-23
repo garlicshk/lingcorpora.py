@@ -20,7 +20,7 @@
   <tr>
     <td>License</td>
     <td>
-      <a href="https://github.com/lingcorpora/lingcorpora.py/blob/master/LICENSE"/>
+      <a href="https://github.com/lingcorpora/lingcorpora.py/blob/master/LICENSE.md"/>
       <img src="https://img.shields.io/github/license/lingcorpora/lingcorpora.py.svg"/>
     </td>
   </tr>

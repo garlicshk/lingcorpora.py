@@ -12,21 +12,55 @@ from ..exceptions import EmptyPageException
 __author__ = 'akv17, maria-terekhina'
 __doc__ = \
 """
+National Corpus of Russian: Parallel Subcorpus
+==============================================
+
 API for parallel subcorpus of National Corpus of Russian (http://ruscorpora.ru/search-para-en.html)
-Args:
-    query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-    n_results: int: number of results wanted (100 by default)
-    kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-    get_analysis: boolean: whether to collect grammatical tags for target word or not (False by default)
-    subcorpus: str: subcorpus ('rus' by default - search query over all subcorpora).
-                    Valid: ['rus', 'eng', 'bel', 'bul', 'bua', 'esp', 'ita',
-                            'zho', 'lav', 'ger', 'pol', 'ukr',
-                            'fra', 'sve', 'est']
-    query_language: str: language of the 'query'
-    
-Main method: extract
-Returns:
-    A generator over Target objects.
+
+**Search Parameters**
+
+query: str or list([str]):
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted
+kwic: bool, default True
+    kwic format (True) or a sentence (False)
+get_analysis: bool, default False
+    whether to collect grammatical tags for target word or not
+subcorpus: str, default 'rus'
+    subcorpus ('rus' - search query over all subcorpora).
+    Valid: ['rus', 'eng', 'bel', 'bul', 'bua', 'esp', 'ita',
+            'zho', 'lav', 'ger', 'pol', 'ukr',
+            'fra', 'sve', 'est']
+    query_language: str
+        language of the 'query'
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('rus_parallel')
+    results = corp.search('авось', n_results=10, query_language='rus')
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "авось": 100%|██████████| 10/10 [00:00<00:00, 20.01docs/s]
+
+    1   – Русский человек крепок на трех сваях – «авось», «небось» и «как-нибудь».  
+    2   – Я признаться уж не верю-с… – Порфирий Петрович махнул рукой. – Ничего мы тут не зацепим. Кругом одна безнадежность… А впрочем сходите.    Авось вам больше моего повезет.    И ведь как в воду смотрел.  
+    3   Русский злодей горяч и нерасчетлив, крушит на авось.  
+    4   Во-первых, преступление все-таки оказалось не европейское, а русское, на авось.  
+    5   Да еще нумер каждому проставьте.    Ничего, авось не перепутаем-с.    Я их всех уж наизусть успел выучить.  
+    6   Никто, естественно, не запретит вашей милости кропать новые эпистолы, ибо капля камень точит, как знать, авось кто-нибудь из кардиналов наконец поддастся, возможно, меня наконец отзовут.  
+    7   Положение его, конечно, аховое, но в глубине сознания все-таки теплилась маленькая надежда.    На авось или, может, на чудо.    Когда другого не находилось, обычно полагались на чудо, так было всегда.  
+    8   Положение его, конечно, аховое, но в глубине сознания все-таки теплилась маленькая надежда.    На авось или, может, на чудо.    Когда другого не находилось, обычно полагались на чудо, так было всегда.  
+    9   Чудо, конечно, выручало редко, больше подводило, особенно атеистов-большевиков, которые теперь так дружно стали взывать к христианскому чуду.    Авось выручит!    ―  
+    10   Чудо, конечно, выручало редко, больше подводило, особенно атеистов-большевиков, которые теперь так дружно стали взывать к христианскому чуду.    Авось выручит!    ―  
+
 """
 
 

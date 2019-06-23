@@ -10,16 +10,24 @@ from ..exceptions import EmptyPageException
 
 __author__ = 'maria-terekhina'
 __doc__ = \
-    '''
-    API for Japanese-English subcorpus of JuKuu corpus (http://www.jukuu.com/)
-    Args:
-        query: str or List([str]): query or queries (currently only exact search by word or phrase is available)
-        n_results: int: number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)
-        kwic: boolean: kwic format (True) or a sentence (False) (True by default)
-        get_analysis: boolean: not relevant for this corpus
-        subcorpus: str: not relevant for this corpus 
-        query_language: str: language of the 'query'
-    '''
+'''
+Jukuu: Japanese-English Subcorpus
+=================================
+
+API for Japanese-English subcorpus of JuKuu corpus (http://www.jukuu.com/)
+
+**Search Parameters**
+
+query: str or list([str])
+    query or queries (currently only exact search by word or phrase is available)
+n_results: int, default 100
+    number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)
+kwic: bool, default True
+    wic format (True) or a sentence (False)
+query_language: str
+    language of the 'query'
+    
+'''
 
 TEST_DATA = {'test_single_query': {'query': 'table', 'query_language': 'eng'},
              'test_multi_query': {'query': ['table', 'chair'], 'query_language': 'eng'}

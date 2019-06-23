@@ -8,28 +8,59 @@ from lingcorpora.exceptions import EmptyPageException
 
 __doc__ = \
 '''
+National Corpus of Polish
+=========================
+
 API for National Corpus of Polish (http://nkjp.pl/)
 
-Args:
-    query: str:
-        Search by word.
-    n_results: int, default 100:
-        Number of results.
-        In case of Polisg Corpus it does NOT work like the less the number the higher speed.
-    n_left: int, default 5:
-        Number of words in the left context.
-    n_right: int, default 5:
-        Number of words in the right context.
-    subcorpus: str, default 'nkjp300':
-        Subcorpus to search in. Available options:
-            * 'nkjp300': balanced NKJP subcorpus (300M segments)
-            * 'nkjp1800': the full NKJP sorpus (1800M segments)
-            * 'nkjp1M': manually annotated corpus (1.2M segments)
-            * 'ipi250': the full IPI PAN corpus (2nd edition, 250M segments)
-            * 'ipi030': the IPI PAN corpus sample (2nd edition; 30M segments)
-            * 'frequency-dictionary': the Frequency Dictionary Corpus (0.5M segments)
-    get_analysis: bool, default False:
-        Whether to download grammatical information if the corpus is annotated.
+**Search Parameters**
+-
+query: str:
+    Search by word.
+n_results: int, default 100
+    Number of results.
+    In case of Polisg Corpus it does NOT work like the less the number the higher speed.
+n_left: int, default 5
+    Number of words in the left context.
+n_right: int, default 5
+    Number of words in the right context.
+subcorpus: str, default 'nkjp300'
+    Subcorpus to search in. Available options:
+        * 'nkjp300': balanced NKJP subcorpus (300M segments)
+        * 'nkjp1800': the full NKJP sorpus (1800M segments)
+        * 'nkjp1M': manually annotated corpus (1.2M segments)
+        * 'ipi250': the full IPI PAN corpus (2nd edition, 250M segments)
+        * 'ipi030': the IPI PAN corpus sample (2nd edition; 30M segments)
+        * 'frequency-dictionary': the Frequency Dictionary Corpus (0.5M segments)
+get_analysis: bool, default False
+    Whether to download grammatical information if the corpus is annotated.
+
+Example
+-------
+
+.. code-block:: python
+
+    corp = lingcorpora.Corpus('pol')
+    results = corp.search('żaba', n_results=10)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
+
+.. parsed-literal::
+
+    "żaba": 100%|██████████| 10/10 [00:11<00:00,  1.12s/docs]
+
+    1  nie grzbiet, tylko zielona żaba rozpłaszczona na ropusze. Podróżowała
+    2  woli skakać po łące jaka żaba . Nie może przestać wierzyć
+    3  sobie zapewne, że to żaba błotna. - Tańcio!
+    4 . Jak... żaba w raju. - Sprzątanie
+    5 , rozdęta, bardzo pryszczata żaba . Brwi maga podjechały do
+    6 , czuły na wilgoć jak żaba . Rzeczywiście, ja też
+    7  potrafię tego uczynić. Czyż żaba może śpiewać jak skowronek lub
+    8  Wpadłaś w kałużę, żaba ? - Nie jestem zadna
+    9 em na plecach bezradnie jak żaba , przygnieciony przez Agnieszkę.
+    10  opuchlizny. Wyglądał jak rozdeptana żaba . Pomyślałem, że
+
 '''
 
 class PageParser(Container):
