@@ -20,7 +20,7 @@ API for Japanese-Chinese subcorpus of JuKuu corpus (http://www.jukuu.com/)
 query: str or list([str])
     query or queries (currently only exact search by word or phrase is available)
 n_results: int, default 100
-    number of results wanted (100 by default, also 100 is the maximum possible amount for this corpus)
+    number of results wanted (100 by default, also 100 is the maximum possible quantity for this corpus)
 kwic: bool, default True
     kwic format (True) or a sentence (False)
 query_language: str

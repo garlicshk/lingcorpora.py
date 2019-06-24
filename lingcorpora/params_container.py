@@ -52,7 +52,7 @@ class Container:
             n_results: int, optional, default 100:
                 Number of results wanted.
         
-        Othere arguments (depends on corpus):
+        Other arguments (depends on corpus):
             kwic: boolean, optional, default True: 
                 kwic format (True) or a sentence (False).
             n_left: int, optional:

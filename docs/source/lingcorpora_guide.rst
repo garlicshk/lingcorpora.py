@@ -6,62 +6,42 @@ Main concept
 ------------
 
 -  Search is done via ``Corpus`` object (``search`` method)
--  Each API of a corpus, dictionary, etc. is a ``PageParser`` class (see
-   below) which has method ``.extract()``.
--  ``PageParser.extract()`` is a generator (see ``yield`` in Python) of
-   ``Target`` objects (individual hits).
--  ``PageParser`` inherits from ``Container``, which is a class in
-   ``params_container.py`` and contains all possible parameters for
-   corpora.
--  All ``Target`` objects are collected in ``search`` (in the ``Corpus``
-   object) into the ``Result`` object.
--  Documentation for users can be found
-   `here <https://lingcorpora.github.io/lingcorpora.py/docs.html>`__
+-  Each API of a corpus, dictionary, etc. is a ``PageParser`` class (see below) which has method ``.extract()``.
+-  ``PageParser.extract()`` is a generator (see ``yield`` in Python) of ``Target`` objects (individual hits).
+-  ``PageParser`` inherits from ``Container``, which is a class in ``params_container.py`` and contains all possible parameters for corpora.
+-  All ``Target`` objects are collected in ``search`` (in the ``Corpus`` object) into the ``Result`` object.
+-  Documentation for users can be found `here <https://lingcorpora.github.io/lingcorpora.py/docs.html>`_.
 
 To make a new API
 -----------------
 
-1.  Make a ``PageParser`` object
-2.  It inherits from ``Container`` and ``Container`` constructor is
-    called in ``__init__`` (see example below)
-3.  It has method ``extract()`` which ``yield``\ s ``Target`` objects
-4.  All other (auxiliary) parameters in ``PageParser`` should be
-    encapsulated (add to underscores ``__`` to their names)
-5.  You should pass to ``Target`` object the following information:
-6.  whole sentence (``text``) - string
-7.  indices (``idxs``) of the target in the sentence: ``l`` and ``r``
-    such that target == ``text[l:r]`` - tuple
-8.  metadata (``meta``) (document name, author, year, etc.) - string. If
-    there is no meta, then pass empty string
-9.  grammar tags (``tags``) - dict. If there are no tags, pass empty
-    dict
-10. for parallel corpora: translation (``transl``) - translation from
-    ``queryLanguage`` to another language
-11. for parallel corpora: language (``lang``) - the other language (not
-    ``queryLanguage``) in the example pair
-12. **Important**: if there are several target occurrences in one
-    example, you should split them into **separate** Target objects.
-13. Write the docstring ``__doc__`` and the author ``__author__`` before
-    ``PageParser``
-14. Name the file *langcode*\ \_corpus.py and place it into the
-    ``corpora`` directory. *langcode* stands for `ISO 639-3
-    code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
-15. For testing purposes querying data must be provided via ``<dict>``
-    named ``TEST_DATA`` (see template below for details)
-16. If you would like to add new search parameters, open
-    ``params_container.py`` and add this parameter to the arguments
-    (**do not forget default value**) and attributes.
-17. Make a pull request and if API is OK, we will:
-18. Add it to the package
-19. Include it in the docs
+1. Make a ``PageParser`` object
+    1. It inherits from ``Container`` and ``Container`` constructor is called in ``__init__`` (see example below)
+    2. It has method ``extract()`` which ``yield``\ s ``Target`` objects
+    3. All other (auxiliary) parameters in ``PageParser`` should be encapsulated (add to underscores ``__`` to their names)
+2. You should pass to ``Target`` object the following information:
+    1. whole sentence (``text``) - string
+    2. indices (``idxs``) of the target in the sentence: ``l`` and ``r`` such that target == ``text[l:r]`` - tuple
+    3. metadata (``meta``) (document name, author, year, etc.) - string. If there is no meta, then pass empty string
+    4. grammar tags (``tags``) - dict. If there are no tags, pass empty dict
+    5. for parallel corpora: translation (``transl``) - translation from ``queryLanguage`` to another language
+    6. for parallel corpora: language (``lang``) - the other language (not ``queryLanguage``) in the example pair
+    7. **Important**: if there are several target occurrences in one example, you should split them into **separate** Target objects.
+3. Write the docstring ``__doc__`` and the author ``__author__`` before ``PageParser``
+4. Name the file *langcode*\ \_corpus.py and place it into the ``corpora`` directory. *langcode* stands for `ISO 639-3 code <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>`__
+5. For testing purposes querying data must be provided via ``<dict>`` named ``TEST_DATA`` (see template below for details)
+6. If you would like to add new search parameters, open ``params_container.py`` and add this parameter to the arguments (**do not forget default value**) and attributes.
+7. Make a pull request and if API is OK, we will:
+    1. Add it to the package
+    2. Include it in the docs
 
 API template
 ------------
 
 .. code:: ipython3
 
-    from params_container import Container
-    from target import Target
+    from lingcorpora.params_container import Container
+    from lingcorpora.target import Target
     
     
     __author__ = ''

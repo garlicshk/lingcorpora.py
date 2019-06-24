@@ -50,11 +50,16 @@ Example
 
     "gut": 100%|██████████| 10/10 [00:00<00:00, 17.48docs/s]
 
-        Er mache schon seit zehn Jahren mit, denn das sei ein
-    
-    guter
-    
-        Start ins neue Jahr.  
+    1 Ein in Wien sesshafter Reichsdeutscher, der bisher auch nicht einen Moment daran gedacht hatte, den Wiener Gemeinderath zu einer antipapistischen Liga umzugestalten, behauptete kürzlich, dass er es absolut nicht einsehen könne, warum die Briefe, die ihm seine Mutter aus Berlin schickt, täglich in »amtlich geschlossenem« Zustande an ihn gelangen.
+    2 Das arme, alte Mütterlein in der Provinz muss sich's jetzt zweimal überlegen, mit ihren weit, weit in der Stadt im Soldatenrock steckenden Jungen briefliche Zwiesprach zu halten, und auch der hat die Heller nicht gar im Ueberfluss und zwackt jetzt wohl von seinen Ausgaben für schriftliche Mittheilungen an Mutter und Bruder zwei oder drei Karten wöchentlich ab.
+    3 Aber vielleicht könnte man Mutter und Sohn anderweitig eine Genugthuung verschaffen; vielleicht entschlösse man sich, auf die vertheuerte Correspondenzkarte die Conterfeis der Herren Bacher, Benedikt, Singer, Glogau und Frischauer zu drucken, damit das Volk wenigstens durch den Anblick der Männer entschädigt wird, zu deren Gunsten es jetzt Zeitungsstempel und erhöhte Postgebür bezahlen muss.
+    4 In seinem Tagebuche sprach Krauthauf von seiner Mutter per »Josefine«.
+    5 Eine Erzieherin erkrankte und begab sich zu ihrer Mutter in Pflege.
+    6 Aber die Klagen einer langen Reihe von Müttern über die Zustände im St. Joseph-Kinderspital haben sie tief erregt.
+    7 Und auf seine Frage, was denn dazu gehöre, einem Kinde eine Ohrfeige zu geben, hat ihm der Vertheidiger offenbar namens aller Wiener Väter, Mütter und Lehrer nachdrücklich geantwortet:
+    8 Das dauerte so lange, bis der frühreife Sohn der Königin sein Interesse für die Hofdame seiner Mutter , die "Femme de trente ans", in allzu deutlicher Weise kundgab.
+    9 Je heißer das Verhältnis zwischen Draga und "Sascha" wurde, desto kälter wurden die Beziehungen zwischen dem König und seiner Mutter .
+    10 Die Begrüßung zwischen der hohen Mutter und dem, von der Herbstsonne gebräunten, recht gut aussehenden Kronprinzen war sehr herzlich, und die Liebenswürdigkeit und das gewinnende Wesen der hohen Frau rissen die zahlreichen Zuschauer zu begeisterten Huldigungen hin. 
 
 """
 
@@ -85,7 +90,7 @@ class PageParser(Container):
 
     def __new_target(self, left, word, right):
         text = '%s %s %s' % (left, word, right)
-        idxs = (len(left) + 2, len(left) + len(word))
+        idxs = (len(left) + 1, len(left) + len(word))
         meta = ''
         tags = {}
         return Target(text, idxs, meta, tags)
@@ -96,11 +101,11 @@ class PageParser(Container):
         center_list = []
         soup = BeautifulSoup(self.__page.text, 'lxml')
         for left in soup.select('.ddc-kwic-ls'):
-            left_list.append(left.text)
+            left_list.append(left.text.strip())
         for center in soup.select('.ddc-kwic-kw.ddc-hl'):
-            center_list.append(center.text)
+            center_list.append(center.text.strip())
         for right in soup.select('.ddc-kwic-rs'):
-            right_list.append(right.text)
+            right_list.append(right.text.strip())
 
         s = [self.__new_target(l, w, r) for l, w, r in zip(
             left_list, center_list, right_list)]

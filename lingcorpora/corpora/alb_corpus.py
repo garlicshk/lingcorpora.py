@@ -41,25 +41,16 @@ Example
 
     "shqipe": 100%|██████████| 10/10 [00:04<00:00,  2.02docs/s]
 
-    1  «Shqiptarët po blejnë banesa në Nish », apo «Shqiptarët‘pushtojnë’Nishin » – ishin tituj bombastikë të cilët para disa ditësh gdhinë në shtypin tonë, ndërsa po të bëni një kërkim në Google me cilindo variant të tij, do të shihni se këtë lajm e kanë botuar pothuajse të gjitha portalet në internet në gjuhën shqipe nga të gjitha territoret e banuara nga shqiptarët. 
-    2 
-    Dyke u hapur shkolla shqipe e Korçës – siç pamë përmes aq mundimesh dhe intrigash dhe mjerimesh-shoqërisë Shqiptare të Kollonisë së Bukureshtit i-u hap dhe asaj një përkujdesje e re, një vepërim tjetër.  
-    3 
-    Këtë mendim ndan edhe Isen Bajrami, njëri prej iniciatorëve për themelimin e Këshillit të prindërve për formimin e paralele shqipe të ciklit të lartë, që u formua në vitin 2007. «Më distancuan prej Këshillit duke më quajtur të paaftë në gjeten e zgjidhjes së problemit afatgjatë, pasi i orientuan negociatat me MASH-in për ndërtimin e një shkolle të re », tregon Bajrami.  
-    4 
-    Mendoni se mund të ketë dëshmi të shkruara që e çojnë historinë e gjuhës shqipe para Buzukut? 
-    5 
-    Ai kërkoi besimin që në mandatin e ardhshëm katërvjeçar të zgjidh përfundimisht çështjen e përdorimit të gjuhës shqipe, zbutjen e papunësisë, hapjen e vendeve të reja të punës.  
-    6 
-    Përmes protestës, Beqiri ka njoftuar se shqiptarët e Luginës së Preshevës do të kërkojnë që të ketë tekste shkollore në gjuhën shqipe ngase nxënësit, sipas tij, vazhdojnë të zhvillojnë mësim me shënime, por jo me tekste shkollore. 
-    7 
-    Çdo ditë përballemi me gabime akute dhe deformime të gjuhës shqipe nëpër mediume (media të shkruar dhe vizive, forume online etj), çdo ditë shohim se si gjuha shqipe po venitet nga debate të vakta televizive dhe diskurset e forta mbi dialektet që e formojnë atë.  
-    8 
-    Duke jetuar në një botë ku bursa e vlerave të mirëfillta dhe të patjetërsueshme artistike përzihet keqazi me bursën e interesave dhe vlerave të ndryshueshme të tregut, lëvruesit e letrave shqipe, me synimin për të qenë të botuar jashtë vendit, kanë nisur të lëshojnë jo pak pe në drejtim të «invariableve » për t’u kapur pas «variableve » letrare, duke u përpjekur shpesh të lëvrojnë një mori vlerash të luhatshme, në mos të dyshimta, të cilat duket se grishin fort një lloj kërshërie të veçantë ndaj asaj që ndodh brenda izolimit në përgjithësi, por dhe ndaj vuajtjes njerëzore në veçanti.  
-    9 
-    Abetaret e Naum Veqilharxhit luajtën një rol të rëndësishëm në Rilindjen Shqiptare, hodhën hapat e parë të arsimit në gjuhën shqipe. 
-    10 
-    Nuk ishte e rastit as edhe prirja e disa klerikëve për të futur në shërbesat kishtare edhe gjuhën shqipe.  
+    1 Vetë termi huliganizëm e ka prejardhjen nga një mbiemër irlandez «Hooligan » i cili në gjuhën shqipe do të thotë qen, langua ose laro.
+    2 Në suaza të realitetit shumetnik që e ka Maqedonia, Bajrami thotë se barazimi i gjuhës shqipe me atë maqedonase si gjuhë zyrtare në vend, paraqet elementin kryesor për plotësimin e këtij mozaiku shumetnik që po ndërtohet në vend.
+    3 Në të parën punohet pa kushte minimale, ndërsa në të dytën - sipas të gjitha standardeve, për shkak se MASH nuk është kursyer asnjëherë që të investojë në shkollën e Lubancës, ku mësimi zhvillohet në gjuhën maqedonase, ndërsa në shkollën e Lubotenit - ku mësimi zhvillohet në gjuhën shqipe, nuk është investuar thuajse asgjë në 50 vitet e fundit, prej vitit 1963 kur edhe u ndërtua shkolla.
+    4 Edhe për Bogdanin ka pasaktësi kur thotë:«Kryevepra e tij Çeta e profetëve është një traktat i rëndësishëm teologjik e filozofik dhe vepra e parë më e madhe e shkruar në shqip"që mendoj se Bogdani, veprën e quajtur Flanisae prophetarum (Hojet e profetëve), e ka shkruar vetëm në gjuhën shqipe dhe Kongregacioni ka pranuar të botohet me kusht që të përkthehet edhe në italishte, çështja e kalepinit (S. Riza).
+    5 Më tej thuhet «autorë tashmë në rrjedhat e letërsisë shqipe të sh.
+    6 Së pari, nëntitulli nuk është i saktë, pse ashtu si është formuluar (Letërsia shqipe) nënkupton mbarë letërsinë shqiptare e mendoj se është dashur të thuhet Letërsia shqiptare në Kosovë, ashtu si edhe jo Gjuhët, po Gjuhët në Kosovë, jo Zejet, po Zejet në Kosovë e tjerë.
+    7 Autori i nënkapitullit Letërsia shqipe e fillon studimin me Pjetër Budin, Pal Hasit (Palit prej Hasi), Pjetër Bogdanin, Gjon Nikollë Kazazin, për të vazhduar me Tahir Efendi Boshnjakun, Sheh Hilmi Maliqin, Ndue Bytyqin, Shtjefën Gjeçovin e tjerë, ndërsa më poshtë thotë se «fillimet e saj lidhen me shkrimet e para letrare në nismë të viteve’50, që tingëllon si një fillim nga asgjëja », që duket se është në kolizion mendimesh.
+    8 «Formula për përkthimin e të gjithë këtyre titujve për këtë periudhë është çështje teknike e shtëpive që merren me përkthim », pohon zëvendësministri Neziri, ndërsa tregon se do të jetë MASH ajo që në të ardhmen do të hapë tenderët për përkthimin e të gjithë titujve të mbetur, si në maqedonisht, ashtu edhe në gjuhën shqipe.
+    9 Sipas banorëve të fshatit Podgorcë, ata deri më 1945 kanë mësuar në gjuhën shqipe dhe mësues kanë patur veteranin e arsimit shqiptar, Tomorr Starovën nga Pogradeci, kurse shkolla ka mbajtur emrin e publicistit nga ky fshat, Iljaz Podgorca.
+    10 Ky hap për hapjen e paraleleve me mësim në gjuhën shqipe është një zhvillim pozitiv theksojnë banorët që e ndjejnë veten shqiptar në këtë fshat, në drejtim të ruajtjes dhe kultivimin e gjuhës shqipe.
     
 """
 

@@ -3,7 +3,6 @@
 
 import warnings
 from collections import Iterable, deque
-from time import sleep
 
 from tqdm import tqdm
 
@@ -84,11 +83,6 @@ class Corpus:
         
     verbose: bool, default True
         whether to enable tqdm progressbar.
-    sleep_time: int, default 1
-        the length of pause between requests to the corpus (in seconds).
-        It is required to avoid blocking and corpus breakdown.
-    sleep_each: int, default 5
-        the number of requests after which a pause is required.
     
     Attributes
     ----------
@@ -108,10 +102,6 @@ class Corpus:
             language alias
         verbose: bool
             enable tqdm progressbar
-        sleep_time: int
-            sleeping time in seconds USELESS?
-        sleep_each: int
-            sleep after each `sleep_each` request USELESS?
         """
         
         self.language = language

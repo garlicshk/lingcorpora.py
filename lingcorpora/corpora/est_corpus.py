@@ -105,7 +105,7 @@ Example
 .. code-block:: python
 
     corp = lingcorpora.Corpus('est')
-    results = corp.search('keel', n_results = 10)
+    results = corp.search('keel', n_results=10)
     for result in results:
         for i,target in enumerate(result):
             print(i+1,target.text)
@@ -114,16 +114,16 @@ Example
 
     "keel": 100%|██████████| 10/10 [00:01<00:00,  5.01docs/s]
 
-    1 SSÜP Keskkomitee Poliitbüroo minu teada noorima liikme Egon Krenzi nimega annab saksa keeles üsna vaimukalt &zcaron;ongleerida.
-    2 Seadused peavad lähtuma nendest otsustest ja olema tõlgitud nende otsuste keelde .
-    3 Praegune kriis sai alguse 16. novembri otsuste tõlkimisest kodakondsuse seaduse keelde .
-    4 Arvutused ja eksperthinnangud näitasid, et erilisi jõuvõtteid mittekasutava nullvariandi rakendamine jätaks kodakondsusest välja sama palju või isegi rohkem muulasi kui 10-aastase paiksuse abil kodakondsusest jõuga eemale hoidmine; b) lükata uute kodanike vastuvõtmine 10 aastaks edasi, kehtestades 10-aastase paiksuse ja eesti keele oskuse nõude (ajaloo, kultuuri ja valitsemiskorra tundmise nõue peeti otstarbekaks lülitada immigratsiooniseadusse.
-    5 Ka ateljeetöö pole normaalne, kui iga päev pool tööajast kulub nii lastel kui ka rahva keeli pallaslastel oma ruumide tühjakstegemiseks ja uuesti töökorda seadmiseks.
-    6 Mis parata: kõigepealt tuleb meelde Jaan Kaplinski nägus esseekogu, mis sai teoks samuti lahe taga ja hõimurahva keeles .
-    7 Kas pole kurb, et eestlased ei saa oma asju lugeda originaalis, vaid peavad tõlke kaudu mõistatama - või koguni lugemiseseks mõne keele juurde õppima?
-    8 Käesoleva puhul pole ehk keel suuremaks takistuseks neile Eestis, kes iga päev Soome TV-d jälgivad.
-    9 Nad on ilma jäänud otsekontaktist nendega, kes küüditusest tagasi pääsesid, soome keelega pole neil tegemist.
-    10 Soome keelses eessõnas öeldakse, et see toimuvat veel tänavu.
+    1 Käesoleva puhul pole ehk keel suuremaks takistuseks neile Eestis, kes iga päev Soome TV-d jälgivad.
+    2 Moskvas ka eesti keel 
+    3 Kõlas ainult ukraina keel , sõna- ja muusikaprogrammiga esinesid banduristid Alla Kutsevitš ja Ostap Stahhiv Lvovist, meeleolukat muusikat esitas Rovno muusikakeskkooli folkloorne instrumentaalansambel Drevljane.
+    4 Noortele psüühiliselt lähedaseks peaks tükki tegema ka tema keel .
+    5 Pusapratipundara keel aga jättis kauni ja stiilse mulje.
+    6 Inglise keel oli mu hobi, meenutab Sirbis ja Vasaras kuus aastat tagasi juubilar Oleg Mutt.
+    7 Kellel 4 ja 5, teevad matemaatika suulise eksami; 4) õigusteaduse eriala jaguneb kohtu- ja majandustsükliks (kohturühma mõnedele kohtadele on teatud eelised neil, kellel võrdselt hästi selge eesti ja ka vene keel) , eksamid: kirjand ja NSVL ajalugu.
+    8 Heitsin pikali, aga ometi sain pihta, kild purustas mõlemad lõualuud, keel sai vigastada.
+    9 Kõlas eesti , vene , leedu , läti , soome ja saksa keel .
+    10 Rohkesti tehakse keeleoskuse omandamiseks ( eesti keel venelastele , vene keel eestlastele , inglise keel kõigile ) .
 
 """
 
@@ -136,13 +136,12 @@ class PageParser(Container):
             self.subcorpus = '1990_ajalehed_26_08_04'
 
     def get_page(self):
-        params = {'otsisona': self.query,
+        params = {'otsisona': r'\b'+self.query+r'\b',
                   'subcorp': self.subcorpus.split(';'),
                   'kontekst': '0',
-                  'lause_arv':	'0'}
+                  'lause_arv': '0'}
         s = get('http://www.cl.ut.ee/korpused/kasutajaliides/konk.cgi.et', params=params)
         return s
-
 
     def find_right_part(self, elem, right_part):
         right_part = right_part + elem.string + elem.next_sibling
@@ -150,13 +149,11 @@ class PageParser(Container):
             right_part = self.find_right_part(elem.next_sibling.next_sibling, right_part)
         return right_part
 
-
     def find_left_part(self, elem, left_part):
         left_part = elem.previous_sibling + elem.string + left_part
         if elem.previous_sibling.previous_sibling.name != 'hr':
             left_part = self.find_left_part(elem.previous_sibling.previous_sibling, left_part)
         return left_part
-
 
     def extract(self):
         s = 0
@@ -173,9 +170,11 @@ class PageParser(Container):
                 if elem.previous_sibling.previous_sibling.name != 'hr':
                     left_part = self.find_left_part(elem.previous_sibling.previous_sibling, left_part)
                     
-                left_part, center_part, right_part = left_part.split('    ', maxsplit=1)[1].strip(),\
-                                                     center_part + right_part[0:self.p.search(right_part).start()].strip(), \
-                                                     right_part[self.p.search(right_part).start():].strip()
+                left_part, center_part, right_part = (
+                    left_part.split('    ', maxsplit=1)[1].strip(),
+                    center_part + right_part[0:self.p.search(right_part).start()].strip(),
+                    right_part[self.p.search(right_part).start():].strip()
+                )
                 idx = (len(left_part) + 1, len(left_part) + 1 + len(center_part))
                 text = left_part + ' ' + center_part + ' ' + right_part
                 t = Target(text,idx,'',[])
