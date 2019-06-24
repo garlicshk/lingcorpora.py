@@ -63,6 +63,11 @@ Example
 
 '''
 
+TEST_DATA = {
+    'test_single_query': {'query': 'żaba'},
+    'test_multi_query': {'query': ['żaba', 'ropucha']}
+}
+
 class PageParser(Container):
     
     def __init__(self, *args, **kwargs):
