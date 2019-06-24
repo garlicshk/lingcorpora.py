@@ -152,7 +152,7 @@ class PageParser(Container):
             analysis = {}
         target = Target(
             text='{} {} {}'.format(*r).replace('  ', ' '),
-            idxs=(len(r[0]) + 2, len(r[0]) + len(r[1])),
+            idxs=(len(r[0]) + 1, len(r[0]) + len(r[1])),
             meta='',
             analysis=analysis,
         )
