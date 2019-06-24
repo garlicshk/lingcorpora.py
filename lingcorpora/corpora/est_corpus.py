@@ -139,7 +139,7 @@ class PageParser(Container):
         params = {'otsisona': self.query,
                   'subcorp': self.subcorpus.split(';'),
                   'kontekst': '0',
-                  'lause_arv':	'0'}
+                  'lause_arv': '0'}
         s = get('http://www.cl.ut.ee/korpused/kasutajaliides/konk.cgi.et', params=params)
         return s
 

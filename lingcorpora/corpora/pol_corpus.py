@@ -63,6 +63,11 @@ Example
 
 '''
 
+TEST_DATA = {
+    'test_single_query': {'query': 'żaba'},
+    'test_multi_query': {'query': ['żaba', 'ropucha']}
+}
+
 class PageParser(Container):
     
     def __init__(self, *args, **kwargs):
@@ -147,7 +152,7 @@ class PageParser(Container):
             analysis = {}
         target = Target(
             text='{} {} {}'.format(*r).replace('  ', ' '),
-            idxs=(len(r[0]) + 2, len(r[0]) + len(r[1])),
+            idxs=(len(r[0]) + 1, len(r[0]) + len(r[1])),
             meta='',
             analysis=analysis,
         )
