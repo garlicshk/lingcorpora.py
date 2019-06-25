@@ -90,11 +90,13 @@ class PageParser(Container):
         """
         params = {
             "corpname": self.subcorpus,
-            "iquery": self.query,
+            "iquery": '',
             "fromp": self.__pagenum,
             "viewmode": self.__viewmode,
             "attrs": self.writing_system,
-            "ctxattrs": self.writing_system
+            "ctxattrs": self.writing_system,
+            "word": self.query,
+            "queryselector": 'wordrow',
         }
         r = get('http://maslinsky.spb.ru/emk/run.cgi/first', params)
         return unescape(r.text)
