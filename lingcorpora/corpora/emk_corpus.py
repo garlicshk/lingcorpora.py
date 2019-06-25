@@ -90,14 +90,18 @@ class PageParser(Container):
         """
         params = {
             "corpname": self.subcorpus,
-            "iquery": '',
             "fromp": self.__pagenum,
             "viewmode": self.__viewmode,
             "attrs": self.writing_system,
             "ctxattrs": self.writing_system,
-            "word": self.query,
-            "queryselector": 'wordrow',
         }
+        #params differ in case of multi-word query
+        if len(self.query.split()) > 1:
+            params['iquery'] = self.query
+        else:
+            params['iquery'] = ''
+            params['word'] = self.query
+            params['queryselector'] = 'wordrow'
         r = get('http://maslinsky.spb.ru/emk/run.cgi/first', params)
         return unescape(r.text)
 
