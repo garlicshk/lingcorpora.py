@@ -1,5 +1,6 @@
 from requests import get, post
 from bs4 import BeautifulSoup
+from time import sleep
 import re
 
 from lingcorpora.params_container import Container
@@ -92,6 +93,7 @@ class PageParser(Container):
         if s.status_code != 200:
             raise EmptyPageException
         
+        session_id = s.cookies.get('sessionid')
         user_agent = {
             'Host': 'nkjp.pl',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.' \
@@ -101,7 +103,7 @@ class PageParser(Container):
             'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
             'Accept-Encoding': 'gzip, deflate',
             'Referer': 'http://nkjp.pl/poliqarp',
-            'Cookie': 'sessionid={}'.format(s.cookies.get('sessionid')),
+            'Cookie': 'sessionid={}'.format(session_id),
             'Connection': 'keep-alive',
             'Upgrade-Insecure-Requests': '1'
         }
@@ -111,11 +113,13 @@ class PageParser(Container):
             headers=user_agent,
             data={'query': self.query,
                   'corpus': self.subcorpus},
+            cookies={'sessionid': session_id}
         )
         request = post(
             url='http://nkjp.pl/poliqarp/{}/query/export/'.format(self.subcorpus),
             headers=user_agent,
             data={'format': 'html'},
+            cookies={'sessionid': session_id},
         )
         html_page = request
         return html_page.text
