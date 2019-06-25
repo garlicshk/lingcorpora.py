@@ -6,13 +6,7 @@
 lingcorpora: documentation
 =======================================
 
-This package includes API for more than 20 online text corpora including:
-
-* National Corpus of Russian Language
-* Parallel subcorpus of National Corpus of Russian Language
-* Center of Chinese Linguistics corpus
-* Corpus Bambara de Reference
-* Maninka Automatically Parsed corpus
+This package includes API for more than 20 online text corpora. Comprehensive list of supported corpora is available below in the `Contents <#contents>`_ section.
 
 R version of this package by George Moroz is located `here <https://github.com/lingcorpora/lingcorpora.R>`_.
 
@@ -22,7 +16,7 @@ About
 ------
 
 The project is maintained by `Ekaterina Gerasimenko <https://github.com/kategerasimenko>`_ and `Artyom Kopetskiy <https://github.com/akv17>`_.
-At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Michael Voronov and George Moroz.
+At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Anna Klezovich, Michael Voronov and George Moroz.
 
 Contents
 --------

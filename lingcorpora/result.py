@@ -19,7 +19,7 @@ class Result:
     ----------
     results: list[Target]
         List of results.
-    N: int
+    n: int
         Number of results.
     query: str
         Search query.
@@ -105,7 +105,7 @@ class Result:
 
         if filename is None:
             filename = '%s_%s_results.csv' % \
-                        (self.lang, self.not_allowed_sub_regexp('', self.query))
+                        (self.lang, self.not_allowed_sub_regexp.sub('', self.query))
         
         with open(filename, 'w', encoding='utf-8-sig') as f:
             writer = csv.writer(

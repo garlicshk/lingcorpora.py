@@ -39,7 +39,25 @@ Example
     results = corp.search('лягушка', n_results=10, query_language='rus')
     for result in results:
         for i, target in enumerate(result):
-            print(i+1, target.text)
+            print(i+1, target.transl.strip(), '\n', target.text.strip())
+            
+.. parsed-literal::
+
+    "лягушка": 100%|██████████| 10/10 [00:00<00:00, 42.38docs/s]
+            
+    1 Na sąsiednią mogiłę wskoczyła wielka żaba. 
+     На соседнюю могилу запрыгнула огромная лягушка.
+    2 - Jasne, brekek - powiedziała żaba. 
+     – Само собой, брекекек, – сказала лягушка.
+    3 O mój Mowgli - bo będę cię odtąd nazywała Mowglim, czyli Żabą - nadejdzie czas, kiedy zapolujesz na Shere Khana, jak on dziś polował na ciebie! 
+     Да, да, я назову тебя Маугли - лягушка... и когда-нибудь ты будешь охотиться на Шер Хана, как он охотился на тебя.
+    4 Cóż złego może nam wyrządzić ta goła żaba? 
+     Какой вред может принести нам безволосая лягушка?
+    5 - W imieniu Mowgliego, czyli Żaby. 
+     - Я Маугли-лягушка.
+    6 Wziąłem go za rękę wprowadzając na ciemne schody, aby uchronić od uderzenia się o cośkolwiek. Wilgotny chłód tej ręki tak był przenikliwy i przykry, iż była chwila, żem chciał ją wypuścić z mych dłoni... i uciec. 
+     Я повел его за руку по темной лестнице, чтобы он не стукнулся обо что-нибудь головой; рука была на ощупь такой влажной и холодной – совсем как лягушка! – что мне захотелось оттолкнуть ее и убежать.
+     
 """
 
 
@@ -55,7 +73,7 @@ class PageParser(Container):
         if self.subcorpus is None:
             self.subcorpus = ['1', '2', '3', '4', '5', '6', 'russian', 'foreign', 'polish']
         elif not isinstance(self.subcorpus, list):
-            raise TypeError('This corpus is spetial: parameter subcorpus should be list type!')
+            raise TypeError('This corpus is special: parameter subcorpus should be list type!')
         else:
             synon = {'non-fiction': '6',
                      'fiction<1945': '1',
@@ -142,7 +160,7 @@ class PageParser(Container):
 
             if _target_idxs:
                 for i, ixs in enumerate(_target_idxs):
-                    yield _text, ixs, _meta, _ana, _transl, _lang
+                    yield _text, ixs, _meta, _ana, self.gr_tags, _transl, _lang
             else:
                 continue
 

@@ -52,6 +52,7 @@ class PageParser(Container):
             "occurences_per_page": self.__per_page,
             "search_language": self.__search_language,
             "subcorpus": self.subcorpus,
+            "sort_by": "wordform",
             "interface_language": "en",
             "sentences_per_enlarged_occurrence": "1",
             "contexts_layout": "basic",
@@ -148,7 +149,7 @@ class PageParser(Container):
         return (beg, beg + len(word))
 
     def __get_text(self, res_context):
-        res_text = res_context.text
+        res_text = res_context.text.strip()
         word = self.__get_word_info(res_context)
         idxs = None
         if word != {}:
