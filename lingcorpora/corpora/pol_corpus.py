@@ -1,6 +1,5 @@
 from requests import get, post
 from bs4 import BeautifulSoup
-from time import sleep
 import re
 
 from lingcorpora.params_container import Container
