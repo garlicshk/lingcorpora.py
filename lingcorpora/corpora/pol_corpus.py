@@ -114,12 +114,12 @@ class PageParser(Container):
             )
             return html_page
         i = 0
-        while i < 5:
+        while i < 10:
             html_page = _connect()
             if html_page.status_code == 200:
                 break
             else:
-                if i == 4:
+                if i == 9:
                     raise EmptyPageException
                 else:
                     sleep(1)
