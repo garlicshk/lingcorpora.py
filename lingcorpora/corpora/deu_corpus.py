@@ -90,7 +90,7 @@ class PageParser(Container):
 
     def __new_target(self, left, word, right):
         text = '%s %s %s' % (left, word, right)
-        idxs = (len(left) + 1, len(left) + len(word))
+        idxs = (len(left) + 1, len(left) + len(word) + 1)
         meta = ''
         tags = {}
         return Target(text, idxs, meta, tags)
