@@ -1,5 +1,6 @@
 from requests import get, post
 from bs4 import BeautifulSoup
+from time import sleep
 import re
 
 from lingcorpora.params_container import Container
@@ -86,32 +87,38 @@ class PageParser(Container):
             'results_per_page': self.n_results,
             'next': '/poliqarp/{}/query/'.format(self.subcorpus)
         }
-        r = get('http://nkjp.pl/poliqarp/')
-        self.cookies = {
-            'httpOnly': 'true',
-            'path': '/',
-            'sessionid': r.cookies.get('sessionid'),
-        }
     
     def _get_html(self):
-        post(
-            url='http://nkjp.pl/poliqarp/settings/',
-            cookies=self.cookies,
-            data=self.data,
-        )
-        post(
-            url='http://nkjp.pl/poliqarp/query/',
-            cookies=self.cookies,
-            data={'query': self.query,
-                  'corpus': self.subcorpus},
-        )
-        html_page = post(
-            url='http://nkjp.pl/poliqarp/{}/query/export/'.format(self.subcorpus),
-            cookies=self.cookies,
-            data={'format': 'html'},
-        )
+        def _connect():
+            r = get('http://nkjp.pl/poliqarp/')
+            cookies = {
+                'httpOnly': 'true',
+                'path': '/',
+                'sessionid': r.cookies.get('sessionid'),
+            }
+            post(
+                url='http://nkjp.pl/poliqarp/settings/',
+                cookies=cookies,
+                data=self.data,
+            )
+            post(
+                url='http://nkjp.pl/poliqarp/query/',
+                cookies=cookies,
+                data={'query': self.query,
+                    'corpus': self.subcorpus},
+            )
+            html_page = post(
+                url='http://nkjp.pl/poliqarp/{}/query/export/'.format(self.subcorpus),
+                cookies=cookies,
+                data={'format': 'html'},
+            )
+            return html_page
+        html_page = _connect()
         if not html_page.status_code == 200:
-            raise EmptyPageException
+            sleep(1)
+            html_page = _connect()
+            if not html_page.status_code == 200:
+                raise EmptyPageException
         return html_page.text
     
     def _parse(self):
