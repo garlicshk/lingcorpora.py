@@ -11,15 +11,15 @@ from .corpora import rus_parallel_corpus
 from .corpora import dan_corpus
 from .corpora import est_corpus
 from .corpora import kat_corpus
-from .corpora import crh_corpus
+#from .corpora import crh_corpus
 from .corpora import tat_corpus
 from .corpora import deu_corpus
-from .corpora import slk_corpus
+#from .corpora import slk_corpus
 from .corpora import hin_corpus
 from .corpora import rus_pol_corpus
 from .corpora import zho_eng_corpus
-from .corpora import jpn_eng_corpus
-from .corpora import jpn_zho_corpus
+#from .corpora import jpn_eng_corpus
+#from .corpora import jpn_zho_corpus
 from .corpora import sl_dict
 from .corpora import arm_corpus
 from .corpora import grk_corpus
@@ -42,15 +42,15 @@ functions = {
     'dan': dan_corpus,
     'est': est_corpus,
     'kat': kat_corpus,
-    'crh': crh_corpus,
+#    'crh': crh_corpus,
     'tat': tat_corpus,
     'deu': deu_corpus,
-    'slk': slk_corpus,
+#    'slk': slk_corpus,
     'hin': hin_corpus,
     'rus_pol': rus_pol_corpus,
     'zho_eng': zho_eng_corpus,
-    'jpn_eng': jpn_eng_corpus,
-    'jpn_zho': jpn_zho_corpus,
+#    'jpn_eng': jpn_eng_corpus,
+#    'jpn_zho': jpn_zho_corpus,
     'sls': sl_dict,
     'arm': arm_corpus,
     'grk': grk_corpus,
