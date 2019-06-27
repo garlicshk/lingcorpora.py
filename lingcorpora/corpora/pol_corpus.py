@@ -87,39 +87,27 @@ class PageParser(Container):
             'next': '/poliqarp/{}/query/'.format(self.subcorpus)
         }
         r = get('http://nkjp.pl/poliqarp/')
-        self.session_id = r.cookies.get('sessionid')
-        self.headers = {
-            'Host': 'nkjp.pl',
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.' \
-                '10; rv:51.0) Gecko/20100101 Firefox/51.0',
-            'Accept': 'text/html,application/xhtml+xml,application/' \
-                'xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
-            'Accept-Encoding': 'gzip, deflate',
-            'Referer': 'http://nkjp.pl/poliqarp',
-            'Cookie': 'sessionid={}'.format(self.session_id),
-            'Connection': 'keep-alive',
-            'Upgrade-Insecure-Requests': '1'
+        self.cookies = {
+            'httpOnly': 'true',
+            'path': '/',
+            'sessionid': r.cookies.get('sessionid'),
         }
     
     def _get_html(self):
         post(
             url='http://nkjp.pl/poliqarp/settings/',
-            headers=self.headers,
-            cookies={'sessionid': self.session_id},
+            cookies=self.cookies,
             data=self.data,
         )
         post(
             url='http://nkjp.pl/poliqarp/query/',
-            headers=self.headers,
-            cookies={'sessionid': self.session_id},
+            cookies=self.cookies,
             data={'query': self.query,
                   'corpus': self.subcorpus},
         )
         html_page = post(
             url='http://nkjp.pl/poliqarp/{}/query/export/'.format(self.subcorpus),
-            headers=self.headers,
-            cookies={'sessionid': self.session_id},
+            cookies=self.cookies,
             data={'format': 'html'},
         )
         if not html_page.status_code == 200:
