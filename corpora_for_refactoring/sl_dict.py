@@ -67,12 +67,12 @@ class PageParser(Container):
 
         if not isinstance(self.query_language, str):
             raise TypeError("Language of the query should be a string \n Available languages can be seen in docstring")
+        
+        if self.subcorpus is None:
+            self.subcorpus = "ru.ru"
 
         if not isinstance(self.subcorpus, list) and not isinstance(self.subcorpus, str):
             raise TypeError("Subcorpus should be a string or a list of strings \n Available languages can be seen in docstring")
-
-        if self.subcorpus is None:
-            self.subcorpus = "ru.ru"
 
     def get_page(self, lang, word):
         url_address = "http://www.spreadthesign.com/" + self.query_language + "/search/?cls=2&q=" + word

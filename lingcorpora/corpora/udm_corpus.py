@@ -3,8 +3,8 @@ from .arkhangelskiy_corpora import PageParser
 language = 'udmurt'
 results = 'http://web-corpora.net/UdmurtCorpus/search/results.php'
 
-TEST_DATA = {'test_single_query': {'query': 'коӵыш'},
-             'test_multi_query': {'query': ['коӵыш', 'яра']}
+TEST_DATA = {'test_single_query': {'query': 'кыл'},
+             'test_multi_query': {'query': ['кыл', 'яра']}
              }
 
 __author__ = 'ustya-k'
