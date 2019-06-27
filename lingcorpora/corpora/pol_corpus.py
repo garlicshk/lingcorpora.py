@@ -86,14 +86,9 @@ class PageParser(Container):
             'results_per_page': self.n_results,
             'next': '/poliqarp/{}/query/'.format(self.subcorpus)
         }
-    
-    def _get_html(self):
-        s = post(url='http://nkjp.pl/poliqarp/settings/', data=self.data)
-        if s.status_code != 200:
-            raise EmptyPageException
-        
-        session_id = s.cookies.get('sessionid')
-        user_agent = {
+        r = get('http://nkjp.pl/poliqarp/')
+        self.session_id = r.cookies.get('sessionid')
+        self.headers = {
             'Host': 'nkjp.pl',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.' \
                 '10; rv:51.0) Gecko/20100101 Firefox/51.0',
@@ -102,25 +97,33 @@ class PageParser(Container):
             'Accept-Language': 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3',
             'Accept-Encoding': 'gzip, deflate',
             'Referer': 'http://nkjp.pl/poliqarp',
-            'Cookie': 'sessionid={}'.format(session_id),
+            'Cookie': 'sessionid={}'.format(self.session_id),
             'Connection': 'keep-alive',
             'Upgrade-Insecure-Requests': '1'
         }
-        
+    
+    def _get_html(self):
+        post(
+            url='http://nkjp.pl/poliqarp/settings/',
+            headers=self.headers,
+            cookies={'sessionid': self.session_id},
+            data=self.data,
+        )
         post(
             url='http://nkjp.pl/poliqarp/query/',
-            headers=user_agent,
+            headers=self.headers,
+            cookies={'sessionid': self.session_id},
             data={'query': self.query,
                   'corpus': self.subcorpus},
-            cookies={'sessionid': session_id}
         )
-        request = post(
+        html_page = post(
             url='http://nkjp.pl/poliqarp/{}/query/export/'.format(self.subcorpus),
-            headers=user_agent,
+            headers=self.headers,
+            cookies={'sessionid': self.session_id},
             data={'format': 'html'},
-            cookies={'sessionid': session_id},
         )
-        html_page = request
+        if not html_page.status_code == 200:
+            raise EmptyPageException
         return html_page.text
     
     def _parse(self):
