@@ -3,8 +3,8 @@ from ..target import Target
 from requests import post
 from bs4 import BeautifulSoup
 
-TEST_DATA = {'test_single_query': {'query': 'bezug'},
-             'test_multi_query': {'query': ['bezug', 'Mutter']}
+TEST_DATA = {'test_single_query': {'query': 'da'},
+             'test_multi_query': {'query': ['da', 'immer']}
             }
 
 __author__ = 'alexeykosh, ustya-k'
@@ -18,7 +18,12 @@ API for German corpus (https://www.dwds.de).
 **Search Parameters**
 
 query: str or list([str])
-    query or queries
+    query or queries. Be default inflection will be incleded
+    (unlike in the case of the other corpora). To perform an
+    exact search add '@' symbol before the query (e.g. '@gut').
+    By default multi-word queries will not work. To perform
+    a multi-word query, put it between double quotation marks
+    (e.g. '"guten tag"')
 n_results: int, default 100
     number of results wanted
 kwic: bool, default True
@@ -50,16 +55,16 @@ Example
 
     "gut": 100%|██████████| 10/10 [00:00<00:00, 17.48docs/s]
 
-    1 Ein in Wien sesshafter Reichsdeutscher, der bisher auch nicht einen Moment daran gedacht hatte, den Wiener Gemeinderath zu einer antipapistischen Liga umzugestalten, behauptete kürzlich, dass er es absolut nicht einsehen könne, warum die Briefe, die ihm seine Mutter aus Berlin schickt, täglich in »amtlich geschlossenem« Zustande an ihn gelangen.
-    2 Das arme, alte Mütterlein in der Provinz muss sich's jetzt zweimal überlegen, mit ihren weit, weit in der Stadt im Soldatenrock steckenden Jungen briefliche Zwiesprach zu halten, und auch der hat die Heller nicht gar im Ueberfluss und zwackt jetzt wohl von seinen Ausgaben für schriftliche Mittheilungen an Mutter und Bruder zwei oder drei Karten wöchentlich ab.
-    3 Aber vielleicht könnte man Mutter und Sohn anderweitig eine Genugthuung verschaffen; vielleicht entschlösse man sich, auf die vertheuerte Correspondenzkarte die Conterfeis der Herren Bacher, Benedikt, Singer, Glogau und Frischauer zu drucken, damit das Volk wenigstens durch den Anblick der Männer entschädigt wird, zu deren Gunsten es jetzt Zeitungsstempel und erhöhte Postgebür bezahlen muss.
-    4 In seinem Tagebuche sprach Krauthauf von seiner Mutter per »Josefine«.
-    5 Eine Erzieherin erkrankte und begab sich zu ihrer Mutter in Pflege.
-    6 Aber die Klagen einer langen Reihe von Müttern über die Zustände im St. Joseph-Kinderspital haben sie tief erregt.
-    7 Und auf seine Frage, was denn dazu gehöre, einem Kinde eine Ohrfeige zu geben, hat ihm der Vertheidiger offenbar namens aller Wiener Väter, Mütter und Lehrer nachdrücklich geantwortet:
-    8 Das dauerte so lange, bis der frühreife Sohn der Königin sein Interesse für die Hofdame seiner Mutter , die "Femme de trente ans", in allzu deutlicher Weise kundgab.
-    9 Je heißer das Verhältnis zwischen Draga und "Sascha" wurde, desto kälter wurden die Beziehungen zwischen dem König und seiner Mutter .
-    10 Die Begrüßung zwischen der hohen Mutter und dem, von der Herbstsonne gebräunten, recht gut aussehenden Kronprinzen war sehr herzlich, und die Liebenswürdigkeit und das gewinnende Wesen der hohen Frau rissen die zahlreichen Zuschauer zu begeisterten Huldigungen hin. 
+    1 Zwar ist er in den letzten Tagen von ungarischer und czechischer Seite hart angegriffen worden, aber neben den Ugron , Gregr und Genossen gibt es in der habsburgischen Monarchie noch vernünftige Leute genug, die recht gut wissen, was sie am Dreibund haben und die sich auch sorgfältig davor hüten, durch Uebertreibung nationaler Forderungen den Bestand der Monarchie zu gefährden.
+    2 In den sieben laugen Jahren schwerster Knechtschaft lehrte Gott unser Volk sich auf sich selbst besinnen, und unter dem Druck des Fußes eines übermüthigen Eroberers gebar unser Volk aus sich heraus den hehrsten Gedanken, daß es die höchste Ehre sei, im Waffendienste seinem Vaterlande Gut und Blut zu weihen:
+    3 In den sieben langen Jahren schwerster Knechtschaft lehrte Gott unser Volk sich auf sich selbst besinnen und unter dem Drucke eines übermüthigen Eroberers gebar unser Volk aus sich heraus den hehrsten Gedanken, daß es die höchste Ehre sei, im Waffendienste seinem Vaterlande Gut und Blut zu weihen, die allgemeine Dienstpflicht . Mein Urgroßvater gab ihr Form und Leben und neuer Lorbeer krönte die neuerstandene Armee und ihre jungen Fahnen.
+    4 In den sieben langen Jahren schwerster Knechtschaft lehrte Gott unser Volk sich auf sich selbst besinnen, und unter dem Druck des Fußes eines übermütigen Eroberers gebar unser Volk aus sich heraus den hehrsten Gedanken, daß es die höchste Ehre sei, im Waffendienste seinem Vaterlande Gut und Blut zu weihen: die allgemeine Dienstpflicht . Mein Urgroßvater gab ihr Form und Leben, und neuer Lorber krönte die neu erstandene Armee und ihre jungen Fahnen.
+    5 Wie die "Köln. Ztg." aus London erfährt, beunruhigt man sich dort, obschon neuere Nachrichten aus Ladysmith von hinreichendem Proviant für mindestens sechs Wochen melden, neuerdings in gewöhnlich gut unterrichteten Kreisen wieder lebhafter um das Schicksal der eingeschlossenen Garnison.
+    6 Man wird gut thun, hinter diese privaten englischen Berichte ein Fragezeichen zu setzen.
+    7 Der Rittmeister Montmorency von den 21. Lancers stieß mit einer überlegenen feindlichen Streitmacht, die Artillerie mit sich führte, zusammen und wurde im Laufe des Sonnabends gezwungen, sich nach Dordrecht zurückzuziehen, was in guter Ordnung geschah.
+    8 Insbesondere sollen die Parlamente, die im Begriff stehen, neue Marinerüstungen zu beraten, sich von dem Gedanken erleuchten lassen, daß es einen besseren Weg giebt, das Vaterland zu schützen und zugleich der Menschheit ewige Dienste zu leisten. -
+    9 Diejenigen, die ihn tadelten, seine keine guten Katholiken und seien vom Protestantismus angesteckt.
+    10 Die gute einheimische Ernte in Verbindung mit den reichlichen Vorräthen Amerikas und der Aussicht auf große Erträge in Argentinien und Australien lähmten jeden Anlauf zu einer Besserung.
 
 """
 
