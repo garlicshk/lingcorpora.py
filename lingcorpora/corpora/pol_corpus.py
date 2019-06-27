@@ -113,12 +113,17 @@ class PageParser(Container):
                 data={'format': 'html'},
             )
             return html_page
-        html_page = _connect()
-        if not html_page.status_code == 200:
-            sleep(1)
+        i = 0
+        while i < 5:
             html_page = _connect()
-            if not html_page.status_code == 200:
-                raise EmptyPageException
+            if html_page.status_code == 200:
+                break
+            else:
+                if i == 4:
+                    raise EmptyPageException
+                else:
+                    sleep(1)
+                    i += 1
         return html_page.text
     
     def _parse(self):
