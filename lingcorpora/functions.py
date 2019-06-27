@@ -20,7 +20,7 @@ from .corpora import rus_pol_corpus
 from .corpora import zho_eng_corpus
 #from .corpora import jpn_eng_corpus
 #from .corpora import jpn_zho_corpus
-from .corpora import sl_dict
+#from .corpora import sl_dict
 from .corpora import arm_corpus
 from .corpora import grk_corpus
 from .corpora import ady_corpus
@@ -51,7 +51,7 @@ functions = {
     'zho_eng': zho_eng_corpus,
 #    'jpn_eng': jpn_eng_corpus,
 #    'jpn_zho': jpn_zho_corpus,
-    'sls': sl_dict,
+#    'sls': sl_dict,
     'arm': arm_corpus,
     'grk': grk_corpus,
     'ady': ady_corpus,
