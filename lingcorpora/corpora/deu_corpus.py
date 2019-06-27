@@ -23,13 +23,16 @@ query: str or list([str])
     exact search add '@' symbol before the query (e.g. '@gut').
     By default multi-word queries will not work. To perform
     a multi-word query, put it between double quotation marks
-    (e.g. '"guten tag"')
+    (e.g. '"guten tag"'). The full list of options is available
+    `here (in German) <https://www.dwds.de/d/suche#cheatsheet>`_.
 n_results: int, default 100
     number of results wanted
 kwic: bool, default True
     kwic format (True) or a sentence (False) (True by default)
 subcorpus: str
-    subcorpus. Available options:
+    subcorpus. The description for the given options are
+    `here (in German) <https://www.dwds.de/r#corpusstat>`_.
+    Available options:
         * 'kern' (by default)
         * 'tagesspiegel'
         * 'zeit'
