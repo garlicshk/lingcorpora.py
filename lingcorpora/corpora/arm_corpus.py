@@ -3,8 +3,8 @@ from .arkhangelskiy_corpora import PageParser
 language = 'armenian1'
 results = 'http://eanc.net/EANC/search/results.php'
 
-TEST_DATA = {'test_single_query': {'query': 'կատու'},
-             'test_multi_query': {'query': ['կատու', 'սիրով']}
+TEST_DATA = {'test_single_query': {'query': 'նարդի'},
+             'test_multi_query': {'query': ['նարդի', 'սիրով']}
              }
 
 __author__ = 'ustya-k'
