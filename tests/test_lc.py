@@ -3,7 +3,6 @@ import os
 import unittest
 
 from modulefinder import ModuleFinder
-from random import randint
 from collections import Iterable
 
 sys.path.insert(0, os.path.abspath('..'))
@@ -59,7 +58,7 @@ class TestLangFunc(unittest.TestCase):
 
     def test_single_query(self):
         kwargs = self.fetch_data['test_single_query']
-        kwargs['n_results'] = randint(1, 5)
+        kwargs['n_results'] = 5
 
         parser = self.func.PageParser(**kwargs)
         
@@ -77,7 +76,7 @@ class TestLangFunc(unittest.TestCase):
 
     def test_n_results(self):
         kwargs = self.fetch_data['test_single_query']
-        kwargs['n_results'] = randint(1, 5)
+        kwargs['n_results'] = 5
 
         parser = self.func.PageParser(**kwargs)
 
@@ -90,7 +89,7 @@ class TestLangFunc(unittest.TestCase):
 
     def test_multi_query(self):
         kwargs = self.fetch_data['test_multi_query']
-        kwargs['n_results'] = randint(1, 5)
+        kwargs['n_results'] = 5
 
         result_obj = self.corp.search(**kwargs)
 
@@ -108,7 +107,7 @@ class TestLangFunc(unittest.TestCase):
 
     def test_local_scope_only(self):
         kwargs = self.fetch_data['test_single_query']
-        kwargs['n_results'] = randint(1, 5)
+        kwargs['n_results'] = 5
 
         result_obj = self.corp.search(**kwargs)
 
