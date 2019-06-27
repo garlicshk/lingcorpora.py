@@ -122,7 +122,7 @@ class PageParser(Container):
                 if i == 9:
                     raise EmptyPageException
                 else:
-                    sleep(1)
+                    sleep(i)
                     i += 1
         return html_page.text
     
