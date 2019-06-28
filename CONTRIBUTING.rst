@@ -58,7 +58,7 @@ To make a new API
 API template
 ------------
 
-.. code:: ipython3
+.. code:: python3
 
     from params_container import Container
     from target import Target
