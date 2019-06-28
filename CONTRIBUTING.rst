@@ -69,17 +69,21 @@ API template
     # The header is the name of the module
     # The subheader is 'Search Parameters'
     # e.g:
-    # pol_corpus
-    # ==========
-    # 
-    # API for National Corpus of Polish (http://nkjp.pl/)
-    # 
-    # Search Parameters
-    # ------------------
-    # query: str:
-    #    Search by word.
+    # Mongolian Corpus
+    # ================
+    #
+    # API for Mongolian corpus (http://web-corpora.net/MongolianCorpus/search/).
+    #
+    # **Search Parameters**
+    #
+    # query: str or list([str])
+    #     query or queries
     # n_results: int, default 100
-    #     Number of results.
+    #     number of results wanted
+    # ...
+    #
+    # Example
+    # -------
     # ...
     __doc__ = \
     """
@@ -88,9 +92,10 @@ API template
     # <dict> of querying data passed to `Corpus.search` as kwargs while testing
     # keys and types to be preserved
     
-    TEST_DATA = {'test_single_query': {'query': <str>, ...},                            # {arg: value, ...}
-                 'test_multi_query': {'query': [<str 1>, <str 2>, ... <str N>], ...}    # {arg: value, ...}
-                }
+    TEST_DATA = {
+        'test_single_query': {'query': <str>, ...},                            # {arg: value, ...}
+        'test_multi_query': {'query': [<str 1>, <str 2>, ... <str N>], ...}    # {arg: value, ...}
+    }
     
     
     class PageParser(Container):
