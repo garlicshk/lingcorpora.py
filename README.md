@@ -27,8 +27,8 @@
   <tr>
     <td>DOI</td>
     <td>
-      <a href="https://zenodo.org/badge/latestdoi/1172456"/>
-      <img src="https://zenodo.org/badge/1172456.svg"/>
+      <a href="https://doi.org/10.5281/zenodo.1172456"/>
+      <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1172456.svg"/>
     </td>
   </tr>
 </table>
