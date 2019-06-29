@@ -50,7 +50,7 @@ You are welcome to suggest your improvements to the source code and make APIs fo
 
 .. toctree::
     
-    lingcorpora_guide
+    CONTRIBUTING
 
 Indices and tables
 ==================
