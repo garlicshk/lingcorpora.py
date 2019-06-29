@@ -16,7 +16,16 @@ About
 ------
 
 The project is maintained by `Ekaterina Gerasimenko <https://github.com/kategerasimenko>`_ and `Artyom Kopetskiy <https://github.com/akv17>`_.
-At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Anna Klezovich, Michael Voronov and George Moroz.
+At different stages, the following people have contributed to the project:
+`Alexey Koshevoy <https://github.com/alexeykosh>`_,
+`Anna Klezovich <https://github.com/Pandaklez)>`_,
+`Anna Zueva <https://github.com/zu-ann)>`_,
+Diana Malyshok,
+`George Moroz <https://github.com/agricolamz>`_,
+`Maria Terekhina <https://github.com/maria-terekhina>`_,
+`Mark Sobolev <https://github.com/strategy155>`_,
+`Michael Voronov <https://github.com/OneAdder>`_ and
+`Ustinya Kosheleva <https://github.com/ustya-k>`_.
 
 Contents
 --------

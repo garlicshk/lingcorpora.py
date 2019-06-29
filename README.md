@@ -57,8 +57,8 @@ pip3 install . --user
 The project is maintained by [Ekaterina Gerasimenko](https://github.com/kategerasimenko) and [Artyom Kopetskiy](https://github.com/akv17).
 At different stages, the following people have contributed to the project:
 [Alexey Koshevoy](https://github.com/alexeykosh),
-[Anna Zueva](https://github.com/zu-ann),
 [Anna Klezovich](https://github.com/Pandaklez),
+[Anna Zueva](https://github.com/zu-ann),
 Diana Malyshok,
 [George Moroz](https://github.com/agricolamz),
 [Maria Terekhina](https://github.com/maria-terekhina),
