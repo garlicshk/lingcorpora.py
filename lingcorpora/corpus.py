@@ -142,7 +142,7 @@ class Corpus:
         .. code-block:: python
 
             >>> rus_corp = lingcorpora.Corpus('rus')
-            >>> rus_results = rus_corp.search('мешок', n_results = 10)
+            >>> rus_results = rus_corp.search('мешок', n_results=10)
             >>> rus_results
             "мешок": 100%|███████████████████████████████| 10/10 [00:07<00:00,  1.40docs/s]
             [Result(query=мешок, N=10, params={'n_results': 10, 'kwic': True, 'n_left': None, 'n_right': None, 'query_language': None, 'subcorpus': 'main', 'get_analysis': False, 'gr_tags': None, 'start': 0, 'writing_system': None})]

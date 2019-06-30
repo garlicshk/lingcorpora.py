@@ -13,7 +13,7 @@ class Container:
         query or queries.
     n_results: int, default 100
         number of results wanted.
-    kwic: boolean, default True:
+    kwic: bool, default True:
         kwic format (True) or a sentence (False).
     n_left: int, default None:
         number of words / symbols (corpus-specific) in the left context.
@@ -53,7 +53,7 @@ class Container:
                 Number of results wanted.
         
         Other arguments (depends on corpus):
-            kwic: boolean, optional, default True: 
+            kwic: bool, optional, default True: 
                 kwic format (True) or a sentence (False).
             n_left: int, optional:
                 Number of words / symbols (corpus-specific) in the left context.
