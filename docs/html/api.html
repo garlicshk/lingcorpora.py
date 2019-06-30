@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Corpus list" href="corpora.html" />
+    <link rel="next" title="Corpus List" href="corpora.html" />
     <link rel="prev" title="lingcorpora: documentation" href="index.html" /> 
 </head>
 
@@ -90,10 +90,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#module-lingcorpora.result">Working with results</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="corpora.html">Corpus list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="corpora.html">Corpus List</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="lingcorpora_guide.html">Making new API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Making new API</a></li>
 </ul>
 
             
@@ -164,7 +164,7 @@
 <span id="corpus-object"></span><h2>Corpus object<a class="headerlink" href="#module-lingcorpora.corpus" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="lingcorpora.corpus.Corpus">
-<em class="property">class </em><code class="descclassname">lingcorpora.corpus.</code><code class="descname">Corpus</code><span class="sig-paren">(</span><em>language</em>, <em>verbose=True</em>, <em>sleep_time=1</em>, <em>sleep_each=5</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.corpus.Corpus" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">lingcorpora.corpus.</code><code class="descname">Corpus</code><span class="sig-paren">(</span><em>language</em>, <em>verbose=True</em><span class="sig-paren">)</span><a class="headerlink" href="#lingcorpora.corpus.Corpus" title="Permalink to this definition">¶</a></dt>
 <dd><p>The object of this class should be instantiated for each corpus. Search is conducted via search method.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -199,47 +199,35 @@ List of available corpora with corresponding codes:</p>
 <tr class="row-even"><td>bua</td>
 <td>Buryat corpus</td>
 </tr>
-<tr class="row-odd"><td>chr</td>
-<td>Crimean Tatar corpus</td>
-</tr>
-<tr class="row-even"><td>dan</td>
+<tr class="row-odd"><td>dan</td>
 <td>Danish corpus</td>
 </tr>
-<tr class="row-odd"><td>deu</td>
+<tr class="row-even"><td>deu</td>
 <td>German corpus</td>
 </tr>
-<tr class="row-even"><td>emk</td>
+<tr class="row-odd"><td>emk</td>
 <td>Maninka Automatically Parsed corpus</td>
 </tr>
-<tr class="row-odd"><td>est</td>
+<tr class="row-even"><td>est</td>
 <td>Estonian corpus</td>
 </tr>
-<tr class="row-even"><td>grk</td>
+<tr class="row-odd"><td>grk</td>
 <td>Modern Greek corpus</td>
 </tr>
-<tr class="row-odd"><td>hin</td>
+<tr class="row-even"><td>hin</td>
 <td>Hindi corpus</td>
 </tr>
-<tr class="row-even"><td>jpn_eng</td>
-<td>Japanese-English subcorpus of JuKuu corpus</td>
-</tr>
-<tr class="row-odd"><td>jpn_zho</td>
-<td>Japanese-Chinese subcorpus of JuKuu corpus</td>
-</tr>
-<tr class="row-even"><td>kal</td>
+<tr class="row-odd"><td>kal</td>
 <td>Kalmyk corpus</td>
 </tr>
-<tr class="row-odd"><td>kat</td>
+<tr class="row-even"><td>kat</td>
 <td>Georgian monolingual corpus</td>
 </tr>
-<tr class="row-even"><td>kaz</td>
+<tr class="row-odd"><td>kaz</td>
 <td>Almaty corpus of the Kazakh language</td>
 </tr>
-<tr class="row-odd"><td>mon</td>
+<tr class="row-even"><td>mon</td>
 <td>Mongolian corpus</td>
-</tr>
-<tr class="row-even"><td>pol</td>
-<td>National Corpus of Polish</td>
 </tr>
 <tr class="row-odd"><td>rus</td>
 <td>National Corpus of Russian</td>
@@ -249,12 +237,6 @@ List of available corpora with corresponding codes:</p>
 </tr>
 <tr class="row-odd"><td>rus_pol</td>
 <td>Polish-Russian Parallel Corpus</td>
-</tr>
-<tr class="row-even"><td>sl_dict</td>
-<td>Spreadthesign sign language dictionary</td>
-</tr>
-<tr class="row-odd"><td>slk</td>
-<td>Slovak corpus</td>
 </tr>
 <tr class="row-even"><td>tat</td>
 <td>Tatar corpus</td>
@@ -275,9 +257,6 @@ List of available corpora with corresponding codes:</p>
 </table>
 </li>
 <li><strong>verbose</strong> (<em>bool</em><em>, </em><em>default True</em>) – whether to enable tqdm progressbar.</li>
-<li><strong>sleep_time</strong> (<em>int</em><em>, </em><em>default 1</em>) – the length of pause between requests to the corpus (in seconds).
-It is required to avoid blocking and corpus breakdown.</li>
-<li><strong>sleep_each</strong> (<em>int</em><em>, </em><em>default 5</em>) – the number of requests after which a pause is required.</li>
 </ul>
 </td>
 </tr>
@@ -423,8 +402,8 @@ It is required to avoid blocking and corpus breakdown.</li>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="lingcorpora.result.Result.N">
-<code class="descname">N</code><a class="headerlink" href="#lingcorpora.result.Result.N" title="Permalink to this definition">¶</a></dt>
+<dt id="lingcorpora.result.Result.n">
+<code class="descname">n</code><a class="headerlink" href="#lingcorpora.result.Result.n" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of results.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -576,7 +555,7 @@ Header is stored in .__header: <code class="docutils literal notranslate"><span 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="corpora.html" class="btn btn-neutral float-right" title="Corpus list" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="corpora.html" class="btn btn-neutral float-right" title="Corpus List" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="lingcorpora: documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -27,8 +27,8 @@
   <tr>
     <td>DOI</td>
     <td>
-      <a href="https://zenodo.org/badge/latestdoi/115459241"/>
-      <img src="https://zenodo.org/badge/115459241.svg"/>
+      <a href="https://doi.org/10.5281/zenodo.1172456"/>
+      <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1172456.svg"/>
     </td>
   </tr>
 </table>
@@ -40,16 +40,31 @@ Documentation: [https://lingcorpora.github.io/lingcorpora.py/](https://lingcorpo
 
 You can install the latest release from PyPI using the following command:
 
-`pip3 install lingcorpora --user`
+```
+pip3 install lingcorpora --user
+```
 
 Also you can install the latest build from git checkout:
 
-`git clone https://github.com/lingcorpora/lingcorpora.py && cd lingcorpora.py && pip3 install . --user`
+```
+git clone https://github.com/lingcorpora/lingcorpora.py
+cd lingcorpora.py
+pip3 install . --user
+```
 
 ## Contributors
 
 The project is maintained by [Ekaterina Gerasimenko](https://github.com/kategerasimenko) and [Artyom Kopetskiy](https://github.com/akv17).
-At different stages, the following people have contributed to the project: Alexey Koshevoy, Mark Sobolev, Anna Zueva, Diana Malyshok, Maria Terekhina, Ustinya Kosheleva, Michael Voronov and George Moroz.
+At different stages, the following people have contributed to the project:
+[Alexey Koshevoy](https://github.com/alexeykosh),
+[Anna Klezovich](https://github.com/Pandaklez),
+[Anna Zueva](https://github.com/zu-ann),
+Diana Malyshok,
+[George Moroz](https://github.com/agricolamz),
+[Maria Terekhina](https://github.com/maria-terekhina),
+[Mark Sobolev](https://github.com/strategy155),
+[Michael Voronov](https://github.com/OneAdder) and
+[Ustinya Kosheleva](https://github.com/ustya-k).
 
 ## Citation
 
