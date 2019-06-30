@@ -3,7 +3,7 @@ import os
 import unittest
 
 from modulefinder import ModuleFinder
-from collections import Iterable
+from collections.abc import Iterable
 
 sys.path.insert(0, os.path.abspath('..'))
 from lingcorpora.corpus import Corpus, functions

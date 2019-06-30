@@ -43,8 +43,8 @@ Example
     corp = lingcorpora.Corpus('emk')
     results = corp.search('tuma bɛɛ', n_results=10, writing_system='latin', kwic=False)
     for result in results:
-        for i,target in enumerate(result):
-            print(i+1,target.text)
+        for i, target in enumerate(result):
+            print(i+1, target.text)
 
 .. parsed-literal::
 

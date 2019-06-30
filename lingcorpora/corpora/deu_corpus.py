@@ -18,7 +18,7 @@ API for German corpus (https://www.dwds.de).
 **Search Parameters**
 
 query: str or list([str])
-    query or queries. Be default inflection will be incleded
+    query or queries. By default, inflection will be included
     (unlike in the case of the other corpora). To perform an
     exact search add '@' symbol before the query (e.g. '@gut').
     By default multi-word queries will not work. To perform
@@ -52,7 +52,9 @@ Example
 
     corp = lingcorpora.Corpus('deu')
     results = corp.search('gut', n_results=10)
-    print(results[0][0].text)
+    for result in results:
+        for i, target in enumerate(result):
+            print(i+1, target.text)
 
 .. parsed-literal::
 

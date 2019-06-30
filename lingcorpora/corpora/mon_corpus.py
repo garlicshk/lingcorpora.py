@@ -34,8 +34,8 @@ Example
     corp = lingcorpora.Corpus('mon')
     results = corp.search('гээд', n_results=10)
     for result in results:
-        for i,target in enumerate(result):
-            print(i+1,target.text)
+        for i, target in enumerate(result):
+            print(i+1, target.text)
 
 .. parsed-literal::
 
