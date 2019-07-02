@@ -330,7 +330,7 @@ List of available corpora with corresponding codes:</p>
 </table>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rus_corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;rus&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">rus_results</span> <span class="o">=</span> <span class="n">rus_corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;мешок&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rus_results</span> <span class="o">=</span> <span class="n">rus_corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;мешок&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">rus_results</span>
 <span class="go">&quot;мешок&quot;: 100%|███████████████████████████████| 10/10 [00:07&lt;00:00,  1.40docs/s]</span>
 <span class="go">[Result(query=мешок, N=10, params={&#39;n_results&#39;: 10, &#39;kwic&#39;: True, &#39;n_left&#39;: None, &#39;n_right&#39;: None, &#39;query_language&#39;: None, &#39;subcorpus&#39;: &#39;main&#39;, &#39;get_analysis&#39;: False, &#39;gr_tags&#39;: None, &#39;start&#39;: 0, &#39;writing_system&#39;: None})]</span>
@@ -352,7 +352,7 @@ List of available corpora with corresponding codes:</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>query</strong> (<em>str</em><em> or </em><em>list</em><em>[</em><em>str</em><em>]</em>) – query or queries.</li>
 <li><strong>n_results</strong> (<em>int</em><em>, </em><em>default 100</em>) – number of results wanted.</li>
-<li><strong>kwic</strong> (<em>boolean</em><em>, </em><em>default True:</em>) – kwic format (True) or a sentence (False).</li>
+<li><strong>kwic</strong> (<em>bool</em><em>, </em><em>default True:</em>) – kwic format (True) or a sentence (False).</li>
 <li><strong>n_left</strong> (<em>int</em><em>, </em><em>default None:</em>) – number of words / symbols (corpus-specific) in the left context.</li>
 <li><strong>n_right</strong> (<em>int</em><em>, </em><em>default None:</em>) – number of words / symbols (corpus-specific) in the right context.</li>
 <li><strong>subcorpus</strong> (<em>str</em><em>, </em><em>default None:</em>) – subcorpus to search in.</li>
@@ -431,7 +431,7 @@ List of available corpora with corresponding codes:</p>
 
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;emk&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;tuma&#39;</span><span class="p">,</span> <span class="n">n_results</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">kwic</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;tuma&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">kwic</span><span class="o">=</span><span class="bp">False</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results</span>
 <span class="go">&quot;tuma&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 11.09docs/s]</span>
 <span class="go">Result(query=tuma, N=10, params={&#39;n_results&#39;: 10, &#39;kwic&#39;: False, &#39;n_left&#39;: None, &#39;n_right&#39;: None, &#39;query_language&#39;: None, &#39;subcorpus&#39;: &#39;cormani-brut-lat&#39;, &#39;get_analysis&#39;: False, &#39;gr_tags&#39;: None, &#39;start&#39;: 0, &#39;writing_system&#39;: &#39;&#39;})</span>
