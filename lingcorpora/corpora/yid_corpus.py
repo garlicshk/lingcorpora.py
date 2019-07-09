@@ -13,7 +13,7 @@ __doc__ = \
 Modern Yiddish Corpus
 =====================
 
-API for Modern Yiddish corpus (http://web-corpora.net/YMC/search/).
+API for Modern Yiddish corpus (http://web-corpora.net/YNC/search/).
     
 **Search Parameters**
 

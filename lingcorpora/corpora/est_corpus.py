@@ -177,7 +177,7 @@ class PageParser(Container):
                 )
                 idx = (len(left_part) + 1, len(left_part) + 1 + len(center_part))
                 text = left_part + ' ' + center_part + ' ' + right_part
-                t = Target(text,idx,'',[])
+                t = Target(text, idx, '', None)
                 yield t
                 s += 1
                 if s == self.n_results:

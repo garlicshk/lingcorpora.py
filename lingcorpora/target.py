@@ -15,7 +15,7 @@ class Target:
         target indexes in self.text -> self.text[l:r].
     meta: str
         sentence / document info (if exists).
-    analysis: dict
+    analysis: list of dicts
         target analysis (parsed).
     gr_tags: str, default None
         grammatical tags passed by user.
@@ -63,7 +63,7 @@ class Target:
             target idxs in self.text -> self.text[l:r]
         meta: str
             sentence / document info (if exists)
-        analysis: dict?, default None
+        analysis: list of dicts, default None
             target analysis (parsed)
         gr_tags: str, default None
             grammatical tags passed by user
@@ -146,6 +146,9 @@ class Target:
         if level == 'word':
             tokens = self.text.split()
             idx = self.__get_kwic_wlvl_target_idx()
+
+            if idx >= len(tokens):
+                return (' '.join(tokens), '', '')
 
             return self.__handle_punct(
                 ' '.join(tokens[max(0, idx-left):idx]),

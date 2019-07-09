@@ -119,7 +119,7 @@ class PageParser(Container):
         result = [x.text.strip() for x in result]
         text = ''.join(result)
         idxs = (len(result[0]),len(result[0])+len(result[1]))
-        return Target(text,idxs,'',[])
+        return Target(text, idxs, '', None)
 
         
     def extract(self):
