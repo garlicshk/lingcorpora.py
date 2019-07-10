@@ -11,7 +11,6 @@ from ..params_container import Container
 from ..target import Target
 from ..exceptions import EmptyPageException
 
-
 __author__ = 'akv17'
 
 __doc__ = \
@@ -240,7 +239,11 @@ class PageParser(Container):
 
                 if target_idxs:
                     for i, idxs in enumerate(target_idxs):
-                        yield text, idxs, meta, [ana[i]], self.gr_tags
+                        if not i+1 == len(target_idxs):
+                            if not idxs[1] + 1 == target_idxs[i+1][0]:
+                                yield text, idxs, meta, [ana[i]], self.gr_tags
+                        else:
+                            yield text, idxs, meta, [ana[i]], self.gr_tags
 
                 else:
                     continue
@@ -301,4 +304,3 @@ class PageParser(Container):
                 
             except EmptyPageException:
                 self.__stop_flag = True
-            
