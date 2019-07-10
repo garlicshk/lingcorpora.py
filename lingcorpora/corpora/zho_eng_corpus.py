@@ -77,14 +77,6 @@ class PageParser(Container):
         if self.query_language is None:
             raise ValueError('Please specify "query_language" parameter')
 
-    def __get_ana(self, word):
-        _ana = dict()
-        for ana in word.findall('ana'):
-            # iter over values of current ana of target (lex, sem, m, ...)
-            for ana_type in ana.findall('el'):
-                _ana[ana_type.attrib['name']] = [x.text for x in ana_type.findall('el-group/el-atom')]
-        return _ana
-
     def __parse_docs(self, docs_tree, analyses=True):
         """
         a generator over documents tree
@@ -92,7 +84,7 @@ class PageParser(Container):
         _text = str()
         _transl = str()
         _target_idxs = list()
-        _ana = list()
+        _ana = None
         _lang = str()
         _meta = str()
         lq = len(self.query)
@@ -105,7 +97,6 @@ class PageParser(Container):
         for el in docs_tree:
             if original:
                 _text = "".join(el.getchildren()[1].itertext())
-                # print(_text)
 
                 for k, sym in enumerate(_text):
                     if _text[k:k + lq] == self.query:
@@ -115,7 +106,6 @@ class PageParser(Container):
 
             else:
                 _transl = "".join(el.getchildren()[1].itertext())
-                # print(_transl)
                 if el.attrib['class'] == 'e':
                     _lang = 'zho'
                 else:
@@ -124,7 +114,7 @@ class PageParser(Container):
 
             if _target_idxs and (_transl != str()):
                 for ixs in _target_idxs:
-                    yield _text, ixs, _meta, _ana, _transl, _lang
+                    yield _text, ixs, _meta, _ana, self.gr_tags, _transl, _lang
                 _text = str()
                 _transl = str()
                 _target_idxs = list()

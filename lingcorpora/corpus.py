@@ -10,6 +10,9 @@ from .result import Result
 from .functions import functions
 
 
+warnings.simplefilter('always', UserWarning)
+
+
 class Corpus:
     """The object of this class should be instantiated for each corpus. Search is conducted via search method.
     
@@ -149,7 +152,9 @@ class Corpus:
         """
 
         query = self.__to_multisearch_format(arg=query, arg_name='query')
-        gr_tags = kwargs.get('gr_tags', [None] * len(query))
+        gr_tags = kwargs.get('gr_tags')
+        if gr_tags is None:
+            gr_tags = [None] * len(query)
         gr_tags = self.__to_multisearch_format(
             arg=gr_tags,
             arg_name='gr_tags',

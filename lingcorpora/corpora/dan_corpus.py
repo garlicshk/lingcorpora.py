@@ -19,7 +19,7 @@ API for Danish corpus (https://ordnet.dk/korpusdk_en/concordance).
 **Search Parameters**
 
 query: str or list([str]):
-    query or queries (currently only search by forms of the word is available)
+    query or queries
 n_results: int, default 100
     number of results wanted (100 by default)
 
@@ -62,7 +62,7 @@ class PageParser(Container):
         self.__session = requests.Session()
         
     def get_first_page(self):
-        params = {'query': self.query,
+        params = {'query': '"' + self.query + '"',
                   'search': 'Search',
                   'tag': 'word'}
         response = self.__session.get('http://ordnet.dk/korpusdk_en/concordance/action', params=params)
@@ -83,14 +83,14 @@ class PageParser(Container):
            left_part = left_part + ' ' + word.select('a')[0].text
         for word in sen.select('.right-context-cell'):
             right_part = right_part + ' ' + word.select('a')[0].text
-        center_part = sen.select('.conc_match')[0].a.text.strip()
+        center_part = ' '.join([m.a.text.strip() for m in sen.select('.conc_match')])
         left_part, right_part = left_part.strip(), right_part.strip()
         if self.punc.search(center_part[1:]) is not None:
             right_part = center_part[self.punc.search(center_part[1:]).start()+1:].strip() + ' ' + right_part
             center_part = center_part[0:self.punc.search(center_part[1:]).start()+1].strip()
         idx = (len(left_part) + 1, len(left_part) + 1 + len(center_part))
         text = left_part + ' ' + center_part + ' ' + right_part
-        t = Target(text,idx,'',[])
+        t = Target(text, idx, '', None)
         return t        
         
         
@@ -99,7 +99,6 @@ class PageParser(Container):
         if self.__pagenum == 1:
             occur = soup.select('.value')[0].text
             self.__occurrences = int(occur[(occur.find('of') + 2):(occur.find('occur'))].strip())
-            #self.__occurrences = 5000
             if self.__occurrences > 49:
                 self.__occurrences -= 1
         p = soup.select('.conc_table')[0]

@@ -130,7 +130,7 @@ class PageParser(Container):
         final_kws = result.select('div.token span.nott')[0].string.strip()
         idx = (len(lc) + 1, len(lc) + 1 + len(final_kws))
         text = lc + ' ' + final_kws + ' ' + rc
-        t = Target(text.strip(), idx, '', [])
+        t = Target(text.strip(), idx, '', None)
         return t
 
         

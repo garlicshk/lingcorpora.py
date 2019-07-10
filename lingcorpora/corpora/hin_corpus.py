@@ -81,26 +81,32 @@ class PageParser(Container):
         text = '%s %s %s' % (left, word, right)
         idxs = (len(left) + 1, len(left) + len(word) + 1)
         meta = ''
-        tags = {}
+        tags = None
         return Target(text, idxs, meta, tags)
 
     def __get_results(self):
         """
         parse the page and get results
         """
-        num = re.compile('\d+')
+        num = re.compile(r'\d+')
         sentence_list = []
         center_list = []
         left_list = []
         right_list = []
         soup = BeautifulSoup(self.page.text, 'lxml')
         for sentence in soup.select('tr[bgcolor*="f"] td'):
-            if not num.match(sentence.text):
+            if not num.match(sentence.text) and sentence.text.strip():
                 sentence_list.append(sentence.text)
-        for center in soup.select('td font a[target]'):
-            if not num.match(center.text):
-                center_list.append(center.text)
+                center = sentence.select('font a[target]')
+                if center and not num.match(center[0].text):
+                    center_list.append(center[0].text)
+                else:
+                    center_list.append('')
         for i in range(len(sentence_list)):
+            if not center_list[i]:
+                left_list.append(sentence_list[i])
+                right_list.append('')
+                continue
             res = sentence_list[i].split(center_list[i])
             left_list.append(res[0])
             right_list.append(res[1])

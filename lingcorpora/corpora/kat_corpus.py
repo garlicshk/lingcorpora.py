@@ -20,7 +20,7 @@ API for Georgian monolingual corpus (http://corpora.iliauni.edu.ge).
 **Search Parameters**
 
 query: str or list([str])
-    query or queries (currently only exact search by word is available)
+    query or queries (currently only exact search by one word is available)
 n_results: int, default 100
     number of results wanted
 
@@ -101,7 +101,7 @@ class PageParser(Container):
                                              right_part.strip()
         idx = (len(left_part) + 1, len(left_part) + 1 + len(center_part))
         text = left_part + ' ' + center_part + ' ' + right_part
-        t = Target(text,idx,'',[])
+        t = Target(text, idx, '', None)
         return t
 
         

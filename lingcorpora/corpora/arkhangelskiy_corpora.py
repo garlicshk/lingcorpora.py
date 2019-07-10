@@ -23,7 +23,7 @@ n_results: int
 kwic: bool
     kwic format (True) or a sentence (False) (True by default)
 get_analysis: bool
-    tags shown (True) or not (False)
+    tags shown (True) or not (False) (False by default)
 """
 
 
@@ -107,7 +107,7 @@ class PageParser(Container):
         for p, t in zip(pos, tags):
             res = re.search('^(.*?)(?:,|$)(.*?)$', p)
             new_pos.append(res.group(1))
-            new_tags.append(','.join([res.group(2), t]))
+            new_tags.append(','.join([res.group(2), t]).strip(','))
         return new_pos, new_tags
 
     def __get_tag(self, tag_text):
@@ -143,10 +143,10 @@ class PageParser(Container):
         return word
 
     def __get_idxs(self, text, word):
-        beg = text.find(word)
-        if beg == -1:
+        beg = re.search('\\b' + word + '\\b', text)
+        if beg is None:
             return None
-        return (beg, beg + len(word))
+        return (beg.start(), beg.end())
 
     def __get_text(self, res_context):
         res_text = res_context.text.strip()

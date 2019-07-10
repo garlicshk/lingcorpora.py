@@ -23,8 +23,6 @@ n_results: int, default 100
     number of results wanted
 kwic: bool, default True
     kwic format (True) or a sentence (False)
-tag: bool, default False
-    whether to collect grammatical tags for target word or not (False by default)
 subcorpus: list
     subcorpus (all of the mentioned below by default).
     Valid: ['non-fiction', 'fiction<1945', 'fiction>1945', 'press', 'law', 'religious', 
@@ -139,7 +137,7 @@ class PageParser(Container):
             _transl = str()
             _idx = 0
             _target_idxs = list()
-            _ana = list()
+            _ana = None
             _lang = str()
             _meta = str()
 
