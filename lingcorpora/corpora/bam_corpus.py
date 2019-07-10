@@ -31,6 +31,7 @@ subcorpus: str, default 'corbama-net-non-tonal'
         * 'corbama-net-non-tonal'
         * 'corbama-net-tonal'
         * 'corbama-brut'
+        * 'corbama-ud'
 
 Example
 -------
@@ -145,17 +146,17 @@ class PageParser(Container):
                         text += w + ' '
                     elif ch.name == 'span':
                         kws = ch.select('div.token')
-                        final_kws,tags = self.extract_kws(kws)
+                        final_kws, tags = self.extract_kws(kws)
                         idx = (len(text),len(text)+len(final_kws))
                         text += final_kws + ' '
         else:
             lc = sentence.select('span.nott')[0].string.strip()
             rc = sentence.select('span.nott')[-1].string.strip()
             kws = sentence.select('div.token')
-            final_kws,tags = self.extract_kws(kws)
+            final_kws, tags = self.extract_kws(kws)
             idx = (len(lc) + 1, len(lc) + 1 + len(final_kws))
             text = lc + ' ' + final_kws + ' ' + rc
-        t = Target(text,idx,'',tags)
+        t = Target(text, idx, '', tags)
         return t
         
 

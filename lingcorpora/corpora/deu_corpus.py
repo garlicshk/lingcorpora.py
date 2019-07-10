@@ -102,7 +102,7 @@ class PageParser(Container):
         text = '%s %s %s' % (left, word, right)
         idxs = (len(left) + 1, len(left) + len(word) + 1)
         meta = ''
-        tags = []
+        tags = None
         return Target(text, idxs, meta, tags)
 
     def __get_results(self):
