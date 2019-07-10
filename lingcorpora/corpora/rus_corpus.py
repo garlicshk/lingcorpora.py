@@ -239,12 +239,8 @@ class PageParser(Container):
 
                 if target_idxs:
                     for i, idxs in enumerate(target_idxs):
-                        if not i+1 == len(target_idxs):
-                            if not idxs[1] + 1 == target_idxs[i+1][0]:
-                                yield text, idxs, meta, [ana[i]], self.gr_tags
-                        else:
+                        if i+1 == len(target_idxs) or idxs[1]+1 != target_idxs[i+1][0]:
                             yield text, idxs, meta, [ana[i]], self.gr_tags
-
                 else:
                     continue
         
