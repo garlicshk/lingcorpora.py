@@ -29,7 +29,7 @@ class Result:
     .. code-block:: python
     
         >>> corp = lingcorpora.Corpus('emk')
-        >>> results = corp.search('tuma', n_results = 10, kwic=False)[0]
+        >>> results = corp.search('tuma', n_results=10, kwic=False)[0]
         >>> results
         "tuma": 100%|██████████| 10/10 [00:00<00:00, 11.09docs/s]
         Result(query=tuma, N=10, params={'n_results': 10, 'kwic': False, 'n_left': None, 'n_right': None, 'query_language': None, 'subcorpus': 'cormani-brut-lat', 'get_analysis': False, 'gr_tags': None, 'start': 0, 'writing_system': ''})

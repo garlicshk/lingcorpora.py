@@ -585,8 +585,8 @@ Available options:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;est&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;keel&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;keel&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.01docs/s]
@@ -610,7 +610,7 @@ Available options:</p>
 <p><strong>Search Parameters</strong></p>
 <dl class="docutils">
 <dt>query: str or list([str])</dt>
-<dd>query or queries. Be default inflection will be incleded
+<dd>query or queries. By default, inflection will be included
 (unlike in the case of the other corpora). To perform an
 exact search add ‘&#64;’ symbol before the query (e.g. <a class="reference external" href="mailto:'&#37;&#52;&#48;gut">‘<span>&#64;</span>gut</a>’).
 By default multi-word queries will not work. To perform
@@ -645,7 +645,9 @@ Available options:</p>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;deu&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;gut&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;gut&quot;: 100%|██████████| 10/10 [00:00&lt;00:00, 17.48docs/s]
@@ -844,8 +846,8 @@ Available options:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;emk&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;tuma bɛɛ&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">writing_system</span><span class="o">=</span><span class="s1">&#39;latin&#39;</span><span class="p">,</span> <span class="n">kwic</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;tuma bɛɛ&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  9.62docs/s]
@@ -881,8 +883,8 @@ Available options:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;mon&#39;</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;гээд&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 <pre class="literal-block">
@@ -953,34 +955,35 @@ Available options:</p>
 </dl>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">corp</span> <span class="o">=</span> <span class="n">lingcorpora</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;yid&#39;</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;gut&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">corp</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;zikh&#39;</span><span class="p">,</span> <span class="n">n_results</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">result</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;gut&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.17docs/s]
+<p>‘)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;zikh&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.17docs/s]
 
 1
-עס איז גוט באַקאַנט, אַז די פּאַרטײ און סטאַלין אַלײן האָבן געהאַלטן אַ וואַכיק אויג אויף דער ליטעראַטור און קונסט.
+דערנאָך הייבט ער זיך שטיל אויף און גייהט ווייטער מיט אַ שמייכעלע צוריק אין אַלקיריל אַריין; זי שטעלט זיך אויף, שטייהט אַ וויילע און קוקט איהם נאָך,׳ ביז ער פערמאַכט אונטער זיך דאָס טהירעל.
 2
-זיכער האָט ראַבײַ טראַוויס געווירקט אויפֿן אָנגעזאַמלטן עולם וועלכער האָט גאַנץ גוט געוווּסט וואָס עס מיינט אַראָפּצונידערן אַליין, און אַ סך פֿון אים האָבן גאַנץ גוט געוווּסט וואָס מען מיינט מיטן זאָג &quot;זײַן,&quot; צי דאָס האָט געמיינט צו באַקלערן זיך, צו טראַכטן אָדער צו לעבן אינעם מאָמענט.
+למך׳ל זיצט אין אַלקיריל ביי זיך.
 3
-עס וואָלט געווען גוט צו וויסן צי איבערזעצונגען פֿון ייִדיש, &quot;משפּחה מאַשבער“ בתוכם, ווערן געלייענט אין די לייען-קלובן און קרײַזלעך, וואָס זענען טעטיק אין אַלע וויקנלעך פֿון דער וועלט.
+אונטער׳ן ווענטיל שושקעט מען און מען סוד׳עט זיך; און אַ פערשטיקט געלעכטער הערט זיך, און די זעלנערקע האַלט עפיס איין דעם עולם: “מאָרגען”, זאָגט זי אַלץ־אין־איינעם, “מאָרגען!
 4
-אַ גרויסע טייל פֿאַבריקן האָבן אין גאַנצן אײַנגעשטעלט אָפּגעשטעלט די אַרבעט, אַנדערע האָבן דערווײַל נאָר אָפּגעזאָגט האַלב אָדער צוויי-דריטל פֿון זייערע אַרבעטער, ווײַל זיי האָבן נאָך גערעכנט, אַז דער פּלוצלונגער קריזיס וועט שנעל איבערגיין און די געשעפֿטן וועלן צוריק אויפֿלעבן ווי געווען; אָבער די אמתע קלוגע געשעפֿטסלײַט, וועלכע האָבן גוט פֿאַרשטאַנען פֿון וואַנען דער פּלוצלונגער קריזיס האָט זיך גענומען, האָבן ניט פֿיל געהאָפֿט אויף דער צוקונפֿט.
+ווייסט גנענדיל פין דעם אַלעס, זי מאַכט זיך יאָ, צי זי מאַכט זיך נישט דערפין, שווייגען שווייגט זי...
 5
-ווען מע שטרעבט צו זײַן גוט און צו אַנטפּלעקן ג־טלעכקייט אין זיך און אין דער אַרומיקער וועלט, קאָן מען דערגרייכן דאָס אמתע חשיבֿות פֿון דער מענטשלעכער נשמה, די מדרגה פֿון &quot;אַשר לא ימד ולא יספר&quot;, דאָס ליכט פֿונעם ג-טלעכן אין־סוף, וואָס פֿאַראייניקט דאָס גאַנצע וועזן, העכער פֿון אַלע גרענעצן און חשבונות.
+שלענדערט זיך די גרויסע גענענדיל איבער׳ן מאַרק, איבער די גאַסען...
 6
-און לסוף, די אייביקע פֿראַגע: צי איז גוט דער נײַער פּרעזידענט פֿאַר די ייִדן?
+עס געפֿינען זיך דאָ אויך ניט־יידישע פאמיליעס.
 7
-31:18 זי מערקט אַז איר פֿאַרדינסט איז גוט; ניט פֿאַרלאָשן בייַ נאַכט ווערט איר ליכט.
+אַלע איינוווינער זיינען קרובימ צווישן זיך: פֿעטערס, מומעס, פלימעניקעס(צעם), שוועסטער־קינדער אד״גל, פארנעמען זיך מיט לאַנדווירטשאפֿט און אַ טייל מיט פֿורמאנעריי ווי אַ צוגאב, זיינען מקיים דעם “בזעת אפיך” אין די גאנצע הונדערט פראצענט.
 8
-דער אמתער &quot;בערמודער דרײַעק&quot;, וואָס געפֿינט זיך אין אַטלאַנטישן אָקעאַן, צווישן די בערמודער אינדזלען, פּוערטאָ־ריקאָ און פֿלאָרידע, איז גוט באַקאַנט, ווי אַן אָרט, וווּ עס לויערט די סכּנה איבער די שיפֿן אומגעבראַכט אָדער פֿאַרשוווּנדן צו ווערן.
+פֿון מאיאנטעקס פֿון זיך, אַן דער דערלויבעניש פֿון דער מאכט.
 9
-אַזוי איז זרח געקומען נאָך יאָהרען אַהיים צו זייַן ווייַב צירלען צוריק, וימצאה בריאה ושלמה, און האָט זי געפונען געזונד און פריש, וואָרום זי האָט די גאַנצע צאָהל יאָהר נישט איין מינוט פערלוירען דעם בטחון, און האָט יעדען טאָג געהאָפט צו גאָט, אַז זרח איהר מאַן וועט קומען אַהיים און אַלץ וועט נאָך ווערען גוט.
+ביי היינטיקן טאג, ווען עס זיינען אריבער שוין צען יאר זינט די קאלאניזירונג האָט זיך אנגעהויבן, קען מען שוין אונטערפירן אַ שטיקל סך־הכל.
 10
-זיי ווייסן גענוי, וואָס איז גוט און וואָס איז שלעכט.
+וויל שוין גנענדיל מודה זיין אויפ׳ן אמת, זאָל זיין אַיין עק פון אָבקומעניש פאַר׳ן אָבנאַרען, צוליעב אַ נאַרישער בושה; עפענט זיך אָבער באותו הרגע אויף די טהיר, הערט זיך איהר
 </pre></div>
 </div>
 </div>
@@ -1157,26 +1160,16 @@ Valid: [‘non-fiction’, ‘fiction&lt;1945’, ‘fiction&gt;1945’, ‘pres
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;теле&quot;: 100%|██████████| 10/10 [00:02&lt;00:00,  4.85docs/s]
 
-1
-Ир-егетләреңдәй дәртле, Гайрәтле син, татар теле.
-2
-гел Гадел Кутуй 348 украин теле.
-3
-Аның тагы башы әйләнә башлады, авызы кипте, теле әйләнмәс хәлгә килде.
-4
-Хәзер РИУда татар теле күп булмаса да фән буларак укытыла.
-5
-— Татар теле һәм әдәбияты.
-6
-Хәбибуллин укый торган класска җитәкче итеп беркетелгән ана теле укытучысы белән сөйләште.
-7
-Тик шунысы кызганыч һәм сәер, шул кеше мәктәпләрдә милли компонетларны бетерүче мәгънәсез указга ашыгыч рәвештә кул куйды.) Татар теле төрле чорлар кичерде.
-8
-Гомумән, җыеп әйткәндә, татар теле синтаксисы галим тарафыннан бербөтен система итеп тирәнтен өйрәнелә һәм нәтиҗәләр 1958 елда «Хәзерге татар әдәби теле: Синтаксис» исемендә басылып чыга.
-9
-Шагыйрь әсәрләрендә рус теле аркылы шактый күп санда Көнбатыш Европа телләреннән дә алынмалар кулланылган.
-10
-Сүз җаеннан аңлашылганча, мәкаләдә вакытлы матбугат теле турында гына фикер әйтелә, ягъни Г.
+1 Теле авызына бәйләнгән диярсең, ник бер сүз ката алсын.
+2 Гармун күреген шап итеп тарттырып куйгач, Касыймның теле ачылды.
+3 Теле йөрәгенә түгел, акылына буйсынырга тырышты.
+4 Колак очларына ут капкан Нәкыя терсәге белән егеткә төртеп алды:.Теле шушының.
+5 1939 елның көзендә читтән торып Мәскәү педагогика институтының рус теле һәм әдәбияты факультетына укырга керә.
+6 Соңыннан, Сталинабад(Дүшәмбе) шәһәренә күчеп, таҗиклар арасында яши башлагач, ул әлеге телдә дә матур гына аңлаша, институтта укыганда немец теле белән дә кызыксына.
+7 Кызганыч, бүген мәчетләргә урыс теле үтеп керә башлады.
+8 Бу легионда тәрҗемәче һәм немец теле укытучысы сыйфатында Фридрих Биддер хезмәт итә.
+9 шигырьләрендә дә җәмгыятьнең кешелексезлеген, иҗтимагый-сәяси вазгыятьне «эзоп» теле аша тасвирлау урын ала.  «
+10 «Хәзерге татар теле кириллицага нигезләнгән» дип әйтү дә логиканы боза.
 </pre></div>
 </div>
 </div>
@@ -1204,26 +1197,16 @@ Valid: [‘non-fiction’, ‘fiction&lt;1945’, ‘fiction&gt;1945’, ‘pres
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;кыл&quot;: 100%|██████████| 10/10 [00:01&lt;00:00,  5.64docs/s]
 
-1
-Абхазилэн обороная министрез кылсёoӥc: Грузия ожмаськонзэ ӧc дугдытыке, со кыкетӥ фронт усьтоз.
-2
-Ми палан 80 процентэз улӥсьёс - удмуртъёс, нош школаын удмурт кыл быдтэмын.
-3
-Озьы шуи ке, янгыш уг луы, дыр, уго ужало соос «Ӟеч-а, бур-а, удмурт кыл » книгая, кудӥз чакламын воксё удмуртсэ тодӥсьтэм ӟуч нылпиослы.
-4
-Соос пӧлын нимаз ӧвӧл ӟуч литература, вань ӟуч кыл но литература.
-5
-Одӥг кыл гинэ верай вал.
-6
-История уг яраты трос кыл быдтэмез, со эскере документъёсты, учыръёсты.
-7
-Азьвыл аръёсы сямен ик, Гурт шудонъёсын ыбылӥськонэ пыриськозы полиатлонистъёс но ёрос йыръёс гинэ.- Мугорез кыдатонэ трос калыкез кыскон понна специалистъёс но тырмыт луыны кулэ, дыр?- Ёросысь мугорез кыдатон культураез но спортэз азинтон удысын 70 мурт ужа: нылпи садъёсын, школаосын физкультураез нуисьёс, профессиональной колледжысь преподавательёс, предприятиосын но организациосын 6 мурт спортэз азинтон понна кыл кутэ.
-8
-Мон валасько семьяе азьын кыл кутонме,«пӧйшурась » луэмме.- Мон малпай вал, али Д. Донцовалэн кадь книгаос гинэ коньдон ваё...- Кудласянь учкод ведь гожъямъёсыд шоры.
-9
-Нылкышно пал кыл но ӧз тоды ӟуч сямен.
-10
-Базарын китай сямен вераськимы ни, отын, конешно, дасо кыл но тырмыт.
+1 Клубен кивалтӥсь Нина Анатольевна Кузнецова но паймемын.- Кинлы кулэ ни милям клубмы? - лулӟе со. - Юртэз колхозлэн, кыл кутӥсез - нокин но уг сюры.
+2 Отысь клубез радъян пумысен вераськон ёросысь вылӥ кивалтӥсьёсмылэн но кыл йылазы ялан берга.
+3 Номыр понна кыл уд кутӥськы.
+4 Калыкен одӥг кыл шедьтыны секыт ӧвӧл.
+5 Чеберлыко литератураез лыдӟыны ӧдъяй, озьы вераськонме волятӥ, кыл шыкысме узырмытӥ.
+6 Ву тудӟонэз пумитаны дасьлык понна нырысь ик кыл куто кар но ёрос кивалтӥсьёс.
+7 ЮЛИЯ ОЛЮНИНА УДМУРТ КУН УНИВЕРСИТЕТЫСЬ УДМУРТ ФИЛОЛОГИ ФАКУЛЬТЕТЫН ДЫШЕТСКИСЬ:«Чошатоно ке удмурт кылын, китай кыл со туж секыт ми понна, малы ке шуоно, отын портэм интонациосты соблюдать кароно.
+8 Со ваньмыз понна кыл кутыны уг кышка.
+9 Малы?- Туала арын туж модной кыл вань - кризис, - валэктэ Людмила Королёва. - Милемды но со шуккиз, лэся.
+10 А. Ф. Лесун кыл сётӥз коньдон но лэсьтӥськон пумысен Удмурт Элькунлэн Президентэныз пыр-поч кенешыны, ивортэ «Можгинские вести » газет.
 </pre></div>
 </div>
 </div>
