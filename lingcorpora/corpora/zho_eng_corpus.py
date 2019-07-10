@@ -96,7 +96,7 @@ class PageParser(Container):
 
         for el in docs_tree:
             if original:
-                _text = "".join(el.getchildren()[1].itertext())
+                _text = "".join(el.getchildren()[1].itertext()).strip()
 
                 for k, sym in enumerate(_text):
                     if _text[k:k + lq] == self.query:
@@ -105,7 +105,7 @@ class PageParser(Container):
                 original = False
 
             else:
-                _transl = "".join(el.getchildren()[1].itertext())
+                _transl = "".join(el.getchildren()[1].itertext()).strip()
                 if el.attrib['class'] == 'e':
                     _lang = 'zho'
                 else:
