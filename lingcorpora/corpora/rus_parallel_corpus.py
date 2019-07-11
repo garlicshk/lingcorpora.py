@@ -2,7 +2,6 @@
 # coding=<UTF-8>
 
 from lxml import etree
-from functools import reduce
 import urllib.request as ur
 
 from ..params_container import Container
@@ -128,9 +127,10 @@ class PageParser(Container):
             else:
                 if not index in [ind[-1] for ind in to_squeeze if ind]:
                     new_indexes.append(index)
+        to_squeeze.sort()
         for sq in to_squeeze:
             if sq:
-                new_indexes.append(reduce(lambda x, y: [x[0], y[1]], sq))
+                new_indexes.append([sq[0][0], sq[-1][1]])
         new_indexes.sort()
         return new_indexes
 
