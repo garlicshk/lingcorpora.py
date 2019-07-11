@@ -2,12 +2,12 @@
 # coding=<UTF-8>
 
 from lxml import etree
+from functools import reduce
 import urllib.request as ur
 
 from ..params_container import Container
 from ..target import Target
 from ..exceptions import EmptyPageException
-
 
 __author__ = 'akv17, maria-terekhina'
 __doc__ = \
@@ -106,7 +106,32 @@ class PageParser(Container):
             # iter over values of current ana of target (lex, sem, m, ...)
             for ana_type in ana.findall('el'):
                 _ana[ana_type.attrib['name']] = [x.text for x in ana_type.findall('el-group/el-atom')]
-        return _ana        
+        return _ana
+    
+    def _sqeeze_indexes(self, indexes):
+        new_indexes = []
+        ind = 0
+        to_squeeze = []
+        to_squeeze.append([])
+        for i, index in enumerate(indexes):
+            if not i+1 == len(indexes):
+                if index[1] + 1 == indexes[i+1][0]:
+                    if not index in to_squeeze:
+                        to_squeeze[-1].append(index)
+                    if not indexes[i+1][0] in to_squeeze:
+                        to_squeeze[-1].append(indexes[i+1])
+                else:
+                    if not index in [ind[-1] for ind in to_squeeze if ind]:
+                        new_indexes.append(index)
+                        to_squeeze.append([])
+            else:
+                if not index in [ind[-1] for ind in to_squeeze if ind]:
+                    new_indexes.append(index)
+        for sq in to_squeeze:
+            if sq:
+                new_indexes.append(reduce(lambda x, y: [x[0], y[1]], sq))
+        new_indexes.sort()
+        return new_indexes
 
     def __parse_docs(self, docs, ql, analyses=True):
             """
@@ -155,13 +180,15 @@ class PageParser(Container):
 
                                 if snip.attrib['language'] != 'ru':
                                     _lang = snip.attrib['language']
-
+                    
+                    _target_idxs = self._sqeeze_indexes(list(map(list, _target_idxs)))
                     if _target_idxs:
                         for i, ixs in enumerate(_target_idxs):
                             if analyses:
                                 yield _text, ixs, _meta, _ana[i], self.gr_tags, _transl, _lang
                             else:
                                 yield _text, ixs, _meta, _ana, self.gr_tags, _transl, _lang
+                        _target_idxs = []
                     else:
                         continue
         
