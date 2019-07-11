@@ -108,7 +108,8 @@ class PageParser(Container):
                 _ana[ana_type.attrib['name']] = [x.text for x in ana_type.findall('el-group/el-atom')]
         return _ana
     
-    def _sqeeze_indexes(self, indexes):
+    @staticmethod
+    def _sqeeze_indexes(indexes):
         new_indexes = []
         ind = 0
         to_squeeze = []
@@ -188,7 +189,6 @@ class PageParser(Container):
                                 yield _text, ixs, _meta, _ana[i], self.gr_tags, _transl, _lang
                             else:
                                 yield _text, ixs, _meta, _ana, self.gr_tags, _transl, _lang
-                        _target_idxs = []
                     else:
                         continue
         
