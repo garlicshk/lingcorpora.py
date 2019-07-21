@@ -8,7 +8,6 @@ from ..params_container import Container
 from ..target import Target
 from ..exceptions import EmptyPageException
 
-
 __author__ = 'akv17, maria-terekhina'
 __doc__ = \
 """
@@ -106,7 +105,34 @@ class PageParser(Container):
             # iter over values of current ana of target (lex, sem, m, ...)
             for ana_type in ana.findall('el'):
                 _ana[ana_type.attrib['name']] = [x.text for x in ana_type.findall('el-group/el-atom')]
-        return _ana        
+        return _ana
+    
+    @staticmethod
+    def _sqeeze_indexes(indexes):
+        new_indexes = []
+        ind = 0
+        to_squeeze = []
+        to_squeeze.append([])
+        for i, index in enumerate(indexes):
+            if not i+1 == len(indexes):
+                if index[1] + 1 == indexes[i+1][0]:
+                    if not index in to_squeeze:
+                        to_squeeze[-1].append(index)
+                    if not indexes[i+1][0] in to_squeeze:
+                        to_squeeze[-1].append(indexes[i+1])
+                else:
+                    if not index in [ind[-1] for ind in to_squeeze if ind]:
+                        new_indexes.append(index)
+                        to_squeeze.append([])
+            else:
+                if not index in [ind[-1] for ind in to_squeeze if ind]:
+                    new_indexes.append(index)
+        to_squeeze.sort()
+        for sq in to_squeeze:
+            if sq:
+                new_indexes.append([sq[0][0], sq[-1][1]])
+        new_indexes.sort()
+        return new_indexes
 
     def __parse_docs(self, docs, ql, analyses=True):
             """
@@ -155,7 +181,8 @@ class PageParser(Container):
 
                                 if snip.attrib['language'] != 'ru':
                                     _lang = snip.attrib['language']
-
+                    
+                    _target_idxs = self._sqeeze_indexes(list(map(list, _target_idxs)))
                     if _target_idxs:
                         for i, ixs in enumerate(_target_idxs):
                             if analyses:
