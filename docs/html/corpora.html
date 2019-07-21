@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Corpus List &mdash; lingcorpora 2.0rc0 documentation</title>
+  <title>Corpus List &mdash; lingcorpora 2.0 documentation</title>
   
 
   
@@ -313,6 +313,7 @@
 <li>‘corbama-net-non-tonal’</li>
 <li>‘corbama-net-tonal’</li>
 <li>‘corbama-brut’</li>
+<li>‘corbama-ud’</li>
 </ul>
 </dd>
 </dl>
@@ -431,7 +432,7 @@ Available options:</p>
 <p><strong>Search Parameters</strong></p>
 <dl class="docutils">
 <dt>query: str or list([str]):</dt>
-<dd>query or queries (currently only search by forms of the word is available)</dd>
+<dd>query or queries</dd>
 <dt>n_results: int, default 100</dt>
 <dd>number of results wanted (100 by default)</dd>
 </dl>
@@ -671,7 +672,7 @@ Available options:</p>
 <p><strong>Search Parameters</strong></p>
 <dl class="docutils">
 <dt>query: str or list([str])</dt>
-<dd>query or queries (currently only exact search by word is available)</dd>
+<dd>query or queries (currently only exact search by one word is available)</dd>
 <dt>n_results: int, default 100</dt>
 <dd>number of results wanted</dd>
 </dl>
@@ -941,7 +942,7 @@ Available options:</p>
 </div>
 <span class="target" id="module-lingcorpora.corpora.yid_corpus"></span><div class="section" id="modern-yiddish-corpus">
 <h2>Modern Yiddish Corpus<a class="headerlink" href="#modern-yiddish-corpus" title="Permalink to this headline">¶</a></h2>
-<p>API for Modern Yiddish corpus (<a class="reference external" href="http://web-corpora.net/YMC/search/">http://web-corpora.net/YMC/search/</a>).</p>
+<p>API for Modern Yiddish corpus (<a class="reference external" href="http://web-corpora.net/YNC/search/">http://web-corpora.net/YNC/search/</a>).</p>
 <p><strong>Search Parameters</strong></p>
 <dl class="docutils">
 <dt>query: str or list([str])</dt>
@@ -1101,8 +1102,6 @@ Valid: [‘rus’, ‘eng’, ‘bel’, ‘bul’, ‘bua’, ‘esp’, ‘ita
 <dd>number of results wanted</dd>
 <dt>kwic: bool, default True</dt>
 <dd>kwic format (True) or a sentence (False)</dd>
-<dt>tag: bool, default False</dt>
-<dd>whether to collect grammatical tags for target word or not (False by default)</dd>
 <dt>subcorpus: list</dt>
 <dd><p class="first">subcorpus (all of the mentioned below by default).
 Valid: [‘non-fiction’, ‘fiction&lt;1945’, ‘fiction&gt;1945’, ‘press’, ‘law’, ‘religious’,</p>

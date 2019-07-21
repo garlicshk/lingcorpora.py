@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Making new API &mdash; lingcorpora 2.0rc0 documentation</title>
+  <title>Making new API &mdash; lingcorpora 2.0 documentation</title>
   
 
   
@@ -163,62 +163,59 @@
 <div class="section" id="main-concept">
 <h2>Main concept<a class="headerlink" href="#main-concept" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Search is done via <code class="docutils literal notranslate"><span class="pre">Corpus</span></code> object (<code class="docutils literal notranslate"><span class="pre">search</span></code> method)</li>
-<li>Each API of a corpus, dictionary, etc. is a <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> class (see
-below) which has method <code class="docutils literal notranslate"><span class="pre">.extract()</span></code>.</li>
-<li><code class="docutils literal notranslate"><span class="pre">PageParser.extract()</span></code> is a generator (see <code class="docutils literal notranslate"><span class="pre">yield</span></code> in Python) of
-<code class="docutils literal notranslate"><span class="pre">Target</span></code> objects (individual hits).</li>
-<li><code class="docutils literal notranslate"><span class="pre">PageParser</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Container</span></code>, which is a class in
-<code class="docutils literal notranslate"><span class="pre">params_container.py</span></code> and contains all possible parameters for
-corpora.</li>
-<li>All <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects are collected in <code class="docutils literal notranslate"><span class="pre">search</span></code> (in the <code class="docutils literal notranslate"><span class="pre">Corpus</span></code>
-object) into the <code class="docutils literal notranslate"><span class="pre">Result</span></code> object.</li>
-<li>Documentation for users can be found
-<a class="reference external" href="https://lingcorpora.github.io/lingcorpora.py/docs.html">here</a></li>
+<li>Each API of a corpus, dictionary, etc. is a <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> class (see below) which has method <code class="docutils literal notranslate"><span class="pre">.extract()</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PageParser.extract()</span></code> is a generator (see <code class="docutils literal notranslate"><span class="pre">yield</span></code> in Python) of <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects (individual hits).</li>
+<li><code class="docutils literal notranslate"><span class="pre">PageParser</span></code> inherits from <code class="docutils literal notranslate"><span class="pre">Container</span></code>, which is a class in <code class="docutils literal notranslate"><span class="pre">params_container.py</span></code> and contains all possible parameters for corpora.</li>
+<li>All <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects are collected in <code class="docutils literal notranslate"><span class="pre">search</span></code> (in the <code class="docutils literal notranslate"><span class="pre">Corpus</span></code> object) into the <code class="docutils literal notranslate"><span class="pre">Result</span></code> object.</li>
+<li>Documentation for users can be found <a class="reference external" href="https://lingcorpora.github.io/lingcorpora.py/docs.html">here</a>.</li>
 </ul>
 </div>
 <div class="section" id="to-make-a-new-api">
 <h2>To make a new API<a class="headerlink" href="#to-make-a-new-api" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Make a <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> object</li>
-<li>It inherits from <code class="docutils literal notranslate"><span class="pre">Container</span></code> and <code class="docutils literal notranslate"><span class="pre">Container</span></code> constructor is
-called in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> (see example below)</li>
+<li><dl class="first docutils">
+<dt>Make a <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> object</dt>
+<dd><ol class="first last arabic">
+<li>It inherits from <code class="docutils literal notranslate"><span class="pre">Container</span></code> and <code class="docutils literal notranslate"><span class="pre">Container</span></code> constructor is called in <code class="docutils literal notranslate"><span class="pre">__init__</span></code> (see example below)</li>
 <li>It has method <code class="docutils literal notranslate"><span class="pre">extract()</span></code> which <code class="docutils literal notranslate"><span class="pre">yield</span></code>s <code class="docutils literal notranslate"><span class="pre">Target</span></code> objects</li>
-<li>All other (auxiliary) parameters in <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> should be
-encapsulated (add to underscores <code class="docutils literal notranslate"><span class="pre">__</span></code> to their names)</li>
-<li>You should pass to <code class="docutils literal notranslate"><span class="pre">Target</span></code> object the following information:</li>
+<li>All other (auxiliary) parameters in <code class="docutils literal notranslate"><span class="pre">PageParser</span></code> should be encapsulated (add to underscores <code class="docutils literal notranslate"><span class="pre">__</span></code> to their names)</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>You should pass to <code class="docutils literal notranslate"><span class="pre">Target</span></code> object the following information:</dt>
+<dd><ol class="first last arabic">
 <li>whole sentence (<code class="docutils literal notranslate"><span class="pre">text</span></code>) - string</li>
-<li>indices (<code class="docutils literal notranslate"><span class="pre">idxs</span></code>) of the target in the sentence: <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code>
-such that target == <code class="docutils literal notranslate"><span class="pre">text[l:r]</span></code> - tuple</li>
-<li>metadata (<code class="docutils literal notranslate"><span class="pre">meta</span></code>) (document name, author, year, etc.) - string. If
-there is no meta, then pass empty string</li>
-<li>grammar tags (<code class="docutils literal notranslate"><span class="pre">tags</span></code>) - dict. If there are no tags, pass empty
-dict</li>
-<li>for parallel corpora: translation (<code class="docutils literal notranslate"><span class="pre">transl</span></code>) - translation from
-<code class="docutils literal notranslate"><span class="pre">queryLanguage</span></code> to another language</li>
-<li>for parallel corpora: language (<code class="docutils literal notranslate"><span class="pre">lang</span></code>) - the other language (not
-<code class="docutils literal notranslate"><span class="pre">queryLanguage</span></code>) in the example pair</li>
-<li><strong>Important</strong>: if there are several target occurrences in one
-example, you should split them into <strong>separate</strong> Target objects.</li>
-<li>Write the docstring <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> and the author <code class="docutils literal notranslate"><span class="pre">__author__</span></code> before
-<code class="docutils literal notranslate"><span class="pre">PageParser</span></code></li>
-<li>Name the file <em>langcode</em>_corpus.py and place it into the
-<code class="docutils literal notranslate"><span class="pre">corpora</span></code> directory. <em>langcode</em> stands for <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-3
-code</a></li>
-<li>For testing purposes querying data must be provided via <code class="docutils literal notranslate"><span class="pre">&lt;dict&gt;</span></code>
-named <code class="docutils literal notranslate"><span class="pre">TEST_DATA</span></code> (see template below for details)</li>
-<li>If you would like to add new search parameters, open
-<code class="docutils literal notranslate"><span class="pre">params_container.py</span></code> and add this parameter to the arguments
-(<strong>do not forget default value</strong>) and attributes.</li>
-<li>Make a pull request and if API is OK, we will:</li>
+<li>indices (<code class="docutils literal notranslate"><span class="pre">idxs</span></code>) of the target in the sentence: <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code> such that target == <code class="docutils literal notranslate"><span class="pre">text[l:r]</span></code> - tuple</li>
+<li>metadata (<code class="docutils literal notranslate"><span class="pre">meta</span></code>) (document name, author, year, etc.) - string. If there is no meta, then pass empty string</li>
+<li>grammar tags (<code class="docutils literal notranslate"><span class="pre">tags</span></code>) - dict. If there are no tags, pass empty dict</li>
+<li>for parallel corpora: translation (<code class="docutils literal notranslate"><span class="pre">transl</span></code>) - translation from <code class="docutils literal notranslate"><span class="pre">queryLanguage</span></code> to another language</li>
+<li>for parallel corpora: language (<code class="docutils literal notranslate"><span class="pre">lang</span></code>) - the other language (not <code class="docutils literal notranslate"><span class="pre">queryLanguage</span></code>) in the example pair</li>
+<li><strong>Important</strong>: if there are several target occurrences in one example, you should split them into <strong>separate</strong> Target objects.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>Write the docstring <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> and the author <code class="docutils literal notranslate"><span class="pre">__author__</span></code> before <code class="docutils literal notranslate"><span class="pre">PageParser</span></code></li>
+<li>Name the file <em>langcode</em>_corpus.py and place it into the <code class="docutils literal notranslate"><span class="pre">corpora</span></code> directory. <em>langcode</em> stands for <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-3 code</a></li>
+<li>For testing purposes querying data must be provided via <code class="docutils literal notranslate"><span class="pre">&lt;dict&gt;</span></code> named <code class="docutils literal notranslate"><span class="pre">TEST_DATA</span></code> (see template below for details)</li>
+<li>If you would like to add new search parameters, open <code class="docutils literal notranslate"><span class="pre">params_container.py</span></code> and add this parameter to the arguments (<strong>do not forget default value</strong>) and attributes.</li>
+<li><dl class="first docutils">
+<dt>Make a pull request and if API is OK, we will:</dt>
+<dd><ol class="first last arabic">
 <li>Add it to the package</li>
 <li>Include it in the docs</li>
+</ol>
+</dd>
+</dl>
+</li>
 </ol>
 </div>
 <div class="section" id="api-template">
 <h2>API template<a class="headerlink" href="#api-template" title="Permalink to this headline">¶</a></h2>
-<div class="code python3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">params_container</span> <span class="k">import</span> <span class="n">Container</span>
-<span class="kn">from</span> <span class="nn">target</span> <span class="k">import</span> <span class="n">Target</span>
+<div class="code python3 highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lingcorpora.params_container</span> <span class="k">import</span> <span class="n">Container</span>
+<span class="kn">from</span> <span class="nn">lingcorpora.target</span> <span class="k">import</span> <span class="n">Target</span>
 
 
 <span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
