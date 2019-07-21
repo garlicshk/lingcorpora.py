@@ -11,8 +11,6 @@
   <tr>
     <td> Build Status </td>
     <td>
-      <a href="https://travis-ci.org/lingcorpora/lingcorpora.py"/>
-      <img src="https://travis-ci.org/lingcorpora/lingcorpora.py.svg"/>
       <a href="https://ci.appveyor.com/project/kategerasimenko/lingcorpora-py"/>
       <img src="https://ci.appveyor.com/api/projects/status/github/lingcorpora/lingcorpora.py?svg=true"/>
     </td>
