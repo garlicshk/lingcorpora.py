@@ -10,7 +10,8 @@ This package includes API for more than 20 online text corpora. Comprehensive li
 
 R version of this package by George Moroz is located `here <https://github.com/lingcorpora/lingcorpora.R>`_.
 
-The package is available under `MIT license <https://github.com/lingcorpora/lingcorpora.py/blob/master/LICENSE.md>`_.
+| The package is available under `MIT license <https://github.com/lingcorpora/lingcorpora.py/blob/master/LICENSE.md>`_.
+| Note that the corpora may have license conditions that restrict automatic downloads.
 
 About
 ------

@@ -84,7 +84,7 @@ class PageParser(Container):
         _text = str()
         _transl = str()
         _target_idxs = list()
-        _ana = None
+        _ana = []
         _lang = str()
         _meta = str()
         lq = len(self.query)
