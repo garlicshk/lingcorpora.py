@@ -43,7 +43,8 @@ class Container:
          gr_tags=None,
          query_language=None,
          start=0,
-         writing_system=None
+         writing_system=None,
+         *args, **kwargs
     ):
         """
         Universal arguments:
