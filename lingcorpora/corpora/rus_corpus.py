@@ -313,7 +313,7 @@ class PageParser(Container):
                     self.zero_page_first_titles = [x.xpath('span')[0].text for x in page.xpath('//ol/li')]
                 else:
                     lis = page.xpath('//ol/li')
-                    if all([self.zero_page_first_titles[i] == lis[i].xpath('span')[0].text for i in range(len(lis))]):
+                    if len(lis) == len(self.zero_page_first_titles) and all([self.zero_page_first_titles[i] == lis[i].xpath('span')[0].text for i in range(len(lis))]):
                         self.__stop_flag = True
                         break
                 yield from self.__get_results(page)
