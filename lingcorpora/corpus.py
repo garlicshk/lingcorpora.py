@@ -1,6 +1,6 @@
 # python3
 # coding=<UTF-8>
-
+import sys
 import warnings
 from collections import Iterable, deque
 
@@ -176,7 +176,7 @@ class Corpus:
                     # total=parser.n_results,
                     unit='docs',
                     desc=self.pbar_desc % q,
-                    disable=not self.verbose
+                    disable=not self.verbose, file=sys.stdout
             ):
                 result_obj.add(target)
 
@@ -184,7 +184,7 @@ class Corpus:
                 results.append(result_obj)
 
             else:
-                warnings.warn(self.warn_str % q)
+                # warnings.warn(self.warn_str % q)
                 self.failed.append(result_obj)
 
         self.results.extend(results)
